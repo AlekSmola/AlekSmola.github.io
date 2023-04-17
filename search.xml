@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>My Instructions for Using Hexo</title>
+    <url>/2023/03/28/how_to_use_hexo/</url>
+    <content><![CDATA[<h2 id="Just-the-quick-helpdesk-for-the-things-I-went-through-to-get-Hexo-working"><a href="#Just-the-quick-helpdesk-for-the-things-I-went-through-to-get-Hexo-working" class="headerlink" title="Just the quick helpdesk for the things I went through to get Hexo working."></a>Just the quick helpdesk for the things I went through to get Hexo working.</h2><h3 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo:"></a>Install Hexo:</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli </span><br></pre></td></tr></table></figure>
+
+<h3 id="Start-first-project"><a href="#Start-first-project" class="headerlink" title="Start first project"></a>Start first project</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hex init project_name</span><br></pre></td></tr></table></figure>
+
+<h3 id="enter-project-name"><a href="#enter-project-name" class="headerlink" title="enter project_name"></a>enter project_name</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> project_name</span><br></pre></td></tr></table></figure>
+
+<h3 id="start-local-server"><a href="#start-local-server" class="headerlink" title="start local server"></a>start local server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<h3 id="create-new-site-x2F-blog-post"><a href="#create-new-site-x2F-blog-post" class="headerlink" title="create new site&#x2F;blog post"></a>create new site&#x2F;blog post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new post_site_name</span><br><span class="line">hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="to-make-post-be-display-only-in-part-on-home-page-use-this-where-required"><a href="#to-make-post-be-display-only-in-part-on-home-page-use-this-where-required" class="headerlink" title="to make post be display only in part on home page use this where required:"></a>to make post be display only in part on home page use this where required:</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h3 id="to-create-draft-not-published-post"><a href="#to-create-draft-not-published-post" class="headerlink" title="to create draft (not published) post:"></a>to create draft (not published) post:</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new draft to_check</span><br></pre></td></tr></table></figure>
+<p>to see how draft looks like:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server --draft</span><br></pre></td></tr></table></figure>
+
+<h3 id="to-publish-draft-as-normal-post"><a href="#to-publish-draft-as-normal-post" class="headerlink" title="to publish draft as normal post"></a>to publish draft as normal post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish to_check</span><br></pre></td></tr></table></figure>
+
+<h3 id="create-a-page-not-a-post"><a href="#create-a-page-not-a-post" class="headerlink" title="create a page, not a post"></a>create a page, not a post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page about_me_page</span><br></pre></td></tr></table></figure>
+<p>to enter this site: &#x2F;about_me_page&#x2F;</p>
+<h3 id="Change-default-hexo-new-behaviour"><a href="#Change-default-hexo-new-behaviour" class="headerlink" title="Change default hexo new behaviour"></a>Change default <code>hexo new</code> behaviour</h3><p>default is <code>post</code>, but can be <code>draft</code>:<br>in <code>_config.yml</code>:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">default_layout: post</span><br></pre></td></tr></table></figure>
+<p>change to:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">default_layout: draft</span><br></pre></td></tr></table></figure>
+
+<h3 id="page-title-front-matter-date-tags"><a href="#page-title-front-matter-date-tags" class="headerlink" title="page title, front matter, date, tags"></a>page title, front matter, date, tags</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Title of the site</span><br><span class="line">date: 2023-03-28 15:07:42</span><br><span class="line">tags: [Tag1, Tag2, Tag3]</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h3 id="scaffolds-being-like-templates"><a href="#scaffolds-being-like-templates" class="headerlink" title="scaffolds being like templates"></a><code>scaffolds</code> being like templates</h3><p>can add to them:<br><code>author: Me</code><br>can add new templates, not only <code>page, post, draft</code> but also <code>my_own</code> by create new <code>my_own.md</code> file inside of the <code>scaffolds</code> folder. Then:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new my_own title</span><br></pre></td></tr></table></figure>
+<p>it will put it inside of the post folder, or probably a default.</p>
+<h3 id="Categories"><a href="#Categories" class="headerlink" title="Categories"></a>Categories</h3><p>add inside of the file, at the beginning:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">- [Category1]</span><br><span class="line">- [Category2]</span><br><span class="line">- [Category3]</span><br></pre></td></tr></table></figure>
+
+<p>subcategfories, being like index of a book</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">- [Category1, Category1.1]</span><br><span class="line">- [Category2,Category1.1,Category1.2]</span><br><span class="line">- [Category3]</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h3><p>like codebocks</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% codeblock %&#125;</span><br><span class="line">some_code = 2*pi();</span><br><span class="line">other = 89;</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% codeblock lang:javascript %&#125;</span><br><span class="line">some_code = 2*pi();</span><br><span class="line">other = 89;</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>works like</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">``` in markdown</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">some_code = 2*pi();</span><br><span class="line">other = 89;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">some_code = <span class="number">2</span>*<span class="title function_">pi</span>();</span><br><span class="line">other = <span class="number">89</span>;</span><br></pre></td></tr></table></figure>
+
+<p>more plguins:<br><code>https://hexo.io/docs/plugins</code></p>
+<h3 id="allow-files-on-site"><a href="#allow-files-on-site" class="headerlink" title="allow files on site:"></a>allow files on site:</h3><p>in <code>_config.yml</code>:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>change to:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>Than, creating a new post with <code>hexo new site</code> will aslo crease <code>site</code> folder in addition to <code>site.md</code> in which all media will be located.</p>
+
+
+<img src="/2023/03/28/how_to_use_hexo/jpgg.jpg" class="">
+
+<a href="/2023/03/28/how_to_use_hexo/jpgg.jpg" title="jpgg.jpg">jpgg.jpg</a>
+
+<img src="/2023/03/28/how_to_use_hexo/yes.png" class="">
+
+<a href="/2023/03/28/how_to_use_hexo/yes.png" title="yes.png">yes.png</a>
+
+/2023/03/28/how_to_use_hexo/yes.png
+
+
+<h3 id="custom-theme-config"><a href="#custom-theme-config" class="headerlink" title="custom theme config:"></a>custom theme config:</h3><p>hexo server –config _config.next.yml</p>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="Delete-post"><a href="#Delete-post" class="headerlink" title="Delete post"></a>Delete post</h3><ol>
+<li>Delete the post under source&#x2F;_post folder</li>
+<li>Run hexo clean to delete the database (db.json) and assets folder</li>
+<li>Run hexo generateto generate the new blog without your deleted post</li>
+<li>Run hexo deploy to deploy your blog</li>
+</ol>
+<h3 id="Footer-word-count-disable"><a href="#Footer-word-count-disable" class="headerlink" title="Footer word count disable"></a>Footer word count disable</h3><p>in <code>.\firstone\themes\next\layout\_partials\footer.njk</code><br>comment:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;%- <span class="keyword">if</span> config.symbols_count_time.total_time %&#125;</span><br><span class="line">&lt;span class=<span class="string">&quot;post-meta-item&quot;</span>&gt;</span><br><span class="line">  &lt;span class=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">    &lt;i class=<span class="string">&quot;fa fa-coffee&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">  &#123;%- <span class="keyword">if</span> theme.symbols_count_time.item_text_total %&#125;</span><br><span class="line">    &lt;span&gt;&#123;&#123; __(<span class="string">&#x27;symbols_count_time.time_total&#x27;</span>) &#125;&#125; &amp;asymp;&lt;/span&gt;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">  &lt;span title=<span class="string">&quot;&#123;&#123; __(&#x27;symbols_count_time.time_total&#x27;) &#125;&#125;&quot;</span>&gt;&#123;&#123; symbolsTimeTotal(site, config.symbols_count_time.awl, config.symbols_count_time.wpm, __(<span class="string">&#x27;symbols_count_time.time_minutes&#x27;</span>)) &#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/span&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>instructions</tag>
+        <tag>tutorial</tag>
+      </tags>
+  </entry>
+</search>
