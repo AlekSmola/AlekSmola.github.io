@@ -1,2 +1,2 @@
 # AlekSmola.github.io
-The cleanestest
+Source files for my HEXO site.

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>How to Rewind Tinywhoop BLDC Motor</title>
+    <url>/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/</url>
+    <content><![CDATA[<h1 id="to-start-with-you-need-broken-x2F-burnt-BLDC-motor"><a href="#to-start-with-you-need-broken-x2F-burnt-BLDC-motor" class="headerlink" title="to start with, you need broken&#x2F;burnt BLDC motor"></a>to start with, you need broken&#x2F;burnt BLDC motor</h1>]]></content>
+  </entry>
+  <entry>
     <title>My Instructions for Using Hexo</title>
     <url>/2023/03/28/how_to_use_hexo/</url>
     <content><![CDATA[<h2 id="Just-the-quick-helpdesk-for-the-things-I-went-through-to-get-Hexo-working"><a href="#Just-the-quick-helpdesk-for-the-things-I-went-through-to-get-Hexo-working" class="headerlink" title="Just the quick helpdesk for the things I went through to get Hexo working."></a>Just the quick helpdesk for the things I went through to get Hexo working.</h2><h3 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo:"></a>Install Hexo:</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli </span><br></pre></td></tr></table></figure>
