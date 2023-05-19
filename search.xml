@@ -56,6 +56,119 @@
       </tags>
   </entry>
   <entry>
+    <title>How to Flash TP-Link Archer C8v2 With DD-WRT.</title>
+    <url>/2023/05/19/archerc8-flashing/</url>
+    <content><![CDATA[<h1 id="0-DISCLAIMER"><a href="#0-DISCLAIMER" class="headerlink" title="0. DISCLAIMER"></a>0. DISCLAIMER</h1><p><ins>I am not responsible for anything.</ins> In this tutorial, I described my way of flashing dd-wrt onto this router. You may have different hardware and the methods described here may not work. Please keep in mind that you may end up with bricked device and you agreed with this loss. </p>
+<br/>
+
+<h1 id="1-Case-scenario"><a href="#1-Case-scenario" class="headerlink" title="1. Case scenario"></a>1. Case scenario</h1><p>TP-Link Archer C8v1 and v2 are wireless routers. Even in 2023, it will handle most of the tasks thrown at it by normal home users. However, support for it ended way back in 2016 and no more official updates were released since then <a href="https://www.tp-link.com/pl/support/download/archer-c8/v2/#Firmware">[1]</a>.<br>It can be brought back to safer operation with modern updated firmware like dd-wrt. </p>
+<br/>
+
+<h1 id="2-The-problem"><a href="#2-The-problem" class="headerlink" title="2. The problem"></a>2. The problem</h1><p>According to <a href="https://dd-wrt.com/support/router-database/?model=Archer%20C8%20(AC1750)_1.x,%202.x">[2]</a> support page on dd-wrt.com site, this device is supported and there is an image for it. Following instructions on <a href="https://wiki.dd-wrt.com/wiki/index.php/TP_Link_Archer_C8#Installation">[3]</a> flashing this router with dd-wrt is easy. It involves only a few steps. Main one is uploading .bin file via the original TP-Link site. Unfortunately, there are some problems with <strong>v2</strong> hardware version which I encountered.</p>
+<p>While performing a flash the following errors can be encountered: <code>error -5533</code> and <code>Error code: 18005</code>. It appears the .bin file on the dd-wrt download page is meant only for the v1 hardware version. Hence the <code>error -5533</code> appears. </p>
+<br/>
+
+<h1 id="3-Solution"><a href="#3-Solution" class="headerlink" title="3. Solution"></a>3. Solution</h1><p>To solve this issue it is suggested to downgrade the firmware with the official release.</p>
+<span id="more"></span>
+
+<p>This did not help.</p>
+<p>Another way that may be tried is to edit the .bin file. It sounds harder than it in reality is. I used <code>GHex</code> program on my Linux machine (Quick install: <code>sudo apt install ghex</code>). Alternatives can be found for other OSs. By opening the downloaded file from <a href="https://dd-wrt.com/support/router-database/?model=Archer%20C8%20(AC1750)_1.x,%202.x">[2]</a>: <code>factory-to-ddwrt.bin</code> and scrolling all the way down, the following can be seen:</p>
+<div style="text-align: center;">
+<img src="/2023/05/19/archerc8-flashing/archerc8_1.png" class="" title="Before changes">
+</div>
+
+<p><em>Figure. Original file opened in hex file viewer called GHex.</em></p>
+<p>Change the version from:</p>
+<p><code>product_ver:1.0.0</code></p>
+<p>to:</p>
+<p><code>product_ver:2.0.0</code></p>
+<div style="text-align: center;">
+<img src="/2023/05/19/archerc8-flashing/archerc8_2.png" class="" title="After changes">
+</div>
+
+<p><em>Figure. Changes made to the .bin file.</em></p>
+<p style="text-align: left;">Don't forget to save the file.</p
+
+
+<br/>
+
+<h1 id="4-Further-solution"><a href="#4-Further-solution" class="headerlink" title="4. Further solution"></a>4. Further solution</h1><p>Unfortunately, the next error which appeared in place of the previous one is <code>Error code: 18005</code>.</p>
+<p>For me, at this point [DON’T DO IT] is to rip the case of the router apart, find the serial connector as the photo below presents. Use the TFTP upload method. This, if done properly, should get you up and running. </p>
+<div style="text-align: center;">
+<img src="/2023/05/19/archerc8-flashing/archerc8v2desk.jpg" class="" title="Setup with the router connected to serial.">
+</div>
+
+<p><em>Figure. Setup with the router connected to serial.</em></p>
+<p>What the router expects to get from TFTP server:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Device eth0:  hwaddr , ipaddr 192.168.0.86, mask 255.255.255.0</span><br><span class="line">        gateway not set, nameserver not set</span><br><span class="line">Reading 192.168.0.66:ArcherC8v2_tp_recovery.bin</span><br></pre></td></tr></table></figure>
+
+<p>Unfortunately, in my case, I bricked to router permanently to this point, at which after a reboot the router did not start up, all lights were gone, no response on the Ethernet connectors and what’s worse no output on the serial. </p>
+<p>At this point simple operation became a tough task. </p>
+<blockquote>
+<p>If you have your router still operational and are desperate to get dd-wrt running you may look at <code>Alternate solutions</code> at the end of this article first. Below text describes how to de-brick bricked router and may not be required. You can go back to this point and start the de-bricking process from here if the <code>Alternate solutions</code> did not work.</p>
+</blockquote>
+<p>As I understand the flash chip layout holding the execution instructions was changed and the router does not know what to start up. To solve this, I figured out which chip is a flash chip, de-soldered it and flashed again using an external programmer. The chip is visible below. </p>
+<div style="text-align: center;">
+<img src="/2023/05/19/archerc8-flashing/acherc8memory.jpg" class="" title="Memory of the router">
+</div>
+
+<p><em>Figure. Router motherboard with flash chip visible. Some resistor values are also indicated, as well as a serial connector. Ground for serial can be borrowed from antenna shielding.</em></p>
+<div style="text-align: center;">
+<img src="/2023/05/19/archerc8-flashing/archerc8pads.jpg" class="" title="Pads after flash chip was removed.">
+</div>
+
+<p><em>Figure. Photo of the board with removed flash chip. Note kapton tape all around the chip which indicates that I am not that good at hot air de-soldering.</em></p>
+<h2 id="Hints-for-de-soldering"><a href="#Hints-for-de-soldering" class="headerlink" title="Hints for de-soldering"></a>Hints for de-soldering</h2><p>There are several smaller components around the flash. These are mainly tiny pull-ups or pull-downs resistors for chip pins. I suggest if you don’t have experience with de soldering to cover everything around the chip with kapton tape. Then, use flux and hot air to get the flash chip gently off the board. Programming in place is not an option since by 3V3 voltage rail powering the flash will at the same time power up the rest of the board.</p>
+<p>I used the classic CH341a <a href="https://pl.aliexpress.com/item/32725360255.html">programmer</a> with the appropriate adapter board. Although an adapter is not required since the programmer on the bottom side has the proper pads for this sized flash chip.</p>
+<div style="text-align: center;">
+<img src="/2023/05/19/archerc8-flashing/archerc8_5.png" class="" title="Programmer used">
+</div>
+
+<p><em>Figure. CH341a programmer used for re-flashing memory chip.</em></p>
+<p><strong>NOTE</strong>: watch this video before soldering the flash chip:</p>
+<blockquote>
+<p><code>https://www.youtube.com/watch?v=HwnzzF645hA</code><br>TL;DR is that some pins of this programmer are 5V and some of them are 3V3. This may or may not damage the flash chip. I did the mod and it worked. </p>
+</blockquote>
+<p>To program it I have used <code>flashrom</code> on Linux <a href="https://www.flashrom.org/Flashrom">[4]</a> <a href="https://manpages.ubuntu.com/manpages/trusty/man8/flashrom.8.html">[5]</a>.</p>
+<p>First read execute the following command to see if <code>flashrom</code> has detected a programmer and flash attached with the command:</p>
+<p><code>sudo flashrom --programmer ch341a_spi</code> </p>
+<p>It should yield:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">No EEPROM/flash device found.</span><br><span class="line">Note: flashrom can never write if the flash chip isn&#x27;t found automatically.</span><br></pre></td></tr></table></figure>
+<p>and if the flash chip is properly connected, it should give its name.</p>
+<p>Going further, to read the chip contents to see if the programmer is reading the chip and for backup:</p>
+<p><code>sudo flashrom --programmer ch341a_spi -r dump.bin</code> </p>
+<p>This should take some time, around 1-2 minutes. After that, you can examine the <code>dump.bin</code> file with <code>GHex</code>. </p>
+<p>To fix the flash, we need the working .bin dump. Fortunately for us, this was done by a nice person <code>delhite2</code> on dd-wrt forum <a href="https://forum.dd-wrt.com/phpBB2/viewtopic.php?t=311049">[6]</a>. Both files are attached in my GitHub repo <a href="https://github.com/AlekSmola/WebArchives/tree/main/TP_Link%20ArcherC8v1v2%20Firmware">[7]</a> just in case the forum thread disappears.</p>
+<p>I flashed the router with v2 dump. But don’t do that (if you have v2). As it appears, it recovers the router to the initial state just fine, but the error codes remain. I have the v2 version and from the pure lack of other options, I flashed v1 dump. It booted and it worked just fine!</p>
+<p>What’s more important it let me flash the dd-wrt with GUI just fine. after that, the router had the custom firmware operational like a charm!!!</p>
+<p>To flash use the command:</p>
+<p><code>sudo flashrom --programmer ch341a_spi -w dumpv1.bin</code></p>
+<p>It may take a while since the flashrom will read the content first for backup, then write a new image and verify it with the original one. Be patient, if something goes wrong, it will blast you with errors…</p>
+<p>Don’t forget to solder flashed chip onto the board :).</p>
+<h1 id="5-Alternate-solution"><a href="#5-Alternate-solution" class="headerlink" title="5. Alternate solution"></a>5. Alternate solution</h1><p>I did not test it, but it may happen on the v2 that you can flash the v1 official firmware from TP-Link site using GUI and then flash dd-wrt from that. I did not test it and I don’t know if it will work, but it is worth giving a shot. De-soldering the flash from the board and flashing it with an external programmer is the last resort anyway.</p>
+<h1 id="6-Sources"><a href="#6-Sources" class="headerlink" title="6. Sources"></a>6. Sources</h1><p>[1] <a href="https://www.tp-link.com/pl/support/download/archer-c8/v2/#Firmware">https://www.tp-link.com/pl/support/download/archer-c8/v2/#Firmware</a></p>
+<p>[2] <a href="https://dd-wrt.com/support/router-database/?model=Archer%20C8%20(AC1750)_1.x,%202.x">https://dd-wrt.com/support/router-database/?model=Archer%20C8%20(AC1750)_1.x,%202.x</a></p>
+<p>[3] <a href="https://wiki.dd-wrt.com/wiki/index.php/TP_Link_Archer_C8#Installation">https://wiki.dd-wrt.com/wiki/index.php/TP_Link_Archer_C8#Installation</a></p>
+<p>[4] <a href="https://www.flashrom.org/Flashrom">https://www.flashrom.org/Flashrom</a> </p>
+<p>[5] <a href="https://manpages.ubuntu.com/manpages/trusty/man8/flashrom.8.html">https://manpages.ubuntu.com/manpages/trusty/man8/flashrom.8.html</a></p>
+<p>[6] <a href="https://forum.dd-wrt.com/phpBB2/viewtopic.php?t=311049">https://forum.dd-wrt.com/phpBB2/viewtopic.php?t=311049</a></p>
+<p>[7] <a href="https://github.com/AlekSmola/WebArchives/tree/main/TP_Link%20ArcherC8v1v2%20Firmware">https://github.com/AlekSmola/WebArchives/tree/main/TP_Link%20ArcherC8v1v2%20Firmware</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+        <category>Networking</category>
+      </categories>
+      <tags>
+        <tag>instructions</tag>
+        <tag>flashing</tag>
+        <tag>dd-wrt</tag>
+        <tag>archer c8</tag>
+        <tag>tp-link</tag>
+        <tag>tutorials</tag>
+        <tag>de-bricking</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>My Instructions for Using Hexo</title>
     <url>/2023/03/28/how_to_use_hexo/</url>
     <content><![CDATA[<h1 id="How-to-setup-HEXO-website-my-own-instructions-this-site"><a href="#How-to-setup-HEXO-website-my-own-instructions-this-site" class="headerlink" title="How to setup HEXO website [my own instructions] [this site]"></a>How to setup HEXO website [my own instructions] [this site]</h1><p>Just the quick helpdesk for the things I went through to get Hexo working.</p>
@@ -181,119 +294,6 @@
         <tag>page</tag>
         <tag>github</tag>
         <tag>website</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>How to Flash TP-Link Archer C8v2 With DD-WRT.</title>
-    <url>/2023/05/19/archerc8-flashing/</url>
-    <content><![CDATA[<h1 id="0-DISCLAIMER"><a href="#0-DISCLAIMER" class="headerlink" title="0. DISCLAIMER"></a>0. DISCLAIMER</h1><p><ins>I am not responsible for anything.</ins> In this tutorial, I described my way of flashing dd-wrt onto this router. You may have different hardware and the methods described here may not work. Please keep in mind that you may end up with bricked device and you agreed with this loss. </p>
-<br/>
-
-<h1 id="1-Case-scenario"><a href="#1-Case-scenario" class="headerlink" title="1. Case scenario"></a>1. Case scenario</h1><p>TP-Link Archer C8v1 and v2 are wireless routers. Even in 2023, it will handle most of the tasks thrown at it by normal home users. However, support for it ended way back in 2016 and no more official updates were released since then <a href="https://www.tp-link.com/pl/support/download/archer-c8/v2/#Firmware">[1]</a>.<br>It can be brought back to safer operation with modern updated firmware like dd-wrt. </p>
-<br/>
-
-<h1 id="2-The-problem"><a href="#2-The-problem" class="headerlink" title="2. The problem"></a>2. The problem</h1><p>According to <a href="https://dd-wrt.com/support/router-database/?model=Archer%20C8%20(AC1750)_1.x,%202.x">[2]</a> support page on dd-wrt.com site, this device is supported and there is an image for it. Following instructions on <a href="https://wiki.dd-wrt.com/wiki/index.php/TP_Link_Archer_C8#Installation">[3]</a> flashing this router with dd-wrt is easy. It involves only a few steps. Main one is uploading .bin file via the original TP-Link site. Unfortunately, there are some problems with <strong>v2</strong> hardware version which I encountered.</p>
-<p>While performing a flash the following errors can be encountered: <code>error -5533</code> and <code>Error code: 18005</code>. It appears the .bin file on the dd-wrt download page is meant only for the v1 hardware version. Hence the <code>error -5533</code> appears. </p>
-<br/>
-
-<h1 id="3-Solution"><a href="#3-Solution" class="headerlink" title="3. Solution"></a>3. Solution</h1><p>To solve this issue it is suggested to downgrade the firmware with the official release.</p>
-<span id="more"></span>
-
-<p>This did not help.</p>
-<p>Another way that may be tried is to edit the .bin file. It sounds harder than it in reality is. I used <code>GHex</code> program on my Linux machine (Quick install: <code>sudo apt install ghex</code>). Alternatives can be found for other OSs. By opening the downloaded file from <a href="https://dd-wrt.com/support/router-database/?model=Archer%20C8%20(AC1750)_1.x,%202.x">[2]</a>: <code>factory-to-ddwrt.bin</code> and scrolling all the way down, the following can be seen:</p>
-<div style="text-align: center;">
-<img src="/2023/05/19/archerc8-flashing/archerc8_1.png" class="" title="Before changes">
-</div>
-
-<p><em>Figure. Original file opened in hex file viewer called GHex.</em></p>
-<p>Change the version from:</p>
-<p><code>product_ver:1.0.0</code></p>
-<p>to:</p>
-<p><code>product_ver:2.0.0</code></p>
-<div style="text-align: center;">
-<img src="/2023/05/19/archerc8-flashing/archerc8_2.png" class="" title="After changes">
-</div>
-
-<p><em>Figure. Changes made to the .bin file.</em></p>
-<p style="text-align: left;">Don't forget to save the file.</p
-
-
-<br/>
-
-<h1 id="4-Further-solution"><a href="#4-Further-solution" class="headerlink" title="4. Further solution"></a>4. Further solution</h1><p>Unfortunately, the next error which appeared in place of the previous one is <code>Error code: 18005</code>.</p>
-<p>For me, at this point [DON’T DO IT] is to rip the case of the router apart, find the serial connector as the photo below presents. Use the TFTP upload method. This, if done properly, should get you up and running. </p>
-<div style="text-align: center;">
-<img src="/2023/05/19/archerc8-flashing/archerc8v2desk.jpg" class="" title="Setup with the router connected to serial.">
-</div>
-
-<p><em>Figure. Setup with the router connected to serial.</em></p>
-<p>What the router expects to get from TFTP server:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Device eth0:  hwaddr , ipaddr 192.168.0.86, mask 255.255.255.0</span><br><span class="line">        gateway not set, nameserver not set</span><br><span class="line">Reading 192.168.0.66:ArcherC8v2_tp_recovery.bin</span><br></pre></td></tr></table></figure>
-
-<p>Unfortunately, in my case, I bricked to router permanently to this point, at which after a reboot the router did not start up, all lights were gone, no response on the Ethernet connectors and what’s worse no output on the serial. </p>
-<p>At this point simple operation became a tough task. </p>
-<blockquote>
-<p>If you have your router still operational and are desperate to get dd-wrt running you may look at <code>Alternate solutions</code> at the end of this article first. Below text describes how to de-brick bricked router and may not be required. You can go back to this point and start the de-bricking process from here if the <code>Alternate solutions</code> did not work.</p>
-</blockquote>
-<p>As I understand the flash chip layout holding the execution instructions was changed and the router does not know what to start up. To solve this, I figured out which chip is a flash chip, de-soldered it and flashed again using an external programmer. The chip is visible below. </p>
-<div style="text-align: center;">
-<img src="/2023/05/19/archerc8-flashing/acherc8memory.jpg" class="" title="Memory of the router">
-</div>
-
-<p><em>Figure. Router motherboard with flash chip visible. Some resistor values are also indicated, as well as a serial connector. Ground for serial can be borrowed from antenna shielding.</em></p>
-<div style="text-align: center;">
-<img src="/2023/05/19/archerc8-flashing/archerc8pads.jpg" class="" title="Pads after flash chip was removed.">
-</div>
-
-<p><em>Figure. Photo of the board with removed flash chip. Note kapton tape all around the chip which indicates that I am not that good at hot air de-soldering.</em></p>
-<h2 id="Hints-for-de-soldering"><a href="#Hints-for-de-soldering" class="headerlink" title="Hints for de-soldering"></a>Hints for de-soldering</h2><p>There are several smaller components around the flash. These are mainly tiny pull-ups or pull-downs resistors for chip pins. I suggest if you don’t have experience with de soldering to cover everything around the chip with kapton tape. Then, use flux and hot air to get the flash chip gently off the board. Programming in place is not an option since by 3V3 voltage rail powering the flash will at the same time power up the rest of the board.</p>
-<p>I used the classic CH341a <a href="https://pl.aliexpress.com/item/32725360255.html">programmer</a> with the appropriate adapter board. Although an adapter is not required since the programmer on the bottom side has the proper pads for this sized flash chip.</p>
-<div style="text-align: center;">
-<img src="/2023/05/19/archerc8-flashing/archerc8_5.png" class="" title="Programmer used">
-</div>
-
-<p><em>Figure. CH341a programmer used for re-flashing memory chip.</em></p>
-<p><strong>NOTE</strong>: watch this video before soldering the flash chip:</p>
-<blockquote>
-<p><code>https://www.youtube.com/watch?v=HwnzzF645hA</code><br>TL;DR is that some pins of this programmer are 5V and some of them are 3V3. This may or may not damage the flash chip. I did the mod and it worked. </p>
-</blockquote>
-<p>To program it I have used <code>flashrom</code> on Linux <a href="https://www.flashrom.org/Flashrom">[4]</a> <a href="https://manpages.ubuntu.com/manpages/trusty/man8/flashrom.8.html">[5]</a>.</p>
-<p>First read execute the following command to see if <code>flashrom</code> has detected a programmer and flash attached with the command:</p>
-<p><code>sudo flashrom --programmer ch341a_spi</code> </p>
-<p>It should yield:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">No EEPROM/flash device found.</span><br><span class="line">Note: flashrom can never write if the flash chip isn&#x27;t found automatically.</span><br></pre></td></tr></table></figure>
-<p>and if the flash chip is properly connected, it should give its name.</p>
-<p>Going further, to read the chip contents to see if the programmer is reading the chip and for backup:</p>
-<p><code>sudo flashrom --programmer ch341a_spi -r dump.bin</code> </p>
-<p>This should take some time, around 1-2 minutes. After that, you can examine the <code>dump.bin</code> file with <code>GHex</code>. </p>
-<p>To fix the flash, we need the working .bin dump. Fortunately for us, this was done by a nice person <code>delhite2</code> on dd-wrt forum <a href="https://forum.dd-wrt.com/phpBB2/viewtopic.php?t=311049">[6]</a>. Both files are attached in my GitHub repo <a href="https://github.com/AlekSmola/WebArchives/tree/main/TP_Link%20ArcherC8v1v2%20Firmware">[7]</a> just in case the forum thread disappears.</p>
-<p>I flashed the router with v2 dump. But don’t do that (if you have v2). As it appears, it recovers the router to the initial state just fine, but the error codes remain. I have the v2 version and from the pure lack of other options, I flashed v1 dump. It booted and it worked just fine!</p>
-<p>What’s more important it let me flash the dd-wrt with GUI just fine. after that, the router had the custom firmware operational like a charm!!!</p>
-<p>To flash use the command:</p>
-<p><code>sudo flashrom --programmer ch341a_spi -w dumpv1.bin</code></p>
-<p>It may take a while since the flashrom will read the content first for backup, then write a new image and verify it with the original one. Be patient, if something goes wrong, it will blast you with errors…</p>
-<p>Don’t forget to solder flashed chip onto the board :).</p>
-<h1 id="5-Alternate-solution"><a href="#5-Alternate-solution" class="headerlink" title="5. Alternate solution"></a>5. Alternate solution</h1><p>I did not test it, but it may happen on the v2 that you can flash the v1 official firmware from TP-Link site using GUI and then flash dd-wrt from that. I did not test it and I don’t know if it will work, but it is worth giving a shot. De-soldering the flash from the board and flashing it with an external programmer is the last resort anyway.</p>
-<h1 id="6-Sources"><a href="#6-Sources" class="headerlink" title="6. Sources"></a>6. Sources</h1><p>[1] <a href="https://www.tp-link.com/pl/support/download/archer-c8/v2/#Firmware">https://www.tp-link.com/pl/support/download/archer-c8/v2/#Firmware</a></p>
-<p>[2] <a href="https://dd-wrt.com/support/router-database/?model=Archer%20C8%20(AC1750)_1.x,%202.x">https://dd-wrt.com/support/router-database/?model=Archer%20C8%20(AC1750)_1.x,%202.x</a></p>
-<p>[3] <a href="https://wiki.dd-wrt.com/wiki/index.php/TP_Link_Archer_C8#Installation">https://wiki.dd-wrt.com/wiki/index.php/TP_Link_Archer_C8#Installation</a></p>
-<p>[4] <a href="https://www.flashrom.org/Flashrom">https://www.flashrom.org/Flashrom</a> </p>
-<p>[5] <a href="https://manpages.ubuntu.com/manpages/trusty/man8/flashrom.8.html">https://manpages.ubuntu.com/manpages/trusty/man8/flashrom.8.html</a></p>
-<p>[6] <a href="https://forum.dd-wrt.com/phpBB2/viewtopic.php?t=311049">https://forum.dd-wrt.com/phpBB2/viewtopic.php?t=311049</a></p>
-<p>[7] <a href="https://github.com/AlekSmola/WebArchives/tree/main/TP_Link%20ArcherC8v1v2%20Firmware">https://github.com/AlekSmola/WebArchives/tree/main/TP_Link%20ArcherC8v1v2%20Firmware</a></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-        <category>Networking</category>
-      </categories>
-      <tags>
-        <tag>instructions</tag>
-        <tag>flashing</tag>
-        <tag>dd-wrt</tag>
-        <tag>archer c8</tag>
-        <tag>tp-link</tag>
-        <tag>tutorials</tag>
-        <tag>de-bricking</tag>
       </tags>
   </entry>
 </search>
