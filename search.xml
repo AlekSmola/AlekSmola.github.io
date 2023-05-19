@@ -1,31 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>How to Rewind Tinywhoop BLDC Motor</title>
+    <title>How to Rewind a Tinywhoop (Or Any Other) BLDC Motor</title>
     <url>/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/</url>
-    <content><![CDATA[<h1 id="to-start-with-you-need-broken-x2F-burnt-BLDC-motor"><a href="#to-start-with-you-need-broken-x2F-burnt-BLDC-motor" class="headerlink" title="to start with, you need broken&#x2F;burnt BLDC motor"></a>to start with, you need broken&#x2F;burnt BLDC motor</h1><h3 id="test-uploadu"><a href="#test-uploadu" class="headerlink" title="test uploadu"></a>test uploadu</h3><h3 id="again-test-uploadu2"><a href="#again-test-uploadu2" class="headerlink" title="again test uploadu2"></a>again test uploadu2</h3><h3 id="trzeci-test-uploadu"><a href="#trzeci-test-uploadu" class="headerlink" title="trzeci test uploadu"></a>trzeci test uploadu</h3>]]></content>
+    <content><![CDATA[<p>Tutorial on how to rewind a broken BLDC motor by replacing the windings in the stator.</p>
+<h1 id="1-A-bit-of-theory"><a href="#1-A-bit-of-theory" class="headerlink" title="1. A bit of theory"></a>1. A bit of theory</h1><p>BLDC motors are DC voltage operating motors. The most important advantage over regular brushed DC motors is the fact of lack of brushes in BLDC motors. BLDC comes from a Brushless DC motor. Thanks to that, fewer parts can wear out and the motor is more reliable and longer lasting. Stator consists of windings made out of copper enameled wire. This means that wire has thin layer of insulation. This insulation may get damaged by excess heat, which occurs during motor stall (not only of course). The motor stall is when we want motors to rotate, but its rotor is locked. Visually burned coils will be black, they will stink quite a lot and some of the isolation may melt, changing the shape of the wire. The damaged motor will ‘try’ to rotate when power is applied, but will only vibrate by moving small steps forward and backward.</p>
+<img src="/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/mobula6motor.jpg" class="" title="BLDC motor example.">
+<h6 id="Figure-1-BLDC-motor-which-is-to-be-repaired-in-this-guide-Note-that-the-instructions-can-be-applied-to-other-motors-of-that-kind-Only-the-windings-pattern-will-change-and-x2F-or-the-wire-for-windings-used"><a href="#Figure-1-BLDC-motor-which-is-to-be-repaired-in-this-guide-Note-that-the-instructions-can-be-applied-to-other-motors-of-that-kind-Only-the-windings-pattern-will-change-and-x2F-or-the-wire-for-windings-used" class="headerlink" title="Figure 1. BLDC motor which is to be repaired in this guide. Note that the instructions can be applied to other motors of that kind. Only the windings pattern will change and&#x2F;or the wire for windings used."></a><strong>Figure 1. BLDC motor which is to be repaired in this guide. Note that the instructions can be applied to other motors of that kind. Only the windings pattern will change and&#x2F;or the wire for windings used.</strong></h6><p>This guide is based on a tiny BLDC motor taken from Mobula 6 tinywhoop. For other motors, the procedure will be the same but the arrangement and parts required may differ.</p>
+<span id="more"></span>
+
+
+
+<h1 id="2-Why-repair-it-by-yourself-when-spare-motors-can-be-bought-cheaply"><a href="#2-Why-repair-it-by-yourself-when-spare-motors-can-be-bought-cheaply" class="headerlink" title="2. Why repair it by yourself when spare motors can be bought cheaply?"></a>2. Why repair it by yourself when spare motors can be bought cheaply?</h1><p>Sometimes we just want to use the motors instead of waiting for the delivery. You may be in luck if the motors you need are available locally and delivery time is in days. But stuff bought from China may have weeks in delivery time. A repair can be conducted now, at the very moment. With the right tools, you will be in the air the same day.</p>
+<p>Plus this motor is dead anyway, so why not give it a shot?</p>
+<p>Plus plus you will learn something.</p>
+<h1 id="3-What-will-be-needed"><a href="#3-What-will-be-needed" class="headerlink" title="3. What will be needed?"></a>3. What will be needed?</h1><p>There are some</p>
+<ol>
+<li>A bit of patience. Small motors like Mobula 6 are tiny. The winding process may require small fingers and steady hands.</li>
+<li>0.2mm diameter copper enameled wire can be bought cheaply.</li>
+<li>Good tweezers for catching the E-clip. These clips hold the rotor in place. Can be visible from the bottom of the motor.</li>
+<li>Soldering iron will rather be required.</li>
+</ol>
+<h1 id="4-Instructions"><a href="#4-Instructions" class="headerlink" title="4. Instructions."></a>4. Instructions.</h1><p>Note: These instructions are written based on the outrunner motor. The outrunner motor is the motor in which the rotor is outside and the stator is inside. Inrunner motors are the opposite. The inrunner motor can be held by hand while spinning, whereas the outrunner only by stator base.</p>
+<p><strong>1.</strong> Remove the motor from the body of the quadcopter or any frame it is attached to. Disconnect wires. Leave the plug as it may be required later.</p>
+<p><strong>2.</strong> Remove the E-clip. This is tricky without any special tools. You can use a small screwdriver to push the clip out. The secret is to push it from both sides, but the problem is that it rotates independently from the rotor. One note: E-clip is springy, after successful removal it may fly away and you never going to find it again. The motor can spin without it and for such a small motor it may be an option if you lost it, but for any more powerful motor with a bigger propeller, it is not an option. Put your motor into a plastic transparent bug while removing it. even if it flies away should be easy to find in the bug. To be even more safe, attach a neodymium magnet to the tip of the tweezer to catch the clip.</p>
+<p><strong>3.</strong> Remove the rotor from the stator. There will be some magnetic force holding it in place, but nothing strong.</p>
+<p><strong>4.</strong> Cut the plug off, leave some length of wire attached to the winding on the motor since it will be easier to unwind and count the turns.</p>
+<p><strong>5.</strong> Unwind the damaged windings. Note down the number of turns around each stator arm. If your wires are damaged to the point of being unusable below I did it for you for a described motor. Different motors will require some research, keep in mind source number <a href="https://www.bavaria-direct.co.za/scheme/calculator/">[1]</a>. which nicely visualizes how the windings should be winded.</p>
+<p>For the Mobula 6 <strong>SE0802-KV19000 9N12P</strong> (12 magnets&#x2F;poles, 9 stator arms&#x2F;slots) <a href="https://www.aliexpress.com/item/1005001666252329.html">like these</a> motors counts are as follows:</p>
+<ul>
+<li>the wire is <strong>0.2mm in diameter, enameled copper</strong>;</li>
+<li>10 turns around each stator arm;</li>
+<li>Configuration is Y (star) meaning that in the stator there is a connection of all 3 phase wires;</li>
+</ul>
+<p>Make note of which wire is which phase and which end of the wire is start or finish. Preferably use sticky tape and stick it into each note marking for example <code>A start</code>.<br>For now, leave 10cm at the beginning and at the of each winded phase. It will make life easier afterward. Cut the rest.<br>While winding follow the below scheme <strong>ABCABCABC</strong>**:<br>(it describes the direction of winding by lower- or uppercase letter and phases order)</p>
+<img src="/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/bldc_rewinding3.jpg" class="" title="Scheme for windings">
+
+<h6 id="Figure-2-Rewinding-pattern-Follow-the-lines-from-the-figure-exactly-Start-finish-and-direction-matters-Source-http-www-bavaria-direct-co-za"><a href="#Figure-2-Rewinding-pattern-Follow-the-lines-from-the-figure-exactly-Start-finish-and-direction-matters-Source-http-www-bavaria-direct-co-za" class="headerlink" title="Figure 2. Rewinding pattern. Follow the lines from the figure exactly. Start, finish and direction matters! Source: http://www.bavaria-direct.co.za/"></a><em><strong>Figure 2. Rewinding pattern. Follow the lines from the figure exactly. Start, finish and direction matters! Source: <a href="http://www.bavaria-direct.co.za/">http://www.bavaria-direct.co.za/</a></strong></em></h6><p><strong>6.</strong> When this is done, you are left with 3 phases having each two ends. Make sure that the windings do not interfere with the rest of the motor. Make the Y-center connection as inside the diagram in the Figure above. Place it offside but in the footprint of the motor. Solder the three wires. You may heat the ends with the soldering iron to remove the isolation, but it can damage deeper isolation. Preferably use sandpaper. Do not forget to isolate the solder joint from the rest with heat shrink.</p>
+<img src="/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/repaired1.jpg" class="" title="Motor after repair.">
+<h6 id="Figure-3-Repaired-motor-from-top-Note-the-center-Y-connection"><a href="#Figure-3-Repaired-motor-from-top-Note-the-center-Y-connection" class="headerlink" title="Figure 3. Repaired motor from top. Note the center Y connection."></a><em><strong>Figure 3. Repaired motor from top. Note the center Y connection.</strong></em></h6><p><strong>7.</strong> Cut the other ends of each phase to the required length. Solder connector if you need one. Now you can text the motor. For the tests, do not assemble the whole motor yet, leave E-clip aside. Just insert the rotor into the stator.</p>
+<img src="/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/repaired2.jpg" class="" title="Repaired motor from the bottom.">
+<h6 id="Figure-4-Repaired-motor-from-the-bottom-the-Y-center-connection-does-not-interfere-with-other-components"><a href="#Figure-4-Repaired-motor-from-the-bottom-the-Y-center-connection-does-not-interfere-with-other-components" class="headerlink" title="Figure 4. Repaired motor from the bottom. the Y center connection does not interfere with other components."></a><em><strong>Figure 4. Repaired motor from the bottom. the Y center connection does not interfere with other components.</strong></em></h6><h1 id="5-Post-stuff"><a href="#5-Post-stuff" class="headerlink" title="5. Post stuff"></a>5. Post stuff</h1><p>The motor works pretty much the same as the original, but I noted that it starts with a delay concerning the original ones. Higher rotations are required to start it up. You may want to adjust the start-up power in the esc configurator.</p>
+<h1 id="6-Sources-and-useful-links"><a href="#6-Sources-and-useful-links" class="headerlink" title="6. Sources and useful links"></a>6. Sources and useful links</h1><p>[1] <a href="https://www.bavaria-direct.co.za/scheme/calculator/">https://www.bavaria-direct.co.za/scheme/calculator/</a><br>[2] <a href="https://www.rcgroups.com/forums/showthread.php?1076415-Alternative-12N14P-winding">https://www.rcgroups.com/forums/showthread.php?1076415-Alternative-12N14P-winding</a><br>[3] <a href="http://www.bavaria-direct.co.za/scheme/common/#prettyPhoto">http://www.bavaria-direct.co.za/scheme/common/#prettyPhoto</a><br>[4] <a href="https://fjp.at/projects/fpv/motor">https://fjp.at/projects/fpv/motor</a><br>[5] <a href="https://www.machinedesign.com/motors-drives/article/21834666/how-to-calculate-new-dc-motor-parameters-of-a-modified-winding">https://www.machinedesign.com/motors-drives/article/21834666/how-to-calculate-new-dc-motor-parameters-of-a-modified-winding</a><br>[6] <a href="https://www.instructables.com/Rewinding-a-Brushless-Motor/">https://www.instructables.com/Rewinding-a-Brushless-Motor/</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+        <category>Repairs</category>
+      </categories>
+      <tags>
+        <tag>instructions</tag>
+        <tag>tutorial</tag>
+        <tag>bldc</tag>
+        <tag>motors</tag>
+        <tag>repairs</tag>
+      </tags>
   </entry>
   <entry>
     <title>My Instructions for Using Hexo</title>
     <url>/2023/03/28/how_to_use_hexo/</url>
-    <content><![CDATA[<h2 id="Just-the-quick-helpdesk-for-the-things-I-went-through-to-get-Hexo-working"><a href="#Just-the-quick-helpdesk-for-the-things-I-went-through-to-get-Hexo-working" class="headerlink" title="Just the quick helpdesk for the things I went through to get Hexo working."></a>Just the quick helpdesk for the things I went through to get Hexo working.</h2><h3 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo:"></a>Install Hexo:</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli </span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h1 id="How-to-setup-HEXO-website-my-own-instructions-this-site"><a href="#How-to-setup-HEXO-website-my-own-instructions-this-site" class="headerlink" title="How to setup HEXO website [my own instructions] [this site]"></a>How to setup HEXO website [my own instructions] [this site]</h1><p>Just the quick helpdesk for the things I went through to get Hexo working.</p>
+<p><a href="https://hexo.io/">Hexo</a> is the static site generator, which is very easy to use and has a lot of plugins and themes. It simplifies creation of website and does not require much programming skills. Hexco site can be published online to access by everyone, with the help of for example GitHub Pages.</p>
+<h2 id="Installing-Hexo"><a href="#Installing-Hexo" class="headerlink" title="Installing Hexo"></a>Installing Hexo</h2><p>Instructions to install and setup hexo locally.</p>
+<h3 id="Install-required-packages-and-than-Hexo"><a href="#Install-required-packages-and-than-Hexo" class="headerlink" title="Install required packages and than Hexo:"></a>Install required packages and than Hexo:</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. install git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</span></span><br><span class="line"><span class="comment"># 2. install node.js: https://nodejs.org/en/download</span></span><br><span class="line"><span class="comment"># 3. install hexo:</span></span><br><span class="line">npm install -g hexo-cli </span><br></pre></td></tr></table></figure>
 
-<h3 id="Start-first-project"><a href="#Start-first-project" class="headerlink" title="Start first project"></a>Start first project</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hex init project_name</span><br></pre></td></tr></table></figure>
+<h3 id="Start-first-project-first-site"><a href="#Start-first-project-first-site" class="headerlink" title="Start first project - first site"></a>Start first project - first site</h3><p>Enter folder where you want to create your project and than:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hex init project_name</span><br><span class="line"><span class="built_in">cd</span> project_name</span><br></pre></td></tr></table></figure>
 
-<h3 id="enter-project-name"><a href="#enter-project-name" class="headerlink" title="enter project_name"></a>enter project_name</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> project_name</span><br></pre></td></tr></table></figure>
+<h3 id="start-local-server"><a href="#start-local-server" class="headerlink" title="start local server"></a>start local server</h3><p>To enjoy whole site locally, before publishing it online:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 
-<h3 id="start-local-server"><a href="#start-local-server" class="headerlink" title="start local server"></a>start local server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="create-new-site-x2F-blog-post"><a href="#create-new-site-x2F-blog-post" class="headerlink" title="create new site&#x2F;blog post"></a>create new site&#x2F;blog post</h3><p>Creating new content for the site.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new post_site_name</span><br><span class="line">hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="create-new-site-x2F-blog-post"><a href="#create-new-site-x2F-blog-post" class="headerlink" title="create new site&#x2F;blog post"></a>create new site&#x2F;blog post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new post_site_name</span><br><span class="line">hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="to-make-post-be-display-only-in-part-on-home-page-use-this-where-required"><a href="#to-make-post-be-display-only-in-part-on-home-page-use-this-where-required" class="headerlink" title="to make post be display only in part on home page use this where required:"></a>to make post be display only in part on home page use this where required:</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
-
+<h3 id="If-you-desire-the-home-page-of-your-site-may-display-only-some-part-of-the-newest-article-instead-of-the-whole-thing"><a href="#If-you-desire-the-home-page-of-your-site-may-display-only-some-part-of-the-newest-article-instead-of-the-whole-thing" class="headerlink" title="If you desire, the home page of your site may display only some part of the newest article, instead of the whole thing."></a>If you desire, the home page of your site may display only some part of the newest article, instead of the whole thing.</h3><p>To do so put this:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
+<p>in the place where ‘Read more’ should appear.</p>
 <span id="more"></span>
 
 <h3 id="to-create-draft-not-published-post"><a href="#to-create-draft-not-published-post" class="headerlink" title="to create draft (not published) post:"></a>to create draft (not published) post:</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new draft to_check</span><br></pre></td></tr></table></figure>
 <p>to see how draft looks like:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server --draft</span><br></pre></td></tr></table></figure>
-
-<h3 id="to-publish-draft-as-normal-post"><a href="#to-publish-draft-as-normal-post" class="headerlink" title="to publish draft as normal post"></a>to publish draft as normal post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish to_check</span><br></pre></td></tr></table></figure>
+<p>to publish draft as normal post</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish to_check</span><br></pre></td></tr></table></figure>
 
 <h3 id="create-a-page-not-a-post"><a href="#create-a-page-not-a-post" class="headerlink" title="create a page, not a post"></a>create a page, not a post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page about_me_page</span><br></pre></td></tr></table></figure>
 <p>to enter this site: &#x2F;about_me_page&#x2F;</p>
@@ -45,7 +101,6 @@
 <p>subcategfories, being like index of a book</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">- [Category1, Category1.1]</span><br><span class="line">- [Category2,Category1.1,Category1.2]</span><br><span class="line">- [Category3]</span><br></pre></td></tr></table></figure>
 
-
 <h3 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h3><p>like codebocks</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% codeblock %&#125;</span><br><span class="line">some_code = 2*pi();</span><br><span class="line">other = 89;</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% codeblock lang:javascript %&#125;</span><br><span class="line">some_code = 2*pi();</span><br><span class="line">other = 89;</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>works like</p>
@@ -61,41 +116,60 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <p>Than, creating a new post with <code>hexo new site</code> will aslo crease <code>site</code> folder in addition to <code>site.md</code> in which all media will be located.</p>
+<p>To place images use:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#image</span></span><br><span class="line">&#123;% asset_img jpgg.jpg %&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#link:</span></span><br><span class="line">&#123;% asset_link jpgg.jpg %&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#path on server:</span></span><br><span class="line">&#123;% asset_path yes.png %&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2023/03/28/how_to_use_hexo/yes.png" class="" title="Title of the image">
 
+<a href="/2023/03/28/how_to_use_hexo/jpgg.jpg" title="Link preview">Link preview</a>
+<br />
+/2023/03/28/how_to_use_hexo/jpgg.jpg
 
-<img src="/2023/03/28/how_to_use_hexo/jpgg.jpg" class="">
-
-<a href="/2023/03/28/how_to_use_hexo/jpgg.jpg" title="jpgg.jpg">jpgg.jpg</a>
-
-<img src="/2023/03/28/how_to_use_hexo/yes.png" class="">
-
-<a href="/2023/03/28/how_to_use_hexo/yes.png" title="yes.png">yes.png</a>
-
-/2023/03/28/how_to_use_hexo/yes.png
-
-
-<h3 id="custom-theme-config"><a href="#custom-theme-config" class="headerlink" title="custom theme config:"></a>custom theme config:</h3><p>hexo server –config _config.next.yml</p>
-<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="custom-theme-config"><a href="#custom-theme-config" class="headerlink" title="custom theme config:"></a>custom theme config:</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server --config _config.next.yml</span><br></pre></td></tr></table></figure>
+<p>If updating of the custom theme is planned it is a good manner to create theme configuration file separately from the main one. To do so, create <code>_config.next.yml</code> file in the root folder of the project. In this file the same settings as the one found in the  <code>/themes/theme_name/_congig.yml</code> can be used. </p>
 <h3 id="Delete-post"><a href="#Delete-post" class="headerlink" title="Delete post"></a>Delete post</h3><ol>
 <li>Delete the post under source&#x2F;_post folder</li>
 <li>Run hexo clean to delete the database (db.json) and assets folder</li>
-<li>Run hexo generateto generate the new blog without your deleted post</li>
+<li>Run hexo generate to generate the new blog without your deleted post</li>
 <li>Run hexo deploy to deploy your blog</li>
 </ol>
-<h3 id="Footer-word-count-disable"><a href="#Footer-word-count-disable" class="headerlink" title="Footer word count disable"></a>Footer word count disable</h3><p>in <code>.\firstone\themes\next\layout\_partials\footer.njk</code><br>comment:</p>
+<h3 id="Footer-word-count-disable"><a href="#Footer-word-count-disable" class="headerlink" title="Footer word count disable"></a>Footer word count disable</h3><p>in <code>.\site_name\themes\next\layout\_partials\footer.njk</code><br>comment:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;%- <span class="keyword">if</span> config.symbols_count_time.total_time %&#125;</span><br><span class="line">&lt;span class=<span class="string">&quot;post-meta-item&quot;</span>&gt;</span><br><span class="line">  &lt;span class=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">    &lt;i class=<span class="string">&quot;fa fa-coffee&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">  &#123;%- <span class="keyword">if</span> theme.symbols_count_time.item_text_total %&#125;</span><br><span class="line">    &lt;span&gt;&#123;&#123; __(<span class="string">&#x27;symbols_count_time.time_total&#x27;</span>) &#125;&#125; &amp;asymp;&lt;/span&gt;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">  &lt;span title=<span class="string">&quot;&#123;&#123; __(&#x27;symbols_count_time.time_total&#x27;) &#125;&#125;&quot;</span>&gt;&#123;&#123; symbolsTimeTotal(site, config.symbols_count_time.awl, config.symbols_count_time.wpm, __(<span class="string">&#x27;symbols_count_time.time_minutes&#x27;</span>)) &#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/span&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Deploy-Hexo-to-the-interwebs-with-GitHub-Pages"><a href="#Deploy-Hexo-to-the-interwebs-with-GitHub-Pages" class="headerlink" title="Deploy Hexo to the interwebs with GitHub Pages"></a>Deploy Hexo to the interwebs with GitHub Pages</h2><p>There a re few ways to deploy Hexo site to the internet. One of them is to use GitHub Pages. It is free but will require some setup and site will be published under <code>username.github.io</code> address. That means username of the GitHub account is the same as the site address. </p>
+<p>On way is to upload all of the source files to the GitHub repository called <code>username.github.io</code>. Than using GitHub Actions, the site will be automatically generated and published, as described <a href="https://hexo.io/docs/github-pages.html">here</a>. During this operation the second branch in the repository will be create where all of the  <em>public</em> files will be stored. Another approach is to use upload only <em>public</em> folder to the GitHub repository. This is the way I will describe here. </p>
+<p>Firstly,</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> your_site_repository.git</span><br></pre></td></tr></table></figure>
+<p>The folder named your site will be created. I set up this GitHub repository folder next to the Hexo site.<br>In the Hexo site folder, execute </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<p>the <em>public</em> folder will be created. Than, content of this folder has to be copied into the <code>username.github.io</code> folder. In Linux <code>cp -u -r public/* ../username.github.io/</code> will do the job.<br>Moving to the <code>username.github.io</code> folder, execute:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status </span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;Site update&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>This will check for the changes in the repository, it will add all the files and commit them<br>Basic <code>git</code> configuration and authorization is required to upload changes into the repository.</p>
+<p>After successful push, using the web interface file <code>.github/workflows/pages.yml</code> should be added. Inside of it the following content shall be pasted:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">name: Pages</span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - main  <span class="comment"># default branch</span></span><br><span class="line"><span class="built_in">jobs</span>:</span><br><span class="line">  pages:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">    permissions:</span><br><span class="line">      contents: write</span><br><span class="line">    steps:</span><br><span class="line">      - name: Deploy</span><br><span class="line">        uses: peaceiris/actions-gh-pages@v3</span><br><span class="line">        with:</span><br><span class="line">          github_token: <span class="variable">$&#123;&#123; secrets.GITHUB_TOKEN &#125;</span>&#125;</span><br><span class="line">          publish_dir: ./public</span><br></pre></td></tr></table></figure>
+<p>It is the same thing located as in <a href="https://hexo.io/docs/github-pages.html">here</a> but only contain the last step. In normal deployment described in linked link, the GitHub will generate <code>public/</code> content based on uploaded source. In here it will only publish uploaded <code>public/</code> content generated by us locally. </p>
+<p>It might be required to go to settings of the webpage repository &gt; Pages on the left side &gt; Build and deployment &gt; Source &gt; Deploy from branch &gt; and pick main branch.</p>
+<h2 id="Formatting-hints-and-quick-look-ups"><a href="#Formatting-hints-and-quick-look-ups" class="headerlink" title="Formatting hints and quick look-ups"></a>Formatting hints and quick look-ups</h2><h3 id="Underlined"><a href="#Underlined" class="headerlink" title="Underlined"></a><ins>Underlined</ins></h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;ins&gt;Underlined&lt;/ins&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Bold"><a href="#Bold" class="headerlink" title="Bold"></a><strong>Bold</strong></h3><p><strong>Bold</strong> vs non-bold</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">**Bold**</span><br></pre></td></tr></table></figure>
+
+<h3 id="Italic"><a href="#Italic" class="headerlink" title="Italic"></a><em><strong>Italic</strong></em></h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">***Italic***</span><br></pre></td></tr></table></figure>
+
+<h3 id="Strikethrough"><a href="#Strikethrough" class="headerlink" title="Strikethrough"></a><del>Strikethrough</del></h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~~Strikethrough~~</span><br></pre></td></tr></table></figure>
+
+<h3 id="Quote"><a href="#Quote" class="headerlink" title="Quote"></a>Quote</h3><blockquote>
+<p>Quote</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; Quote</span><br></pre></td></tr></table></figure>
+
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a><code>Code</code></h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">`Code`</span><br></pre></td></tr></table></figure>
+
+<h3 id="New-line"><a href="#New-line" class="headerlink" title="New line"></a>New line</h3><p><code>&lt;br /&gt;</code></p>
+<h3 id="More-formatting"><a href="#More-formatting" class="headerlink" title="More formatting"></a>More formatting</h3><p><code>&lt;p style=&quot;text-align: center; font-size:250%; &quot;&gt;&lt;ins&gt;Mgr inż. Aleksander Smolarski&lt;/ins&gt;&lt;/p&gt;</code></p>
+<h3 id="Center-image"><a href="#Center-image" class="headerlink" title="Center image"></a>Center image</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center;&quot;</span>&gt;</span></span><br><span class="line">![alt text](https://markdown.land/wp-content/uploads/2021/06/markdown-512px.png &quot;Our logo&quot;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>or </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span></span></span><br><span class="line"><span class="tag">    <span class="attr">style</span>=<span class="string">&quot;display: block; </span></span></span><br><span class="line"><span class="string"><span class="tag">           margin-left: auto;</span></span></span><br><span class="line"><span class="string"><span class="tag">           margin-right: auto;</span></span></span><br><span class="line"><span class="string"><span class="tag">           margin-bottom: 0px;</span></span></span><br><span class="line"><span class="string"><span class="tag">           margin-top: 0px;</span></span></span><br><span class="line"><span class="string"><span class="tag">           width: 30%;&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">src</span>=<span class="string">&quot;https://markdown.land/wp-content/uploads/2021/06/markdown-512px.png&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">alt</span>=<span class="string">&quot;Our logo&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://markdown.land/markdown-center"><p style="text-align: left; font-size:80%; "><i>Source: https://markdown.land/markdown-center</i></p></a> </p>
 ]]></content>
       <categories>
         <category>Tutorials</category>
@@ -103,6 +177,123 @@
       <tags>
         <tag>instructions</tag>
         <tag>tutorial</tag>
+        <tag>hexo</tag>
+        <tag>page</tag>
+        <tag>github</tag>
+        <tag>website</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>How to Flash TP-Link Archer C8v2 With DD-WRT.</title>
+    <url>/2023/05/19/archerc8-flashing/</url>
+    <content><![CDATA[<h1 id="0-DISCLAIMER"><a href="#0-DISCLAIMER" class="headerlink" title="0. DISCLAIMER"></a>0. DISCLAIMER</h1><p><ins>I am not responsible for anything.</ins> In this tutorial, I described my way of flashing dd-wrt onto this router. You may have different hardware and the methods described here may not work. Please keep in mind that you may end up with bricked device and you agreed with this loss. </p>
+<br/>
+
+<h1 id="1-Case-scenario"><a href="#1-Case-scenario" class="headerlink" title="1. Case scenario"></a>1. Case scenario</h1><p>TP-Link Archer C8v1 and v2 are wireless routers. Even in 2023, it will handle most of the tasks thrown at it by normal home users. However, support for it ended way back in 2016 and no more official updates were released since then <a href="https://www.tp-link.com/pl/support/download/archer-c8/v2/#Firmware">[1]</a>.<br>It can be brought back to safer operation with modern updated firmware like dd-wrt. </p>
+<br/>
+
+<h1 id="2-The-problem"><a href="#2-The-problem" class="headerlink" title="2. The problem"></a>2. The problem</h1><p>According to <a href="https://dd-wrt.com/support/router-database/?model=Archer%20C8%20(AC1750)_1.x,%202.x">[2]</a> support page on dd-wrt.com site, this device is supported and there is an image for it. Following instructions on <a href="https://wiki.dd-wrt.com/wiki/index.php/TP_Link_Archer_C8#Installation">[3]</a> flashing this router with dd-wrt is easy. It involves only a few steps. Main one is uploading .bin file via the original TP-Link site. Unfortunately, there are some problems with <strong>v2</strong> hardware version which I encountered.</p>
+<p>While performing a flash the following errors can be encountered: <code>error -5533</code> and <code>Error code: 18005</code>. It appears the .bin file on the dd-wrt download page is meant only for the v1 hardware version. Hence the <code>error -5533</code> appears. </p>
+<br/>
+
+<h1 id="3-Solution"><a href="#3-Solution" class="headerlink" title="3. Solution"></a>3. Solution</h1><p>To solve this issue it is suggested to downgrade the firmware with the official release.</p>
+<span id="more"></span>
+
+<p>This did not help.</p>
+<p>Another way that may be tried is to edit the .bin file. It sounds harder than it in reality is. I used <code>GHex</code> program on my Linux machine (Quick install: <code>sudo apt install ghex</code>). Alternatives can be found for other OSs. By opening the downloaded file from <a href="https://dd-wrt.com/support/router-database/?model=Archer%20C8%20(AC1750)_1.x,%202.x">[2]</a>: <code>factory-to-ddwrt.bin</code> and scrolling all the way down, the following can be seen:</p>
+<div style="text-align: center;">
+<img src="/2023/05/19/archerc8-flashing/archerc8_1.png" class="" title="Before changes">
+</div>
+
+<p><em>Figure. Original file opened in hex file viewer called GHex.</em></p>
+<p>Change the version from:</p>
+<p><code>product_ver:1.0.0</code></p>
+<p>to:</p>
+<p><code>product_ver:2.0.0</code></p>
+<div style="text-align: center;">
+<img src="/2023/05/19/archerc8-flashing/archerc8_2.png" class="" title="After changes">
+</div>
+
+<p><em>Figure. Changes made to the .bin file.</em></p>
+<p style="text-align: left;">Don't forget to save the file.</p
+
+
+<br/>
+
+<h1 id="4-Further-solution"><a href="#4-Further-solution" class="headerlink" title="4. Further solution"></a>4. Further solution</h1><p>Unfortunately, the next error which appeared in place of the previous one is <code>Error code: 18005</code>.</p>
+<p>For me, at this point [DON’T DO IT] is to rip the case of the router apart, find the serial connector as the photo below presents. Use the TFTP upload method. This, if done properly, should get you up and running. </p>
+<div style="text-align: center;">
+<img src="/2023/05/19/archerc8-flashing/archerc8v2desk.jpg" class="" title="Setup with the router connected to serial.">
+</div>
+
+<p><em>Figure. Setup with the router connected to serial.</em></p>
+<p>What the router expects to get from TFTP server:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Device eth0:  hwaddr , ipaddr 192.168.0.86, mask 255.255.255.0</span><br><span class="line">        gateway not set, nameserver not set</span><br><span class="line">Reading 192.168.0.66:ArcherC8v2_tp_recovery.bin</span><br></pre></td></tr></table></figure>
+
+<p>Unfortunately, in my case, I bricked to router permanently to this point, at which after a reboot the router did not start up, all lights were gone, no response on the Ethernet connectors and what’s worse no output on the serial. </p>
+<p>At this point simple operation became a tough task. </p>
+<blockquote>
+<p>If you have your router still operational and are desperate to get dd-wrt running you may look at <code>Alternate solutions</code> at the end of this article first. Below text describes how to de-brick bricked router and may not be required. You can go back to this point and start the de-bricking process from here if the <code>Alternate solutions</code> did not work.</p>
+</blockquote>
+<p>As I understand the flash chip layout holding the execution instructions was changed and the router does not know what to start up. To solve this, I figured out which chip is a flash chip, de-soldered it and flashed again using an external programmer. The chip is visible below. </p>
+<div style="text-align: center;">
+<img src="/2023/05/19/archerc8-flashing/acherc8memory.jpg" class="" title="Memory of the router">
+</div>
+
+<p><em>Figure. Router motherboard with flash chip visible. Some resistor values are also indicated, as well as a serial connector. Ground for serial can be borrowed from antenna shielding.</em></p>
+<div style="text-align: center;">
+<img src="/2023/05/19/archerc8-flashing/archerc8pads.jpg" class="" title="Pads after flash chip was removed.">
+</div>
+
+<p><em>Figure. Photo of the board with removed flash chip. Note kapton tape all around the chip which indicates that I am not that good at hot air de-soldering.</em></p>
+<h2 id="Hints-for-de-soldering"><a href="#Hints-for-de-soldering" class="headerlink" title="Hints for de-soldering"></a>Hints for de-soldering</h2><p>There are several smaller components around the flash. These are mainly tiny pull-ups or pull-downs resistors for chip pins. I suggest if you don’t have experience with de soldering to cover everything around the chip with kapton tape. Then, use flux and hot air to get the flash chip gently off the board. Programming in place is not an option since by 3V3 voltage rail powering the flash will at the same time power up the rest of the board.</p>
+<p>I used the classic CH341a <a href="https://pl.aliexpress.com/item/32725360255.html">programmer</a> with the appropriate adapter board. Although an adapter is not required since the programmer on the bottom side has the proper pads for this sized flash chip.</p>
+<div style="text-align: center;">
+<img src="/2023/05/19/archerc8-flashing/archerc8_5.png" class="" title="Programmer used">
+</div>
+
+<p><em>Figure. CH341a programmer used for re-flashing memory chip.</em></p>
+<p><strong>NOTE</strong>: watch this video before soldering the flash chip:</p>
+<blockquote>
+<p><code>https://www.youtube.com/watch?v=HwnzzF645hA</code><br>TL;DR is that some pins of this programmer are 5V and some of them are 3V3. This may or may not damage the flash chip. I did the mod and it worked. </p>
+</blockquote>
+<p>To program it I have used <code>flashrom</code> on Linux <a href="https://www.flashrom.org/Flashrom">[4]</a> <a href="https://manpages.ubuntu.com/manpages/trusty/man8/flashrom.8.html">[5]</a>.</p>
+<p>First read execute the following command to see if <code>flashrom</code> has detected a programmer and flash attached with the command:</p>
+<p><code>sudo flashrom --programmer ch341a_spi</code> </p>
+<p>It should yield:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">No EEPROM/flash device found.</span><br><span class="line">Note: flashrom can never write if the flash chip isn&#x27;t found automatically.</span><br></pre></td></tr></table></figure>
+<p>and if the flash chip is properly connected, it should give its name.</p>
+<p>Going further, to read the chip contents to see if the programmer is reading the chip and for backup:</p>
+<p><code>sudo flashrom --programmer ch341a_spi -r dump.bin</code> </p>
+<p>This should take some time, around 1-2 minutes. After that, you can examine the <code>dump.bin</code> file with <code>GHex</code>. </p>
+<p>To fix the flash, we need the working .bin dump. Fortunately for us, this was done by a nice person <code>delhite2</code> on dd-wrt forum <a href="https://forum.dd-wrt.com/phpBB2/viewtopic.php?t=311049">[6]</a>. Both files are attached in my GitHub repo <a href="https://github.com/AlekSmola/WebArchives/tree/main/TP_Link%20ArcherC8v1v2%20Firmware">[7]</a> just in case the forum thread disappears.</p>
+<p>I flashed the router with v2 dump. But don’t do that (if you have v2). As it appears, it recovers the router to the initial state just fine, but the error codes remain. I have the v2 version and from the pure lack of other options, I flashed v1 dump. It booted and it worked just fine!</p>
+<p>What’s more important it let me flash the dd-wrt with GUI just fine. after that, the router had the custom firmware operational like a charm!!!</p>
+<p>To flash use the command:</p>
+<p><code>sudo flashrom --programmer ch341a_spi -w dumpv1.bin</code></p>
+<p>It may take a while since the flashrom will read the content first for backup, then write a new image and verify it with the original one. Be patient, if something goes wrong, it will blast you with errors…</p>
+<p>Don’t forget to solder flashed chip onto the board :).</p>
+<h1 id="5-Alternate-solution"><a href="#5-Alternate-solution" class="headerlink" title="5. Alternate solution"></a>5. Alternate solution</h1><p>I did not test it, but it may happen on the v2 that you can flash the v1 official firmware from TP-Link site using GUI and then flash dd-wrt from that. I did not test it and I don’t know if it will work, but it is worth giving a shot. De-soldering the flash from the board and flashing it with an external programmer is the last resort anyway.</p>
+<h1 id="6-Sources"><a href="#6-Sources" class="headerlink" title="6. Sources"></a>6. Sources</h1><p>[1] <a href="https://www.tp-link.com/pl/support/download/archer-c8/v2/#Firmware">https://www.tp-link.com/pl/support/download/archer-c8/v2/#Firmware</a></p>
+<p>[2] <a href="https://dd-wrt.com/support/router-database/?model=Archer%20C8%20(AC1750)_1.x,%202.x">https://dd-wrt.com/support/router-database/?model=Archer%20C8%20(AC1750)_1.x,%202.x</a></p>
+<p>[3] <a href="https://wiki.dd-wrt.com/wiki/index.php/TP_Link_Archer_C8#Installation">https://wiki.dd-wrt.com/wiki/index.php/TP_Link_Archer_C8#Installation</a></p>
+<p>[4] <a href="https://www.flashrom.org/Flashrom">https://www.flashrom.org/Flashrom</a> </p>
+<p>[5] <a href="https://manpages.ubuntu.com/manpages/trusty/man8/flashrom.8.html">https://manpages.ubuntu.com/manpages/trusty/man8/flashrom.8.html</a></p>
+<p>[6] <a href="https://forum.dd-wrt.com/phpBB2/viewtopic.php?t=311049">https://forum.dd-wrt.com/phpBB2/viewtopic.php?t=311049</a></p>
+<p>[7] <a href="https://github.com/AlekSmola/WebArchives/tree/main/TP_Link%20ArcherC8v1v2%20Firmware">https://github.com/AlekSmola/WebArchives/tree/main/TP_Link%20ArcherC8v1v2%20Firmware</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+        <category>Networking</category>
+      </categories>
+      <tags>
+        <tag>instructions</tag>
+        <tag>flashing</tag>
+        <tag>dd-wrt</tag>
+        <tag>archer c8</tag>
+        <tag>tp-link</tag>
+        <tag>tutorials</tag>
+        <tag>de-bricking</tag>
       </tags>
   </entry>
 </search>

@@ -6,10 +6,10 @@
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/site_logo2white_exp.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -20,22 +20,25 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"aleksmola.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"bounceInLeft","post_block":"bounceInRight","post_header":"bounceInRight","sidebar":"bounceInLeft"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":2,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Just the quick helpdesk for the things I went through to get Hexo working.Install Hexo:1npm install -g hexo-cli   Start first project1hex init project_name  enter project_name1cd project_name  start l">
+    <meta name="description" content="How to setup HEXO website [my own instructions] [this site]Just the quick helpdesk for the things I went through to get Hexo working. Hexo is the static site generator, which is very easy to use and h">
 <meta property="og:type" content="article">
 <meta property="og:title" content="My Instructions for Using Hexo">
 <meta property="og:url" content="https://aleksmola.github.io/2023/03/28/how_to_use_hexo/index.html">
 <meta property="og:site_name" content="AlekSmola">
-<meta property="og:description" content="Just the quick helpdesk for the things I went through to get Hexo working.Install Hexo:1npm install -g hexo-cli   Start first project1hex init project_name  enter project_name1cd project_name  start l">
+<meta property="og:description" content="How to setup HEXO website [my own instructions] [this site]Just the quick helpdesk for the things I went through to get Hexo working. Hexo is the static site generator, which is very easy to use and h">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://aleksmola.github.io/2023/03/28/how_to_use_hexo/jpgg.jpg">
 <meta property="og:image" content="https://aleksmola.github.io/2023/03/28/how_to_use_hexo/yes.png">
 <meta property="article:published_time" content="2023-03-28T13:11:52.000Z">
-<meta property="article:modified_time" content="2023-04-04T20:30:23.046Z">
+<meta property="article:modified_time" content="2023-05-19T16:29:19.580Z">
 <meta property="article:author" content="AlekSmola">
 <meta property="article:tag" content="instructions">
 <meta property="article:tag" content="tutorial">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="page">
+<meta property="article:tag" content="github">
+<meta property="article:tag" content="website">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://aleksmola.github.io/2023/03/28/how_to_use_hexo/jpgg.jpg">
+<meta name="twitter:image" content="https://aleksmola.github.io/2023/03/28/how_to_use_hexo/yes.png">
 
 
 <link rel="canonical" href="https://aleksmola.github.io/2023/03/28/how_to_use_hexo/">
@@ -82,7 +85,7 @@
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Just stuff I try to accomplish in my free time.</p>
-      <img class="custom-logo-image" src="/images/blankimage.png" alt="AlekSmola">
+      <img class="custom-logo-image" src="/images/site_logo2transparent.png" alt="AlekSmola">
   </div>
 
   <div class="site-nav-right">
@@ -95,7 +98,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">1</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">2</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">2</span></a></li><li class="menu-item menu-item-about-page"><a href="/about-page/" rel="section"><i class="fa fa-user fa-fw"></i>About Page</a></li><li class="menu-item menu-item-about-author"><a href="/about-me/" rel="section"><i class="fa fa-user fa-fw"></i>About Author</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">3</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">3</span></a></li><li class="menu-item menu-item-about-page"><a href="/about-page/" rel="section"><i class="fa fa-user fa-fw"></i>About Page</a></li><li class="menu-item menu-item-about-author"><a href="/about-me/" rel="section"><i class="fa fa-user fa-fw"></i>About Author</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -146,14 +149,14 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Just-the-quick-helpdesk-for-the-things-I-went-through-to-get-Hexo-working"><span class="nav-number">1.</span> <span class="nav-text">Just the quick helpdesk for the things I went through to get Hexo working.</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Hexo"><span class="nav-number">1.1.</span> <span class="nav-text">Install Hexo:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Start-first-project"><span class="nav-number">1.2.</span> <span class="nav-text">Start first project</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#enter-project-name"><span class="nav-number">1.3.</span> <span class="nav-text">enter project_name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#start-local-server"><span class="nav-number">1.4.</span> <span class="nav-text">start local server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#create-new-site-x2F-blog-post"><span class="nav-number">1.5.</span> <span class="nav-text">create new site&#x2F;blog post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#to-make-post-be-display-only-in-part-on-home-page-use-this-where-required"><span class="nav-number">1.6.</span> <span class="nav-text">to make post be display only in part on home page use this where required:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#to-create-draft-not-published-post"><span class="nav-number">1.7.</span> <span class="nav-text">to create draft (not published) post:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#to-publish-draft-as-normal-post"><span class="nav-number">1.8.</span> <span class="nav-text">to publish draft as normal post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#create-a-page-not-a-post"><span class="nav-number">1.9.</span> <span class="nav-text">create a page, not a post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Change-default-hexo-new-behaviour"><span class="nav-number">1.10.</span> <span class="nav-text">Change default hexo new behaviour</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#page-title-front-matter-date-tags"><span class="nav-number">1.11.</span> <span class="nav-text">page title, front matter, date, tags</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scaffolds-being-like-templates"><span class="nav-number">1.12.</span> <span class="nav-text">scaffolds being like templates</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Categories"><span class="nav-number">1.13.</span> <span class="nav-text">Categories</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Plugins"><span class="nav-number">1.14.</span> <span class="nav-text">Plugins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#allow-files-on-site"><span class="nav-number">1.15.</span> <span class="nav-text">allow files on site:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#custom-theme-config"><span class="nav-number">1.16.</span> <span class="nav-text">custom theme config:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.17.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.18.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.19.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.20.</span> <span class="nav-text">Deploy to remote sites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-post"><span class="nav-number">1.21.</span> <span class="nav-text">Delete post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Footer-word-count-disable"><span class="nav-number">1.22.</span> <span class="nav-text">Footer word count disable</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-setup-HEXO-website-my-own-instructions-this-site"><span class="nav-text">How to setup HEXO website [my own instructions] [this site]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Installing-Hexo"><span class="nav-text">Installing Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-required-packages-and-than-Hexo"><span class="nav-text">Install required packages and than Hexo:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Start-first-project-first-site"><span class="nav-text">Start first project - first site</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#start-local-server"><span class="nav-text">start local server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#create-new-site-x2F-blog-post"><span class="nav-text">create new site&#x2F;blog post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#If-you-desire-the-home-page-of-your-site-may-display-only-some-part-of-the-newest-article-instead-of-the-whole-thing"><span class="nav-text">If you desire, the home page of your site may display only some part of the newest article, instead of the whole thing.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#to-create-draft-not-published-post"><span class="nav-text">to create draft (not published) post:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#create-a-page-not-a-post"><span class="nav-text">create a page, not a post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Change-default-hexo-new-behaviour"><span class="nav-text">Change default hexo new behaviour</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#page-title-front-matter-date-tags"><span class="nav-text">page title, front matter, date, tags</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scaffolds-being-like-templates"><span class="nav-text">scaffolds being like templates</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Categories"><span class="nav-text">Categories</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Plugins"><span class="nav-text">Plugins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#allow-files-on-site"><span class="nav-text">allow files on site:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#custom-theme-config"><span class="nav-text">custom theme config:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-post"><span class="nav-text">Delete post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Footer-word-count-disable"><span class="nav-text">Footer word count disable</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deploy-Hexo-to-the-interwebs-with-GitHub-Pages"><span class="nav-text">Deploy Hexo to the interwebs with GitHub Pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Formatting-hints-and-quick-look-ups"><span class="nav-text">Formatting hints and quick look-ups</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Underlined"><span class="nav-text">Underlined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bold"><span class="nav-text">Bold</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Italic"><span class="nav-text">Italic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Strikethrough"><span class="nav-text">Strikethrough</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quote"><span class="nav-text">Quote</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-text">Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#New-line"><span class="nav-text">New line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#More-formatting"><span class="nav-text">More formatting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Center-image"><span class="nav-text">Center image</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="AlekSmola"
-      src="/images/blankimage.png">
+      src="/images/mat.jpg">
   <p class="site-author-name" itemprop="name">AlekSmola</p>
   <div class="site-description" itemprop="description">"Simple site"</div>
 </div>
@@ -187,7 +190,7 @@
     <link itemprop="mainEntityOfPage" href="https://aleksmola.github.io/2023/03/28/how_to_use_hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/blankimage.png">
+      <meta itemprop="image" content="/images/mat.jpg">
       <meta itemprop="name" content="AlekSmola">
     </span>
 
@@ -220,7 +223,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-04-04 22:30:23" itemprop="dateModified" datetime="2023-04-04T22:30:23+02:00">2023-04-04</time>
+      <time title="Modified: 2023-05-19 18:29:19" itemprop="dateModified" datetime="2023-05-19T18:29:19+02:00">2023-05-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -239,14 +242,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>517</span>
+      <span>1.1k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
+      <span>4 mins.</span>
     </span>
 </div>
 
@@ -257,24 +260,30 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="Just-the-quick-helpdesk-for-the-things-I-went-through-to-get-Hexo-working"><a href="#Just-the-quick-helpdesk-for-the-things-I-went-through-to-get-Hexo-working" class="headerlink" title="Just the quick helpdesk for the things I went through to get Hexo working."></a>Just the quick helpdesk for the things I went through to get Hexo working.</h2><h3 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo:"></a>Install Hexo:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli </span><br></pre></td></tr></table></figure>
+        <h1 id="How-to-setup-HEXO-website-my-own-instructions-this-site"><a href="#How-to-setup-HEXO-website-my-own-instructions-this-site" class="headerlink" title="How to setup HEXO website [my own instructions] [this site]"></a>How to setup HEXO website [my own instructions] [this site]</h1><p>Just the quick helpdesk for the things I went through to get Hexo working.</p>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> is the static site generator, which is very easy to use and has a lot of plugins and themes. It simplifies creation of website and does not require much programming skills. Hexco site can be published online to access by everyone, with the help of for example GitHub Pages.</p>
+<h2 id="Installing-Hexo"><a href="#Installing-Hexo" class="headerlink" title="Installing Hexo"></a>Installing Hexo</h2><p>Instructions to install and setup hexo locally.</p>
+<h3 id="Install-required-packages-and-than-Hexo"><a href="#Install-required-packages-and-than-Hexo" class="headerlink" title="Install required packages and than Hexo:"></a>Install required packages and than Hexo:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. install git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</span></span><br><span class="line"><span class="comment"># 2. install node.js: https://nodejs.org/en/download</span></span><br><span class="line"><span class="comment"># 3. install hexo:</span></span><br><span class="line">npm install -g hexo-cli </span><br></pre></td></tr></table></figure>
 
-<h3 id="Start-first-project"><a href="#Start-first-project" class="headerlink" title="Start first project"></a>Start first project</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hex init project_name</span><br></pre></td></tr></table></figure>
+<h3 id="Start-first-project-first-site"><a href="#Start-first-project-first-site" class="headerlink" title="Start first project - first site"></a>Start first project - first site</h3><p>Enter folder where you want to create your project and than:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hex init project_name</span><br><span class="line"><span class="built_in">cd</span> project_name</span><br></pre></td></tr></table></figure>
 
-<h3 id="enter-project-name"><a href="#enter-project-name" class="headerlink" title="enter project_name"></a>enter project_name</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> project_name</span><br></pre></td></tr></table></figure>
+<h3 id="start-local-server"><a href="#start-local-server" class="headerlink" title="start local server"></a>start local server</h3><p>To enjoy whole site locally, before publishing it online:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 
-<h3 id="start-local-server"><a href="#start-local-server" class="headerlink" title="start local server"></a>start local server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="create-new-site-x2F-blog-post"><a href="#create-new-site-x2F-blog-post" class="headerlink" title="create new site&#x2F;blog post"></a>create new site&#x2F;blog post</h3><p>Creating new content for the site.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new post_site_name</span><br><span class="line">hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="create-new-site-x2F-blog-post"><a href="#create-new-site-x2F-blog-post" class="headerlink" title="create new site&#x2F;blog post"></a>create new site&#x2F;blog post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new post_site_name</span><br><span class="line">hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="to-make-post-be-display-only-in-part-on-home-page-use-this-where-required"><a href="#to-make-post-be-display-only-in-part-on-home-page-use-this-where-required" class="headerlink" title="to make post be display only in part on home page use this where required:"></a>to make post be display only in part on home page use this where required:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
-
+<h3 id="If-you-desire-the-home-page-of-your-site-may-display-only-some-part-of-the-newest-article-instead-of-the-whole-thing"><a href="#If-you-desire-the-home-page-of-your-site-may-display-only-some-part-of-the-newest-article-instead-of-the-whole-thing" class="headerlink" title="If you desire, the home page of your site may display only some part of the newest article, instead of the whole thing."></a>If you desire, the home page of your site may display only some part of the newest article, instead of the whole thing.</h3><p>To do so put this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
+<p>in the place where ‘Read more’ should appear.</p>
 <span id="more"></span>
 
 <h3 id="to-create-draft-not-published-post"><a href="#to-create-draft-not-published-post" class="headerlink" title="to create draft (not published) post:"></a>to create draft (not published) post:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new draft to_check</span><br></pre></td></tr></table></figure>
 <p>to see how draft looks like:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server --draft</span><br></pre></td></tr></table></figure>
-
-<h3 id="to-publish-draft-as-normal-post"><a href="#to-publish-draft-as-normal-post" class="headerlink" title="to publish draft as normal post"></a>to publish draft as normal post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo publish to_check</span><br></pre></td></tr></table></figure>
+<p>to publish draft as normal post</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo publish to_check</span><br></pre></td></tr></table></figure>
 
 <h3 id="create-a-page-not-a-post"><a href="#create-a-page-not-a-post" class="headerlink" title="create a page, not a post"></a>create a page, not a post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about_me_page</span><br></pre></td></tr></table></figure>
 <p>to enter this site: &#x2F;about_me_page&#x2F;</p>
@@ -294,7 +303,6 @@
 <p>subcategfories, being like index of a book</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">- [Category1, Category1.1]</span><br><span class="line">- [Category2,Category1.1,Category1.2]</span><br><span class="line">- [Category3]</span><br></pre></td></tr></table></figure>
 
-
 <h3 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h3><p>like codebocks</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock %&#125;</span><br><span class="line">some_code = 2*pi();</span><br><span class="line">other = 89;</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% codeblock lang:javascript %&#125;</span><br><span class="line">some_code = 2*pi();</span><br><span class="line">other = 89;</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>works like</p>
@@ -310,41 +318,60 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <p>Than, creating a new post with <code>hexo new site</code> will aslo crease <code>site</code> folder in addition to <code>site.md</code> in which all media will be located.</p>
+<p>To place images use:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#image</span></span><br><span class="line">&#123;% asset_img jpgg.jpg %&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#link:</span></span><br><span class="line">&#123;% asset_link jpgg.jpg %&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#path on server:</span></span><br><span class="line">&#123;% asset_path yes.png %&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2023/03/28/how_to_use_hexo/yes.png" class="" title="Title of the image">
 
+<a href="/2023/03/28/how_to_use_hexo/jpgg.jpg" title="Link preview">Link preview</a>
+<br />
+/2023/03/28/how_to_use_hexo/jpgg.jpg
 
-<img src="/2023/03/28/how_to_use_hexo/jpgg.jpg" class="">
-
-<a href="/2023/03/28/how_to_use_hexo/jpgg.jpg" title="jpgg.jpg">jpgg.jpg</a>
-
-<img src="/2023/03/28/how_to_use_hexo/yes.png" class="">
-
-<a href="/2023/03/28/how_to_use_hexo/yes.png" title="yes.png">yes.png</a>
-
-/2023/03/28/how_to_use_hexo/yes.png
-
-
-<h3 id="custom-theme-config"><a href="#custom-theme-config" class="headerlink" title="custom theme config:"></a>custom theme config:</h3><p>hexo server –config _config.next.yml</p>
-<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="custom-theme-config"><a href="#custom-theme-config" class="headerlink" title="custom theme config:"></a>custom theme config:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server --config _config.next.yml</span><br></pre></td></tr></table></figure>
+<p>If updating of the custom theme is planned it is a good manner to create theme configuration file separately from the main one. To do so, create <code>_config.next.yml</code> file in the root folder of the project. In this file the same settings as the one found in the  <code>/themes/theme_name/_congig.yml</code> can be used. </p>
 <h3 id="Delete-post"><a href="#Delete-post" class="headerlink" title="Delete post"></a>Delete post</h3><ol>
 <li>Delete the post under source&#x2F;_post folder</li>
 <li>Run hexo clean to delete the database (db.json) and assets folder</li>
-<li>Run hexo generateto generate the new blog without your deleted post</li>
+<li>Run hexo generate to generate the new blog without your deleted post</li>
 <li>Run hexo deploy to deploy your blog</li>
 </ol>
-<h3 id="Footer-word-count-disable"><a href="#Footer-word-count-disable" class="headerlink" title="Footer word count disable"></a>Footer word count disable</h3><p>in <code>.\firstone\themes\next\layout\_partials\footer.njk</code><br>comment:</p>
+<h3 id="Footer-word-count-disable"><a href="#Footer-word-count-disable" class="headerlink" title="Footer word count disable"></a>Footer word count disable</h3><p>in <code>.\site_name\themes\next\layout\_partials\footer.njk</code><br>comment:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- <span class="keyword">if</span> config.symbols_count_time.total_time %&#125;</span><br><span class="line">&lt;span class=<span class="string">&quot;post-meta-item&quot;</span>&gt;</span><br><span class="line">  &lt;span class=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">    &lt;i class=<span class="string">&quot;fa fa-coffee&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">  &#123;%- <span class="keyword">if</span> theme.symbols_count_time.item_text_total %&#125;</span><br><span class="line">    &lt;span&gt;&#123;&#123; __(<span class="string">&#x27;symbols_count_time.time_total&#x27;</span>) &#125;&#125; &amp;asymp;&lt;/span&gt;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">  &lt;span title=<span class="string">&quot;&#123;&#123; __(&#x27;symbols_count_time.time_total&#x27;) &#125;&#125;&quot;</span>&gt;&#123;&#123; symbolsTimeTotal(site, config.symbols_count_time.awl, config.symbols_count_time.wpm, __(<span class="string">&#x27;symbols_count_time.time_minutes&#x27;</span>)) &#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/span&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Deploy-Hexo-to-the-interwebs-with-GitHub-Pages"><a href="#Deploy-Hexo-to-the-interwebs-with-GitHub-Pages" class="headerlink" title="Deploy Hexo to the interwebs with GitHub Pages"></a>Deploy Hexo to the interwebs with GitHub Pages</h2><p>There a re few ways to deploy Hexo site to the internet. One of them is to use GitHub Pages. It is free but will require some setup and site will be published under <code>username.github.io</code> address. That means username of the GitHub account is the same as the site address. </p>
+<p>On way is to upload all of the source files to the GitHub repository called <code>username.github.io</code>. Than using GitHub Actions, the site will be automatically generated and published, as described <a target="_blank" rel="noopener" href="https://hexo.io/docs/github-pages.html">here</a>. During this operation the second branch in the repository will be create where all of the  <em>public</em> files will be stored. Another approach is to use upload only <em>public</em> folder to the GitHub repository. This is the way I will describe here. </p>
+<p>Firstly,</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> your_site_repository.git</span><br></pre></td></tr></table></figure>
+<p>The folder named your site will be created. I set up this GitHub repository folder next to the Hexo site.<br>In the Hexo site folder, execute </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<p>the <em>public</em> folder will be created. Than, content of this folder has to be copied into the <code>username.github.io</code> folder. In Linux <code>cp -u -r public/* ../username.github.io/</code> will do the job.<br>Moving to the <code>username.github.io</code> folder, execute:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git status </span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;Site update&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>This will check for the changes in the repository, it will add all the files and commit them<br>Basic <code>git</code> configuration and authorization is required to upload changes into the repository.</p>
+<p>After successful push, using the web interface file <code>.github/workflows/pages.yml</code> should be added. Inside of it the following content shall be pasted:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">name: Pages</span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - main  <span class="comment"># default branch</span></span><br><span class="line"><span class="built_in">jobs</span>:</span><br><span class="line">  pages:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">    permissions:</span><br><span class="line">      contents: write</span><br><span class="line">    steps:</span><br><span class="line">      - name: Deploy</span><br><span class="line">        uses: peaceiris/actions-gh-pages@v3</span><br><span class="line">        with:</span><br><span class="line">          github_token: <span class="variable">$&#123;&#123; secrets.GITHUB_TOKEN &#125;</span>&#125;</span><br><span class="line">          publish_dir: ./public</span><br></pre></td></tr></table></figure>
+<p>It is the same thing located as in <a target="_blank" rel="noopener" href="https://hexo.io/docs/github-pages.html">here</a> but only contain the last step. In normal deployment described in linked link, the GitHub will generate <code>public/</code> content based on uploaded source. In here it will only publish uploaded <code>public/</code> content generated by us locally. </p>
+<p>It might be required to go to settings of the webpage repository &gt; Pages on the left side &gt; Build and deployment &gt; Source &gt; Deploy from branch &gt; and pick main branch.</p>
+<h2 id="Formatting-hints-and-quick-look-ups"><a href="#Formatting-hints-and-quick-look-ups" class="headerlink" title="Formatting hints and quick look-ups"></a>Formatting hints and quick look-ups</h2><h3 id="Underlined"><a href="#Underlined" class="headerlink" title="Underlined"></a><ins>Underlined</ins></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;ins&gt;Underlined&lt;/ins&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Bold"><a href="#Bold" class="headerlink" title="Bold"></a><strong>Bold</strong></h3><p><strong>Bold</strong> vs non-bold</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**Bold**</span><br></pre></td></tr></table></figure>
+
+<h3 id="Italic"><a href="#Italic" class="headerlink" title="Italic"></a><em><strong>Italic</strong></em></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">***Italic***</span><br></pre></td></tr></table></figure>
+
+<h3 id="Strikethrough"><a href="#Strikethrough" class="headerlink" title="Strikethrough"></a><del>Strikethrough</del></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~Strikethrough~~</span><br></pre></td></tr></table></figure>
+
+<h3 id="Quote"><a href="#Quote" class="headerlink" title="Quote"></a>Quote</h3><blockquote>
+<p>Quote</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; Quote</span><br></pre></td></tr></table></figure>
+
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a><code>Code</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`Code`</span><br></pre></td></tr></table></figure>
+
+<h3 id="New-line"><a href="#New-line" class="headerlink" title="New line"></a>New line</h3><p><code>&lt;br /&gt;</code></p>
+<h3 id="More-formatting"><a href="#More-formatting" class="headerlink" title="More formatting"></a>More formatting</h3><p><code>&lt;p style=&quot;text-align: center; font-size:250%; &quot;&gt;&lt;ins&gt;Mgr inż. Aleksander Smolarski&lt;/ins&gt;&lt;/p&gt;</code></p>
+<h3 id="Center-image"><a href="#Center-image" class="headerlink" title="Center image"></a>Center image</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center;&quot;</span>&gt;</span></span><br><span class="line">![alt text](https://markdown.land/wp-content/uploads/2021/06/markdown-512px.png &quot;Our logo&quot;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>or </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span></span></span><br><span class="line"><span class="tag">    <span class="attr">style</span>=<span class="string">&quot;display: block; </span></span></span><br><span class="line"><span class="string"><span class="tag">           margin-left: auto;</span></span></span><br><span class="line"><span class="string"><span class="tag">           margin-right: auto;</span></span></span><br><span class="line"><span class="string"><span class="tag">           margin-bottom: 0px;</span></span></span><br><span class="line"><span class="string"><span class="tag">           margin-top: 0px;</span></span></span><br><span class="line"><span class="string"><span class="tag">           width: 30%;&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">src</span>=<span class="string">&quot;https://markdown.land/wp-content/uploads/2021/06/markdown-512px.png&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">alt</span>=<span class="string">&quot;Our logo&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://markdown.land/markdown-center"><p style="text-align: left; font-size:80%; "><i>Source: https://markdown.land/markdown-center</i></p></a> </p>
 
     </div>
 
@@ -370,6 +397,10 @@
           <div class="post-tags">
               <a href="/tags/instructions/" rel="tag"><i class="fa fa-tag"></i> instructions</a>
               <a href="/tags/tutorial/" rel="tag"><i class="fa fa-tag"></i> tutorial</a>
+              <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+              <a href="/tags/page/" rel="tag"><i class="fa fa-tag"></i> page</a>
+              <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
+              <a href="/tags/website/" rel="tag"><i class="fa fa-tag"></i> website</a>
           </div>
 
         
@@ -378,8 +409,8 @@
             <div class="post-nav-item">
             </div>
             <div class="post-nav-item">
-                <a href="/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/" rel="next" title="How to Rewind Tinywhoop BLDC Motor">
-                  How to Rewind Tinywhoop BLDC Motor <i class="fa fa-chevron-right"></i>
+                <a href="/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/" rel="next" title="How to Rewind a Tinywhoop (Or Any Other) BLDC Motor">
+                  How to Rewind a Tinywhoop (Or Any Other) BLDC Motor <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -412,13 +443,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">1k</span>
+    <span title="Word count total">4k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2 mins.</span>
+    <span title="Reading time total">13 mins.</span>
   </span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>

@@ -6,10 +6,10 @@
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/site_logo2white_exp.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -20,27 +20,37 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"aleksmola.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"bounceInLeft","post_block":"bounceInRight","post_header":"bounceInRight","sidebar":"bounceInLeft"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":2,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="to start with, you need broken&#x2F;burnt BLDC motortest uploaduagain test uploadu2trzeci test uploadu">
+    <meta name="description" content="Tutorial on how to rewind a broken BLDC motor by replacing the windings in the stator. 1. A bit of theoryBLDC motors are DC voltage operating motors. The most important advantage over regular brushed">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to Rewind Tinywhoop BLDC Motor">
+<meta property="og:title" content="How to Rewind a Tinywhoop (Or Any Other) BLDC Motor">
 <meta property="og:url" content="https://aleksmola.github.io/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/index.html">
 <meta property="og:site_name" content="AlekSmola">
-<meta property="og:description" content="to start with, you need broken&#x2F;burnt BLDC motortest uploaduagain test uploadu2trzeci test uploadu">
+<meta property="og:description" content="Tutorial on how to rewind a broken BLDC motor by replacing the windings in the stator. 1. A bit of theoryBLDC motors are DC voltage operating motors. The most important advantage over regular brushed">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-04-17T18:10:55.000Z">
-<meta property="article:modified_time" content="2023-04-17T19:11:13.329Z">
+<meta property="og:image" content="https://aleksmola.github.io/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/mobula6motor.jpg">
+<meta property="og:image" content="https://aleksmola.github.io/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/bldc_rewinding3.jpg">
+<meta property="og:image" content="https://aleksmola.github.io/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/repaired1.jpg">
+<meta property="og:image" content="https://aleksmola.github.io/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/repaired2.jpg">
+<meta property="article:published_time" content="2023-04-17T18:10:55.603Z">
+<meta property="article:modified_time" content="2023-05-19T18:20:52.563Z">
 <meta property="article:author" content="AlekSmola">
+<meta property="article:tag" content="instructions">
+<meta property="article:tag" content="tutorial">
+<meta property="article:tag" content="bldc">
+<meta property="article:tag" content="motors">
+<meta property="article:tag" content="repairs">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://aleksmola.github.io/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/mobula6motor.jpg">
 
 
 <link rel="canonical" href="https://aleksmola.github.io/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://aleksmola.github.io/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/","path":"2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/","title":"How to Rewind Tinywhoop BLDC Motor"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://aleksmola.github.io/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/","path":"2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/","title":"How to Rewind a Tinywhoop (Or Any Other) BLDC Motor"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>How to Rewind Tinywhoop BLDC Motor | AlekSmola</title>
+<title>How to Rewind a Tinywhoop (Or Any Other) BLDC Motor | AlekSmola</title>
   
 
 
@@ -77,7 +87,7 @@
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Just stuff I try to accomplish in my free time.</p>
-      <img class="custom-logo-image" src="/images/blankimage.png" alt="AlekSmola">
+      <img class="custom-logo-image" src="/images/site_logo2transparent.png" alt="AlekSmola">
   </div>
 
   <div class="site-nav-right">
@@ -90,7 +100,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">1</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">2</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">2</span></a></li><li class="menu-item menu-item-about-page"><a href="/about-page/" rel="section"><i class="fa fa-user fa-fw"></i>About Page</a></li><li class="menu-item menu-item-about-author"><a href="/about-me/" rel="section"><i class="fa fa-user fa-fw"></i>About Author</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">3</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">3</span></a></li><li class="menu-item menu-item-about-page"><a href="/about-page/" rel="section"><i class="fa fa-user fa-fw"></i>About Page</a></li><li class="menu-item menu-item-about-author"><a href="/about-me/" rel="section"><i class="fa fa-user fa-fw"></i>About Author</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -141,14 +151,14 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#to-start-with-you-need-broken-x2F-burnt-BLDC-motor"><span class="nav-number">1.</span> <span class="nav-text">to start with, you need broken&#x2F;burnt BLDC motor</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#test-uploadu"><span class="nav-number">1.0.1.</span> <span class="nav-text">test uploadu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#again-test-uploadu2"><span class="nav-number">1.0.2.</span> <span class="nav-text">again test uploadu2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#trzeci-test-uploadu"><span class="nav-number">1.0.3.</span> <span class="nav-text">trzeci test uploadu</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-A-bit-of-theory"><span class="nav-text">1. A bit of theory</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Why-repair-it-by-yourself-when-spare-motors-can-be-bought-cheaply"><span class="nav-text">2. Why repair it by yourself when spare motors can be bought cheaply?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-What-will-be-needed"><span class="nav-text">3. What will be needed?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Instructions"><span class="nav-text">4. Instructions.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Post-stuff"><span class="nav-text">5. Post stuff</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Sources-and-useful-links"><span class="nav-text">6. Sources and useful links</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="AlekSmola"
-      src="/images/blankimage.png">
+      src="/images/mat.jpg">
   <p class="site-author-name" itemprop="name">AlekSmola</p>
   <div class="site-description" itemprop="description">"Simple site"</div>
 </div>
@@ -182,7 +192,7 @@
     <link itemprop="mainEntityOfPage" href="https://aleksmola.github.io/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/blankimage.png">
+      <meta itemprop="image" content="/images/mat.jpg">
       <meta itemprop="name" content="AlekSmola">
     </span>
 
@@ -192,12 +202,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="How to Rewind Tinywhoop BLDC Motor | AlekSmola">
+      <meta itemprop="name" content="How to Rewind a Tinywhoop (Or Any Other) BLDC Motor | AlekSmola">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          How to Rewind Tinywhoop BLDC Motor
+          How to Rewind a Tinywhoop (Or Any Other) BLDC Motor
         </h1>
 
         <div class="post-meta-container">
@@ -207,9 +217,28 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-04-17 20:10:55 / Modified: 21:11:13" itemprop="dateCreated datePublished" datetime="2023-04-17T20:10:55+02:00">2023-04-17</time>
+      <time title="Created: 2023-04-17 20:10:55" itemprop="dateCreated datePublished" datetime="2023-04-17T20:10:55+02:00">2023-04-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-05-19 20:20:52" itemprop="dateModified" datetime="2023-05-19T20:20:52+02:00">2023-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tutorials/" itemprop="url" rel="index"><span itemprop="name">Tutorials</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Repairs/" itemprop="url" rel="index"><span itemprop="name">Repairs</span></a>
+        </span>
     </span>
 
   
@@ -219,14 +248,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>17</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>4 mins.</span>
     </span>
 </div>
 
@@ -237,7 +266,46 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="to-start-with-you-need-broken-x2F-burnt-BLDC-motor"><a href="#to-start-with-you-need-broken-x2F-burnt-BLDC-motor" class="headerlink" title="to start with, you need broken&#x2F;burnt BLDC motor"></a>to start with, you need broken&#x2F;burnt BLDC motor</h1><h3 id="test-uploadu"><a href="#test-uploadu" class="headerlink" title="test uploadu"></a>test uploadu</h3><h3 id="again-test-uploadu2"><a href="#again-test-uploadu2" class="headerlink" title="again test uploadu2"></a>again test uploadu2</h3><h3 id="trzeci-test-uploadu"><a href="#trzeci-test-uploadu" class="headerlink" title="trzeci test uploadu"></a>trzeci test uploadu</h3>
+        <p>Tutorial on how to rewind a broken BLDC motor by replacing the windings in the stator.</p>
+<h1 id="1-A-bit-of-theory"><a href="#1-A-bit-of-theory" class="headerlink" title="1. A bit of theory"></a>1. A bit of theory</h1><p>BLDC motors are DC voltage operating motors. The most important advantage over regular brushed DC motors is the fact of lack of brushes in BLDC motors. BLDC comes from a Brushless DC motor. Thanks to that, fewer parts can wear out and the motor is more reliable and longer lasting. Stator consists of windings made out of copper enameled wire. This means that wire has thin layer of insulation. This insulation may get damaged by excess heat, which occurs during motor stall (not only of course). The motor stall is when we want motors to rotate, but its rotor is locked. Visually burned coils will be black, they will stink quite a lot and some of the isolation may melt, changing the shape of the wire. The damaged motor will ‘try’ to rotate when power is applied, but will only vibrate by moving small steps forward and backward.</p>
+<img src="/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/mobula6motor.jpg" class="" title="BLDC motor example.">
+<h6 id="Figure-1-BLDC-motor-which-is-to-be-repaired-in-this-guide-Note-that-the-instructions-can-be-applied-to-other-motors-of-that-kind-Only-the-windings-pattern-will-change-and-x2F-or-the-wire-for-windings-used"><a href="#Figure-1-BLDC-motor-which-is-to-be-repaired-in-this-guide-Note-that-the-instructions-can-be-applied-to-other-motors-of-that-kind-Only-the-windings-pattern-will-change-and-x2F-or-the-wire-for-windings-used" class="headerlink" title="Figure 1. BLDC motor which is to be repaired in this guide. Note that the instructions can be applied to other motors of that kind. Only the windings pattern will change and&#x2F;or the wire for windings used."></a><strong>Figure 1. BLDC motor which is to be repaired in this guide. Note that the instructions can be applied to other motors of that kind. Only the windings pattern will change and&#x2F;or the wire for windings used.</strong></h6><p>This guide is based on a tiny BLDC motor taken from Mobula 6 tinywhoop. For other motors, the procedure will be the same but the arrangement and parts required may differ.</p>
+<span id="more"></span>
+
+
+
+<h1 id="2-Why-repair-it-by-yourself-when-spare-motors-can-be-bought-cheaply"><a href="#2-Why-repair-it-by-yourself-when-spare-motors-can-be-bought-cheaply" class="headerlink" title="2. Why repair it by yourself when spare motors can be bought cheaply?"></a>2. Why repair it by yourself when spare motors can be bought cheaply?</h1><p>Sometimes we just want to use the motors instead of waiting for the delivery. You may be in luck if the motors you need are available locally and delivery time is in days. But stuff bought from China may have weeks in delivery time. A repair can be conducted now, at the very moment. With the right tools, you will be in the air the same day.</p>
+<p>Plus this motor is dead anyway, so why not give it a shot?</p>
+<p>Plus plus you will learn something.</p>
+<h1 id="3-What-will-be-needed"><a href="#3-What-will-be-needed" class="headerlink" title="3. What will be needed?"></a>3. What will be needed?</h1><p>There are some</p>
+<ol>
+<li>A bit of patience. Small motors like Mobula 6 are tiny. The winding process may require small fingers and steady hands.</li>
+<li>0.2mm diameter copper enameled wire can be bought cheaply.</li>
+<li>Good tweezers for catching the E-clip. These clips hold the rotor in place. Can be visible from the bottom of the motor.</li>
+<li>Soldering iron will rather be required.</li>
+</ol>
+<h1 id="4-Instructions"><a href="#4-Instructions" class="headerlink" title="4. Instructions."></a>4. Instructions.</h1><p>Note: These instructions are written based on the outrunner motor. The outrunner motor is the motor in which the rotor is outside and the stator is inside. Inrunner motors are the opposite. The inrunner motor can be held by hand while spinning, whereas the outrunner only by stator base.</p>
+<p><strong>1.</strong> Remove the motor from the body of the quadcopter or any frame it is attached to. Disconnect wires. Leave the plug as it may be required later.</p>
+<p><strong>2.</strong> Remove the E-clip. This is tricky without any special tools. You can use a small screwdriver to push the clip out. The secret is to push it from both sides, but the problem is that it rotates independently from the rotor. One note: E-clip is springy, after successful removal it may fly away and you never going to find it again. The motor can spin without it and for such a small motor it may be an option if you lost it, but for any more powerful motor with a bigger propeller, it is not an option. Put your motor into a plastic transparent bug while removing it. even if it flies away should be easy to find in the bug. To be even more safe, attach a neodymium magnet to the tip of the tweezer to catch the clip.</p>
+<p><strong>3.</strong> Remove the rotor from the stator. There will be some magnetic force holding it in place, but nothing strong.</p>
+<p><strong>4.</strong> Cut the plug off, leave some length of wire attached to the winding on the motor since it will be easier to unwind and count the turns.</p>
+<p><strong>5.</strong> Unwind the damaged windings. Note down the number of turns around each stator arm. If your wires are damaged to the point of being unusable below I did it for you for a described motor. Different motors will require some research, keep in mind source number <a target="_blank" rel="noopener" href="https://www.bavaria-direct.co.za/scheme/calculator/">[1]</a>. which nicely visualizes how the windings should be winded.</p>
+<p>For the Mobula 6 <strong>SE0802-KV19000 9N12P</strong> (12 magnets&#x2F;poles, 9 stator arms&#x2F;slots) <a target="_blank" rel="noopener" href="https://www.aliexpress.com/item/1005001666252329.html">like these</a> motors counts are as follows:</p>
+<ul>
+<li>the wire is <strong>0.2mm in diameter, enameled copper</strong>;</li>
+<li>10 turns around each stator arm;</li>
+<li>Configuration is Y (star) meaning that in the stator there is a connection of all 3 phase wires;</li>
+</ul>
+<p>Make note of which wire is which phase and which end of the wire is start or finish. Preferably use sticky tape and stick it into each note marking for example <code>A start</code>.<br>For now, leave 10cm at the beginning and at the of each winded phase. It will make life easier afterward. Cut the rest.<br>While winding follow the below scheme <strong>ABCABCABC</strong>**:<br>(it describes the direction of winding by lower- or uppercase letter and phases order)</p>
+<img src="/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/bldc_rewinding3.jpg" class="" title="Scheme for windings">
+
+<h6 id="Figure-2-Rewinding-pattern-Follow-the-lines-from-the-figure-exactly-Start-finish-and-direction-matters-Source-http-www-bavaria-direct-co-za"><a href="#Figure-2-Rewinding-pattern-Follow-the-lines-from-the-figure-exactly-Start-finish-and-direction-matters-Source-http-www-bavaria-direct-co-za" class="headerlink" title="Figure 2. Rewinding pattern. Follow the lines from the figure exactly. Start, finish and direction matters! Source: http://www.bavaria-direct.co.za/"></a><em><strong>Figure 2. Rewinding pattern. Follow the lines from the figure exactly. Start, finish and direction matters! Source: <a target="_blank" rel="noopener" href="http://www.bavaria-direct.co.za/">http://www.bavaria-direct.co.za/</a></strong></em></h6><p><strong>6.</strong> When this is done, you are left with 3 phases having each two ends. Make sure that the windings do not interfere with the rest of the motor. Make the Y-center connection as inside the diagram in the Figure above. Place it offside but in the footprint of the motor. Solder the three wires. You may heat the ends with the soldering iron to remove the isolation, but it can damage deeper isolation. Preferably use sandpaper. Do not forget to isolate the solder joint from the rest with heat shrink.</p>
+<img src="/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/repaired1.jpg" class="" title="Motor after repair.">
+<h6 id="Figure-3-Repaired-motor-from-top-Note-the-center-Y-connection"><a href="#Figure-3-Repaired-motor-from-top-Note-the-center-Y-connection" class="headerlink" title="Figure 3. Repaired motor from top. Note the center Y connection."></a><em><strong>Figure 3. Repaired motor from top. Note the center Y connection.</strong></em></h6><p><strong>7.</strong> Cut the other ends of each phase to the required length. Solder connector if you need one. Now you can text the motor. For the tests, do not assemble the whole motor yet, leave E-clip aside. Just insert the rotor into the stator.</p>
+<img src="/2023/04/17/How-to-rewind-Tinywhoop-BLDC-motor/repaired2.jpg" class="" title="Repaired motor from the bottom.">
+<h6 id="Figure-4-Repaired-motor-from-the-bottom-the-Y-center-connection-does-not-interfere-with-other-components"><a href="#Figure-4-Repaired-motor-from-the-bottom-the-Y-center-connection-does-not-interfere-with-other-components" class="headerlink" title="Figure 4. Repaired motor from the bottom. the Y center connection does not interfere with other components."></a><em><strong>Figure 4. Repaired motor from the bottom. the Y center connection does not interfere with other components.</strong></em></h6><h1 id="5-Post-stuff"><a href="#5-Post-stuff" class="headerlink" title="5. Post stuff"></a>5. Post stuff</h1><p>The motor works pretty much the same as the original, but I noted that it starts with a delay concerning the original ones. Higher rotations are required to start it up. You may want to adjust the start-up power in the esc configurator.</p>
+<h1 id="6-Sources-and-useful-links"><a href="#6-Sources-and-useful-links" class="headerlink" title="6. Sources and useful links"></a>6. Sources and useful links</h1><p>[1] <a target="_blank" rel="noopener" href="https://www.bavaria-direct.co.za/scheme/calculator/">https://www.bavaria-direct.co.za/scheme/calculator/</a><br>[2] <a target="_blank" rel="noopener" href="https://www.rcgroups.com/forums/showthread.php?1076415-Alternative-12N14P-winding">https://www.rcgroups.com/forums/showthread.php?1076415-Alternative-12N14P-winding</a><br>[3] <a target="_blank" rel="noopener" href="http://www.bavaria-direct.co.za/scheme/common/#prettyPhoto">http://www.bavaria-direct.co.za/scheme/common/#prettyPhoto</a><br>[4] <a target="_blank" rel="noopener" href="https://fjp.at/projects/fpv/motor">https://fjp.at/projects/fpv/motor</a><br>[5] <a target="_blank" rel="noopener" href="https://www.machinedesign.com/motors-drives/article/21834666/how-to-calculate-new-dc-motor-parameters-of-a-modified-winding">https://www.machinedesign.com/motors-drives/article/21834666/how-to-calculate-new-dc-motor-parameters-of-a-modified-winding</a><br>[6] <a target="_blank" rel="noopener" href="https://www.instructables.com/Rewinding-a-Brushless-Motor/">https://www.instructables.com/Rewinding-a-Brushless-Motor/</a></p>
+
     </div>
 
     
@@ -259,6 +327,13 @@
   </div>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/instructions/" rel="tag"><i class="fa fa-tag"></i> instructions</a>
+              <a href="/tags/tutorial/" rel="tag"><i class="fa fa-tag"></i> tutorial</a>
+              <a href="/tags/bldc/" rel="tag"><i class="fa fa-tag"></i> bldc</a>
+              <a href="/tags/motors/" rel="tag"><i class="fa fa-tag"></i> motors</a>
+              <a href="/tags/repairs/" rel="tag"><i class="fa fa-tag"></i> repairs</a>
+          </div>
 
         
 
@@ -269,6 +344,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2023/05/19/archerc8-flashing/" rel="next" title="How to Flash TP-Link Archer C8v2 With DD-WRT.">
+                  How to Flash TP-Link Archer C8v2 With DD-WRT. <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -300,13 +378,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">1k</span>
+    <span title="Word count total">4k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2 mins.</span>
+    <span title="Reading time total">13 mins.</span>
   </span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
