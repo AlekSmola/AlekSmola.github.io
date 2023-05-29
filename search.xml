@@ -169,6 +169,109 @@
       </tags>
   </entry>
   <entry>
+    <title>Easy Way to Create a GUI Application for Your Project in Python</title>
+    <url>/2023/05/29/easy-gui-app-with-python/</url>
+    <content><![CDATA[<h1 id="1-It’s-surprisingly-easy-to-create-your-own-GUI-app-nowadays"><a href="#1-It’s-surprisingly-easy-to-create-your-own-GUI-app-nowadays" class="headerlink" title="1. It’s surprisingly easy to create your own GUI app nowadays"></a>1. It’s surprisingly easy to create your own GUI app nowadays</h1><p>Modern solutions for programming became extremely accessible. </p>
+<div style="text-align: center;">
+<img src="/2023/05/29/easy-gui-app-with-python/GUI_example.png" class="" title="GUI app">
+</div>
+
+<p><em>Figure. Example GUI app</em></p>
+<p>Python programming language is easy and intuitive to learn and lacks unnecessary syntax caveats which may confuse young players. Making an app that simplifies our life, solves some problems or just outputs funny things is as easy as ever before. </p>
+<p>Making a GUI app for your already existing application will make it not only more accessible to non-terminal people but will also simplify using it and make it more error-proof. </p>
+<span id="more"></span>
+
+<br/>
+
+<h1 id="2-Requirments-and-installation"><a href="#2-Requirments-and-installation" class="headerlink" title="2. Requirments and installation"></a>2. Requirments and installation</h1><p>Few things are required:</p>
+<ul>
+<li>some python script</li>
+<li>Internet to download package</li>
+<li>a monitor to dispaly GUI app ;)</li>
+</ul>
+<p>In this tutorial, a <code>PySimpleGUI</code> package will be used [<a href="https://www.pysimplegui.org/en/latest/">1</a>]. There are many more solutions but this is the one I’ve used. <strong>My motivation for writing this tutorial was how fast I managed to bring up a working GUI for my project. How easy was it to code each button’s function and user interface. I literally had an app in 15 minutes!</strong></p>
+<p>To install the mentioned package in the terminal enter:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python3 -m pip install pysimplegui</span><br></pre></td></tr></table></figure>
+<p>You may also need to install <code>thinker</code>, for Python3:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install python3-tk</span><br></pre></td></tr></table></figure>
+<br/>
+
+<h1 id="3-First-steps"><a href="#3-First-steps" class="headerlink" title="3. First steps"></a>3. First steps</h1><p>How to start with GUI, based on my example script discussed below.</p>
+<h2 id="My-Python-Script"><a href="#My-Python-Script" class="headerlink" title="My Python Script"></a>My Python Script</h2><p>In my case, in the game <code>ARK Survival Evolved</code> there is an option to make ammo out of basic ingredients. First, it is needed to gather Stone and Flint. Flint can also be made out of Stone. Secondly, Stone and Flint are used to make Spatkpowder. Combining it with Charcoal, Gunpowder can be made. Out of it, the Ammo can be crafted with the help of Metal Ingot.</p>
+<p>Each of the crafting steps requires a certain amount of each ingredient to get some amount of output product. Numerical values don’t matter in this example. </p>
+<p>Writing a program that would provide a sum of all required ingredients to make a desired amount of Ammo is a handy way to know when to stop harvesting shared in the game World. Or maybe even better: to calculate how much ammo can be made from already gathered supplies. That’s exactly what I’ve done and the output is below:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;=== To make 1004 Advanced Rifle Bullet ===&gt;</span><br><span class="line">    Required Metal Ingot: 502</span><br><span class="line">    Required Gunpowder: 4518:</span><br><span class="line">        Required Sparkpowder: 3012:</span><br><span class="line">                Stone: 1004</span><br><span class="line">                Flint: 2008:</span><br><span class="line">                        Stone: 4016</span><br><span class="line">        Required Charcoal: 3012    </span><br><span class="line"></span><br><span class="line">    Totalling Stone (4016) to put into Grinder</span><br><span class="line">    Totalling Flint (2008) and Stone (1004) and Charcoal (3012) to put into Laboratory</span><br><span class="line">    Tottaling Metal Ingot (502) and Gunpowder (4518) to put into Fabricator</span><br><span class="line">    </span><br><span class="line">    Total Stone to be collected:        5020</span><br><span class="line">    Total Charcoal to be collected:     3012</span><br><span class="line">    Total Metal Ingot to be collected:  502</span><br></pre></td></tr></table></figure>
+<p>Source code as well as a source code for GUI app can be found here: <a href="https://github.com/AlekSmola/ARKulator">[2]</a></p>
+<h2 id="GUI-requirements"><a href="#GUI-requirements" class="headerlink" title="GUI requirements"></a>GUI requirements</h2><p>I wanted it to present the above info based on the provided amount of Ammo desired. It should update constantly, or when an Apply button is pressed.</p>
+<h2 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h2><p>First of all, import:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> PySimpleGUI <span class="keyword">as</span> sg</span><br></pre></td></tr></table></figure>
+<p>Below the import the <code>window</code> is created:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">window = sg.Window(<span class="string">&quot;ARKulator&quot;</span>, layout)</span><br></pre></td></tr></table></figure>
+<p>It contains the parameters of the physical GUI window that will appear. </p>
+<ul>
+<li><code>&quot;ARKulator&quot;</code> is a Title of the window, usually in the middle of the top bar.</li>
+<li><code>layout</code> defines the, well, the layout of the elements in the window. It should be defined here or before the <code>sg.Window</code>.</li>
+</ul>
+<p><code>layout</code> is of a form:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">layout = [</span><br><span class="line">    [   sg.Text(<span class="string">&quot;How much ammo:\t&quot;</span>),</span><br><span class="line">        sg.In(size=(<span class="built_in">int</span>(horizontal_size/<span class="number">2</span>), <span class="number">1</span>), enable_events=<span class="literal">True</span>, key=<span class="string">&quot;_AMMO_AMOUNT_&quot;</span>, default_text=<span class="string">&#x27;0&#x27;</span>)],</span><br><span class="line">    [   sg.Text(<span class="string">&quot;How much Flint:\t&quot;</span>),</span><br><span class="line">        sg.In(size=(<span class="built_in">int</span>(horizontal_size/<span class="number">2</span>), <span class="number">1</span>), enable_events=<span class="literal">True</span>, key=<span class="string">&quot;_FLINT_AMOUNT_&quot;</span>, default_text=<span class="string">&#x27;0&#x27;</span>)],</span><br><span class="line">    [   sg.Button(<span class="string">&quot;Apply&quot;</span>, enable_events=<span class="literal">True</span>, key=<span class="string">&quot;_APPLY_BUTTON_&quot;</span>)    ],</span><br><span class="line">    [   sg.Text(<span class="string">&quot;&lt;=== Advanced Rifle Ammo ===&gt;&quot;</span>)],</span><br><span class="line"></span><br><span class="line">    [   sg.Multiline(<span class="string">&quot;Provide number of ammo demanded ^&quot;</span>, size = (horizontal_size,<span class="number">20</span>), enable_events=<span class="literal">True</span>,key=<span class="string">&quot;_OUTPUT_TEXT_&quot;</span>)  ],</span><br><span class="line"></span><br><span class="line">    [   sg.Text(<span class="string">&quot;To exit:&quot;</span>),</span><br><span class="line">        sg.VSeparator( pad=(<span class="number">50</span>,<span class="number">0</span>) ),</span><br><span class="line">        sg.Button(<span class="string">&quot;Do not exit&quot;</span>, enable_events = <span class="literal">True</span>, key = <span class="string">&quot;_EXIT_BUTTON_&quot;</span>) ]</span><br><span class="line"></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>It will produce the following GUI:</p>
+<div style="text-align: center;">
+<img src="/2023/05/29/easy-gui-app-with-python/GUI-empty.png" class="" title="Empty GUI program.">
+</div>
+
+<p><em>Figure. Produced GUI layout</em></p>
+<p>Describing the layout which starts with:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">layout = [</span><br><span class="line"></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>Here, all elements will be included.<br>Each next <code>[]</code> inside represents the vertical line of elements. If we want a certain Text field, and right next to it a Text box for the user input, and at the end a button to apply field it will look like that:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">layout = [</span><br><span class="line">    [   sg.Text(<span class="string">&quot;How much Flint:\t&quot;</span>),</span><br><span class="line">        sg.In(size=(<span class="built_in">int</span>(horizontal_size/<span class="number">2</span>), <span class="number">1</span>), enable_events=<span class="literal">True</span>, key=<span class="string">&quot;_FLINT_AMOUNT_&quot;</span>, default_text=<span class="string">&#x27;0&#x27;</span>),</span><br><span class="line">        sg.Button(<span class="string">&quot;Apply&quot;</span>, enable_events=<span class="literal">True</span>, key=<span class="string">&quot;_APPLY_BUTTON_&quot;</span>)</span><br><span class="line">    ],</span><br><span class="line">]       </span><br></pre></td></tr></table></figure>
+<p>will give:</p>
+<div style="text-align: center;">
+<img src="/2023/05/29/easy-gui-app-with-python/GUI_three_elements.png" class="" title="Three element GUI.">
+</div>
+
+<p><em>Figure. Simple GUI layout example.</em></p>
+<p>Each field has its own parameters, like default value, size and behavior. Most important is the <code>key=&#39;&#39;</code> which is like the index of the element - it directly leads to it. Give each element an individual name. </p>
+<p>Each next <code>[]</code> in <code>layout</code> will present the next line of elements. </p>
+<p>In my example, there are several lines of elements.</p>
+<h2 id="How-to-control-input-and-outputs"><a href="#How-to-control-input-and-outputs" class="headerlink" title="How to control input and outputs?"></a>How to control input and outputs?</h2><p>Similar, to the Arduino sketch: with a <code>while True</code> loop:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    event, values = window.read()</span><br><span class="line">    <span class="keyword">if</span> event == <span class="string">&quot;_EXIT_BUTTON_&quot;</span> <span class="keyword">or</span> event == sg.WIN_CLOSED:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> event <span class="keyword">in</span> [<span class="string">&quot;_AMMO_AMOUNT_&quot;</span>, <span class="string">&quot;_FLINT_AMOUNT_&quot;</span>, <span class="string">&quot;_APPLY_BUTTON_&quot;</span>]:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            amount_of_flint = <span class="built_in">int</span>(values[<span class="string">&#x27;_FLINT_AMOUNT_&#x27;</span>])</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            amount_of_flint = <span class="number">0</span></span><br><span class="line">            window[<span class="string">&#x27;_FLINT_AMOUNT_&#x27;</span>].update(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            amount_of_ammo = <span class="built_in">int</span>(values[<span class="string">&quot;_AMMO_AMOUNT_&quot;</span>])</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            amount_of_ammo = <span class="number">0</span></span><br><span class="line">            window[<span class="string">&#x27;_AMMO_AMOUNT_&#x27;</span>].update(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            window[<span class="string">&quot;_OUTPUT_TEXT_&quot;</span>].update(<span class="string">f&#x27;<span class="subst">&#123;make_ammo(amount_of_ammo, amount_of_flint)&#125;</span>\nAmount of flint<span class="subst">&#123;amount_of_flint&#125;</span>&#x27;</span>)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            window[<span class="string">&quot;_OUTPUT_TEXT_&quot;</span>].update(<span class="string">f&#x27;Provided value is not a number, lol\</span></span><br><span class="line"><span class="string">                \nHow much ammo do you think is: <span class="subst">&#123;amount_of_ammo&#125;</span> ammo?&#x27;</span>)</span><br><span class="line">            amount_of_ammo = -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>In <code>event, values = window.read()</code> program catches user inputs. It registers what event and where it happened.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> event == <span class="string">&quot;_EXIT_BUTTON_&quot;</span> <span class="keyword">or</span> event == sg.WIN_CLOSED:</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>will check if the defined Exit Button was pressed, or if the Red X was pressed. In such case, the <code>while True</code> loop will break and the last line of the whole code: <code>window.close()</code> will close the window and end the execution.</p>
+<p>Similar to the exit part of the code the script checks what was pressed and what do to with it. I had to use several <code>try: except:</code>‘s cause without them, the script would crash if default 0 in the input field was attempted to be changed to something else (no character as input). After that, when the script has the ammo which I want to make (input variable) it will use a previously defined function to gather all of the ingredients. Having that, it will update the Text field named <code>_OUTPUT_TEXT_</code> with <code>.update()</code>.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">window[<span class="string">&quot;_OUTPUT_TEXT_&quot;</span>].update(<span class="string">&quot;Whatever Text you want&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><code>window[&#39;_AMMO_AMOUNT_&#39;]</code> can be used to update any other field, by changing its index name.</p>
+<p>And that’s it, the final effect can be seen below.</p>
+<div style="text-align: center;">
+<img src="/2023/05/29/easy-gui-app-with-python/GUI_full.png" class="" title="After filling.">
+</div>
+
+<p><em>Figure. Working script with full output.</em></p>
+<p>As can be seen, the script will update on every change in input fields, so the Apply button is useless. </p>
+<br/>
+
+<h1 id="Conclusions"><a href="#Conclusions" class="headerlink" title="Conclusions"></a>Conclusions</h1><p>Creating a GUI app with the help of <code>PySimpleGUI</code> is extremely easy and fast in making basic GUI app. It will bring basic input and outputs to the graphical usage.</p>
+<br/>
+
+<h1 id="Sources"><a href="#Sources" class="headerlink" title="Sources"></a>Sources</h1><p>[1] <a href="https://www.pysimplegui.org/en/latest/">https://www.pysimplegui.org/en/latest/</a></p>
+<p>[2] <a href="https://github.com/AlekSmola/ARKulator">https://github.com/AlekSmola/ARKulator</a></p>
+<p>[3] <a href="https://realpython.com/pysimplegui-python/">https://realpython.com/pysimplegui-python/</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>instructions</tag>
+        <tag>tutorials</tag>
+        <tag>python</tag>
+        <tag>gui</tag>
+        <tag>appications</tag>
+        <tag>apps</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>My Instructions for Using Hexo</title>
     <url>/2023/03/28/how_to_use_hexo/</url>
     <content><![CDATA[<h1 id="How-to-setup-HEXO-website-my-own-instructions-this-site"><a href="#How-to-setup-HEXO-website-my-own-instructions-this-site" class="headerlink" title="How to setup HEXO website [my own instructions] [this site]"></a>How to setup HEXO website [my own instructions] [this site]</h1><p>Just the quick helpdesk for the things I went through to get Hexo working.</p>

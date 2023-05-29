@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/site_logo2white_exp.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha256-/4UQcSmErDzPCMAiuOiWPVVsNN2s3ZY/NsmXNcj0IFc=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"aleksmola.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"bounceInLeft","post_block":"bounceInRight","post_header":"bounceInRight","sidebar":"bounceInLeft"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":2,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="1. It’s surprisingly easy to create your own GUI app nowadaysModern solutions for programming became extremely accessible.      Figure. Example GUI app Python programming language is easy and intuitiv">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Easy Way to Create a GUI Application for Your Project in Python">
+<meta property="og:url" content="https://aleksmola.github.io/2023/05/29/easy-gui-app-with-python/index.html">
+<meta property="og:site_name" content="AlekSmola">
+<meta property="og:description" content="1. It’s surprisingly easy to create your own GUI app nowadaysModern solutions for programming became extremely accessible.      Figure. Example GUI app Python programming language is easy and intuitiv">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://aleksmola.github.io/2023/05/29/easy-gui-app-with-python/GUI_example.png">
+<meta property="og:image" content="https://aleksmola.github.io/2023/05/29/easy-gui-app-with-python/GUI-empty.png">
+<meta property="og:image" content="https://aleksmola.github.io/2023/05/29/easy-gui-app-with-python/GUI_three_elements.png">
+<meta property="og:image" content="https://aleksmola.github.io/2023/05/29/easy-gui-app-with-python/GUI_full.png">
+<meta property="article:published_time" content="2023-05-29T14:21:12.000Z">
+<meta property="article:modified_time" content="2023-05-29T18:53:05.737Z">
+<meta property="article:author" content="AlekSmola">
+<meta property="article:tag" content="instructions">
+<meta property="article:tag" content="tutorials">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="gui">
+<meta property="article:tag" content="appications">
+<meta property="article:tag" content="apps">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://aleksmola.github.io/2023/05/29/easy-gui-app-with-python/GUI_example.png">
+
+
+<link rel="canonical" href="https://aleksmola.github.io/2023/05/29/easy-gui-app-with-python/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://aleksmola.github.io/2023/05/29/easy-gui-app-with-python/","path":"2023/05/29/easy-gui-app-with-python/","title":"Easy Way to Create a GUI Application for Your Project in Python"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Easy Way to Create a GUI Application for Your Project in Python | AlekSmola</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">AlekSmola</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Just stuff I try to accomplish in my free time.</p>
+      <img class="custom-logo-image" src="/images/site_logo2transparent.png" alt="AlekSmola">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">4</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">19</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">4</span></a></li><li class="menu-item menu-item-about-page"><a href="/about-page/" rel="section"><i class="fa fa-user fa-fw"></i>About Page</a></li><li class="menu-item menu-item-about-author"><a href="/about-me/" rel="section"><i class="fa fa-user fa-fw"></i>About Author</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-It%E2%80%99s-surprisingly-easy-to-create-your-own-GUI-app-nowadays"><span class="nav-text">1. It’s surprisingly easy to create your own GUI app nowadays</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Requirments-and-installation"><span class="nav-text">2. Requirments and installation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-First-steps"><span class="nav-text">3. First steps</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#My-Python-Script"><span class="nav-text">My Python Script</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GUI-requirements"><span class="nav-text">GUI requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basics"><span class="nav-text">Basics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-control-input-and-outputs"><span class="nav-text">How to control input and outputs?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusions"><span class="nav-text">Conclusions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sources"><span class="nav-text">Sources</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="AlekSmola"
+      src="/images/blankimage.png">
+  <p class="site-author-name" itemprop="name">AlekSmola</p>
+  <div class="site-description" itemprop="description">"Simple site"</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/aleksmola" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;aleksmola" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://aleksmola.github.io/2023/05/29/easy-gui-app-with-python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blankimage.png">
+      <meta itemprop="name" content="AlekSmola">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AlekSmola">
+      <meta itemprop="description" content=""Simple site"">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Easy Way to Create a GUI Application for Your Project in Python | AlekSmola">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Easy Way to Create a GUI Application for Your Project in Python
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-05-29 16:21:12 / Modified: 20:53:05" itemprop="dateCreated datePublished" datetime="2023-05-29T16:21:12+02:00">2023-05-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tutorials/" itemprop="url" rel="index"><span itemprop="name">Tutorials</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="1-It’s-surprisingly-easy-to-create-your-own-GUI-app-nowadays"><a href="#1-It’s-surprisingly-easy-to-create-your-own-GUI-app-nowadays" class="headerlink" title="1. It’s surprisingly easy to create your own GUI app nowadays"></a>1. It’s surprisingly easy to create your own GUI app nowadays</h1><p>Modern solutions for programming became extremely accessible. </p>
+<div style="text-align: center;">
+<img src="/2023/05/29/easy-gui-app-with-python/GUI_example.png" class="" title="GUI app">
+</div>
+
+<p><em>Figure. Example GUI app</em></p>
+<p>Python programming language is easy and intuitive to learn and lacks unnecessary syntax caveats which may confuse young players. Making an app that simplifies our life, solves some problems or just outputs funny things is as easy as ever before. </p>
+<p>Making a GUI app for your already existing application will make it not only more accessible to non-terminal people but will also simplify using it and make it more error-proof. </p>
+<span id="more"></span>
+
+<br/>
+
+<h1 id="2-Requirments-and-installation"><a href="#2-Requirments-and-installation" class="headerlink" title="2. Requirments and installation"></a>2. Requirments and installation</h1><p>Few things are required:</p>
+<ul>
+<li>some python script</li>
+<li>Internet to download package</li>
+<li>a monitor to dispaly GUI app ;)</li>
+</ul>
+<p>In this tutorial, a <code>PySimpleGUI</code> package will be used [<a target="_blank" rel="noopener" href="https://www.pysimplegui.org/en/latest/">1</a>]. There are many more solutions but this is the one I’ve used. <strong>My motivation for writing this tutorial was how fast I managed to bring up a working GUI for my project. How easy was it to code each button’s function and user interface. I literally had an app in 15 minutes!</strong></p>
+<p>To install the mentioned package in the terminal enter:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m pip install pysimplegui</span><br></pre></td></tr></table></figure>
+<p>You may also need to install <code>thinker</code>, for Python3:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python3-tk</span><br></pre></td></tr></table></figure>
+<br/>
+
+<h1 id="3-First-steps"><a href="#3-First-steps" class="headerlink" title="3. First steps"></a>3. First steps</h1><p>How to start with GUI, based on my example script discussed below.</p>
+<h2 id="My-Python-Script"><a href="#My-Python-Script" class="headerlink" title="My Python Script"></a>My Python Script</h2><p>In my case, in the game <code>ARK Survival Evolved</code> there is an option to make ammo out of basic ingredients. First, it is needed to gather Stone and Flint. Flint can also be made out of Stone. Secondly, Stone and Flint are used to make Spatkpowder. Combining it with Charcoal, Gunpowder can be made. Out of it, the Ammo can be crafted with the help of Metal Ingot.</p>
+<p>Each of the crafting steps requires a certain amount of each ingredient to get some amount of output product. Numerical values don’t matter in this example. </p>
+<p>Writing a program that would provide a sum of all required ingredients to make a desired amount of Ammo is a handy way to know when to stop harvesting shared in the game World. Or maybe even better: to calculate how much ammo can be made from already gathered supplies. That’s exactly what I’ve done and the output is below:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;=== To make 1004 Advanced Rifle Bullet ===&gt;</span><br><span class="line">    Required Metal Ingot: 502</span><br><span class="line">    Required Gunpowder: 4518:</span><br><span class="line">        Required Sparkpowder: 3012:</span><br><span class="line">                Stone: 1004</span><br><span class="line">                Flint: 2008:</span><br><span class="line">                        Stone: 4016</span><br><span class="line">        Required Charcoal: 3012    </span><br><span class="line"></span><br><span class="line">    Totalling Stone (4016) to put into Grinder</span><br><span class="line">    Totalling Flint (2008) and Stone (1004) and Charcoal (3012) to put into Laboratory</span><br><span class="line">    Tottaling Metal Ingot (502) and Gunpowder (4518) to put into Fabricator</span><br><span class="line">    </span><br><span class="line">    Total Stone to be collected:        5020</span><br><span class="line">    Total Charcoal to be collected:     3012</span><br><span class="line">    Total Metal Ingot to be collected:  502</span><br></pre></td></tr></table></figure>
+<p>Source code as well as a source code for GUI app can be found here: <a target="_blank" rel="noopener" href="https://github.com/AlekSmola/ARKulator">[2]</a></p>
+<h2 id="GUI-requirements"><a href="#GUI-requirements" class="headerlink" title="GUI requirements"></a>GUI requirements</h2><p>I wanted it to present the above info based on the provided amount of Ammo desired. It should update constantly, or when an Apply button is pressed.</p>
+<h2 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h2><p>First of all, import:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> PySimpleGUI <span class="keyword">as</span> sg</span><br></pre></td></tr></table></figure>
+<p>Below the import the <code>window</code> is created:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window = sg.Window(<span class="string">&quot;ARKulator&quot;</span>, layout)</span><br></pre></td></tr></table></figure>
+<p>It contains the parameters of the physical GUI window that will appear. </p>
+<ul>
+<li><code>&quot;ARKulator&quot;</code> is a Title of the window, usually in the middle of the top bar.</li>
+<li><code>layout</code> defines the, well, the layout of the elements in the window. It should be defined here or before the <code>sg.Window</code>.</li>
+</ul>
+<p><code>layout</code> is of a form:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">layout = [</span><br><span class="line">    [   sg.Text(<span class="string">&quot;How much ammo:\t&quot;</span>),</span><br><span class="line">        sg.In(size=(<span class="built_in">int</span>(horizontal_size/<span class="number">2</span>), <span class="number">1</span>), enable_events=<span class="literal">True</span>, key=<span class="string">&quot;_AMMO_AMOUNT_&quot;</span>, default_text=<span class="string">&#x27;0&#x27;</span>)],</span><br><span class="line">    [   sg.Text(<span class="string">&quot;How much Flint:\t&quot;</span>),</span><br><span class="line">        sg.In(size=(<span class="built_in">int</span>(horizontal_size/<span class="number">2</span>), <span class="number">1</span>), enable_events=<span class="literal">True</span>, key=<span class="string">&quot;_FLINT_AMOUNT_&quot;</span>, default_text=<span class="string">&#x27;0&#x27;</span>)],</span><br><span class="line">    [   sg.Button(<span class="string">&quot;Apply&quot;</span>, enable_events=<span class="literal">True</span>, key=<span class="string">&quot;_APPLY_BUTTON_&quot;</span>)    ],</span><br><span class="line">    [   sg.Text(<span class="string">&quot;&lt;=== Advanced Rifle Ammo ===&gt;&quot;</span>)],</span><br><span class="line"></span><br><span class="line">    [   sg.Multiline(<span class="string">&quot;Provide number of ammo demanded ^&quot;</span>, size = (horizontal_size,<span class="number">20</span>), enable_events=<span class="literal">True</span>,key=<span class="string">&quot;_OUTPUT_TEXT_&quot;</span>)  ],</span><br><span class="line"></span><br><span class="line">    [   sg.Text(<span class="string">&quot;To exit:&quot;</span>),</span><br><span class="line">        sg.VSeparator( pad=(<span class="number">50</span>,<span class="number">0</span>) ),</span><br><span class="line">        sg.Button(<span class="string">&quot;Do not exit&quot;</span>, enable_events = <span class="literal">True</span>, key = <span class="string">&quot;_EXIT_BUTTON_&quot;</span>) ]</span><br><span class="line"></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>It will produce the following GUI:</p>
+<div style="text-align: center;">
+<img src="/2023/05/29/easy-gui-app-with-python/GUI-empty.png" class="" title="Empty GUI program.">
+</div>
+
+<p><em>Figure. Produced GUI layout</em></p>
+<p>Describing the layout which starts with:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">layout = [</span><br><span class="line"></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>Here, all elements will be included.<br>Each next <code>[]</code> inside represents the vertical line of elements. If we want a certain Text field, and right next to it a Text box for the user input, and at the end a button to apply field it will look like that:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">layout = [</span><br><span class="line">    [   sg.Text(<span class="string">&quot;How much Flint:\t&quot;</span>),</span><br><span class="line">        sg.In(size=(<span class="built_in">int</span>(horizontal_size/<span class="number">2</span>), <span class="number">1</span>), enable_events=<span class="literal">True</span>, key=<span class="string">&quot;_FLINT_AMOUNT_&quot;</span>, default_text=<span class="string">&#x27;0&#x27;</span>),</span><br><span class="line">        sg.Button(<span class="string">&quot;Apply&quot;</span>, enable_events=<span class="literal">True</span>, key=<span class="string">&quot;_APPLY_BUTTON_&quot;</span>)</span><br><span class="line">    ],</span><br><span class="line">]       </span><br></pre></td></tr></table></figure>
+<p>will give:</p>
+<div style="text-align: center;">
+<img src="/2023/05/29/easy-gui-app-with-python/GUI_three_elements.png" class="" title="Three element GUI.">
+</div>
+
+<p><em>Figure. Simple GUI layout example.</em></p>
+<p>Each field has its own parameters, like default value, size and behavior. Most important is the <code>key=&#39;&#39;</code> which is like the index of the element - it directly leads to it. Give each element an individual name. </p>
+<p>Each next <code>[]</code> in <code>layout</code> will present the next line of elements. </p>
+<p>In my example, there are several lines of elements.</p>
+<h2 id="How-to-control-input-and-outputs"><a href="#How-to-control-input-and-outputs" class="headerlink" title="How to control input and outputs?"></a>How to control input and outputs?</h2><p>Similar, to the Arduino sketch: with a <code>while True</code> loop:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    event, values = window.read()</span><br><span class="line">    <span class="keyword">if</span> event == <span class="string">&quot;_EXIT_BUTTON_&quot;</span> <span class="keyword">or</span> event == sg.WIN_CLOSED:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> event <span class="keyword">in</span> [<span class="string">&quot;_AMMO_AMOUNT_&quot;</span>, <span class="string">&quot;_FLINT_AMOUNT_&quot;</span>, <span class="string">&quot;_APPLY_BUTTON_&quot;</span>]:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            amount_of_flint = <span class="built_in">int</span>(values[<span class="string">&#x27;_FLINT_AMOUNT_&#x27;</span>])</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            amount_of_flint = <span class="number">0</span></span><br><span class="line">            window[<span class="string">&#x27;_FLINT_AMOUNT_&#x27;</span>].update(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            amount_of_ammo = <span class="built_in">int</span>(values[<span class="string">&quot;_AMMO_AMOUNT_&quot;</span>])</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            amount_of_ammo = <span class="number">0</span></span><br><span class="line">            window[<span class="string">&#x27;_AMMO_AMOUNT_&#x27;</span>].update(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            window[<span class="string">&quot;_OUTPUT_TEXT_&quot;</span>].update(<span class="string">f&#x27;<span class="subst">&#123;make_ammo(amount_of_ammo, amount_of_flint)&#125;</span>\nAmount of flint<span class="subst">&#123;amount_of_flint&#125;</span>&#x27;</span>)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            window[<span class="string">&quot;_OUTPUT_TEXT_&quot;</span>].update(<span class="string">f&#x27;Provided value is not a number, lol\</span></span><br><span class="line"><span class="string">                \nHow much ammo do you think is: <span class="subst">&#123;amount_of_ammo&#125;</span> ammo?&#x27;</span>)</span><br><span class="line">            amount_of_ammo = -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>In <code>event, values = window.read()</code> program catches user inputs. It registers what event and where it happened.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> event == <span class="string">&quot;_EXIT_BUTTON_&quot;</span> <span class="keyword">or</span> event == sg.WIN_CLOSED:</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>will check if the defined Exit Button was pressed, or if the Red X was pressed. In such case, the <code>while True</code> loop will break and the last line of the whole code: <code>window.close()</code> will close the window and end the execution.</p>
+<p>Similar to the exit part of the code the script checks what was pressed and what do to with it. I had to use several <code>try: except:</code>‘s cause without them, the script would crash if default 0 in the input field was attempted to be changed to something else (no character as input). After that, when the script has the ammo which I want to make (input variable) it will use a previously defined function to gather all of the ingredients. Having that, it will update the Text field named <code>_OUTPUT_TEXT_</code> with <code>.update()</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window[<span class="string">&quot;_OUTPUT_TEXT_&quot;</span>].update(<span class="string">&quot;Whatever Text you want&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><code>window[&#39;_AMMO_AMOUNT_&#39;]</code> can be used to update any other field, by changing its index name.</p>
+<p>And that’s it, the final effect can be seen below.</p>
+<div style="text-align: center;">
+<img src="/2023/05/29/easy-gui-app-with-python/GUI_full.png" class="" title="After filling.">
+</div>
+
+<p><em>Figure. Working script with full output.</em></p>
+<p>As can be seen, the script will update on every change in input fields, so the Apply button is useless. </p>
+<br/>
+
+<h1 id="Conclusions"><a href="#Conclusions" class="headerlink" title="Conclusions"></a>Conclusions</h1><p>Creating a GUI app with the help of <code>PySimpleGUI</code> is extremely easy and fast in making basic GUI app. It will bring basic input and outputs to the graphical usage.</p>
+<br/>
+
+<h1 id="Sources"><a href="#Sources" class="headerlink" title="Sources"></a>Sources</h1><p>[1] <a target="_blank" rel="noopener" href="https://www.pysimplegui.org/en/latest/">https://www.pysimplegui.org/en/latest/</a></p>
+<p>[2] <a target="_blank" rel="noopener" href="https://github.com/AlekSmola/ARKulator">https://github.com/AlekSmola/ARKulator</a></p>
+<p>[3] <a target="_blank" rel="noopener" href="https://realpython.com/pysimplegui-python/">https://realpython.com/pysimplegui-python/</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/paypal.jpg" alt="AlekSmola PayPal">
+        <span>PayPal</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/instructions/" rel="tag"><i class="fa fa-tag"></i> instructions</a>
+              <a href="/tags/tutorials/" rel="tag"><i class="fa fa-tag"></i> tutorials</a>
+              <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+              <a href="/tags/gui/" rel="tag"><i class="fa fa-tag"></i> gui</a>
+              <a href="/tags/appications/" rel="tag"><i class="fa fa-tag"></i> appications</a>
+              <a href="/tags/apps/" rel="tag"><i class="fa fa-tag"></i> apps</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/05/19/How-to-rewind-Tinywhoop-BLDC-motor/" rel="prev" title="How to Rewind a Tinywhoop (Or Any Other) BLDC Motor">
+                  <i class="fa fa-chevron-left"></i> How to Rewind a Tinywhoop (Or Any Other) BLDC Motor
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AlekSmola in https://aleksmola.github.io/</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">5k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">18 mins.</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/AlekSmola" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
