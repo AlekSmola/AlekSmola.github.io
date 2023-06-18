@@ -1,6 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>How to Create Automatic, Figures, Tables and Equations References as Well as a Bibliography in MS WORD.</title>
+    <url>/2023/06/02/How-to-create-automatic-references-in-MS-WORD/</url>
+    <content><![CDATA[<br/>
+
+<h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h1><p>During studies, it is required to back up the word you type with some other research papers&#x2F;documents&#x2F;scientific research [1]. Basically, by writing a theoretical introduction chapter to some thesis everything should in some way be quoted and not ‘made up by students imaginations’ [2]. It is usually accomplished by putting <code>[number#]</code> after each sentence&#x2F;paragraph which leads to a full source listed at the end of document [3]. It is annoying and students hate it [4]. Not only the list of references should be kept in order [5], but also each figure should have its number leading to it. Tables and equations follow the same scheme [6]. </p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/thumb.png" class="" title="Reference photo"></div> 
+
+<p>This process seems easy when you start writing the document. You just go from start to the end and write everything in order and numbers will match up [7], right? Well, if you are very consistent, yes but it happens all the time you start writing from actual work and after that, you go on with introduction and theory. In such a case, you would have to change all of the numbers in <code>[]</code> after each change which is a NIGHTMARE [2134]<br>Most simple text editors do not implement any functionality to automate this [2314]. In reality, it is an easy task to automate. In this example, MS Word will be used to show how easy it is to automate handling references like a pro! [4234].</p>
+<span id="more"></span>
+<br/>
+
+<h1 id="2-How-to"><a href="#2-How-to" class="headerlink" title="2. How to"></a>2. How to</h1><p>MS Word has the option to create automatic references for sources (like books, researches and documents), Figures, Tables and Equations. This means if you want to reference a certain Figure in multiple locations in the document, but the number of that Figure may change along the writing process, the program will automatically adjust its reference number and put a new one instead of the old one for you. Genius. </p>
+<h2 id="2-1-References"><a href="#2-1-References" class="headerlink" title="2.1. References"></a>2.1. References</h2><div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/1.jpg" class="" title="Citations location"></div> 
+
+<p><em>Figure. Citations location.</em></p>
+<p>First, go to <code>References &gt; Citation &amp; Bibliography &gt; Insert Citation &gt; Add new source</code>. MS Word keeps a list of all your references inside the document. In the following window, change the type of source and fill in all of the data. By doing so, MS Word will automatically generate a list of references. </p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/2.jpg" class="" title="New citation creation window"></div> 
+
+<p><em>Figure. New citation creation window.</em></p>
+<p>Take a look at the Tag name at the left bottom corner of the window. This is a unique internal identifier for each source. You don’t have to care about it, but if you want to quickly find each source you may provide some naming scheme. In other cases, MS Word will do it by itself. Click OK to add:</p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/4.jpg" class="" title="Filled window"></div> 
+
+<p><em>Figure. Filled window.</em></p>
+<p>Word will add the <code>[1]</code> in the place of the cursor. This <code>[1]</code> will lead to the created resource.<br>Note that this <code>[1]</code> is not a text. It’s like a link that may change but will always lead to the same thing.<br>To create a list of references, navigate to the end of the document and click: <code>References &gt; Citation &amp; Bibliography &gt; Bibliography &gt; and pick the preset you like</code>. </p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/4.jpg" class="" title="Inserted sources"></div> 
+
+<p><em>Figure. Inserted sources.</em></p>
+<p>List of references with all your sources should display. Note again, that it is not a normal text.</p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/5.jpg" class="" title="Automatic bibliography"></div> 
+
+<p><em>Figure. Automatic bibliography preview. Note that it is a field which can be updated.</em></p>
+<p>If you add a new source, click on this Bibliography field. Above it, there should be a text saying to update the field, click it to insert any new references.</p>
+<!-- source: https://www.w3schools.com/w3css/w3css_alerts.asp -->
+<link rel="stylesheet" href="warning-window.css">
+<body class="w3-container w3-auto">
+
+<div class="w3-panel w3-orange w3-round">
+  <h3>Watch out for!</h3>
+  <p>MS Word will NOT update all the fields by itself. It keeps track of them, but if you want to update them all at once it will not do so even during exporting or printing documents. A solution to that is to after you finally finish all the work, Save the document then select all of the content of the document (ctrl+A), then right-click, then click Update field. It may take a while but will work and update everything. </p>
+  <div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/7.jpg" class="" title="Watch out for this"></div> 
+
+<p><em>Figure. How to update every field at once.</em></p>
+</div> 
+</body>
+
+
+<p>Now, to check if the method works indeed, put your cursor at the beginning of the document and add a new source. </p>
+<p>Green sources number 1 and 2 are added first, in order. A red reference is the source added last. As can be seen, it added red source as <code>[1]</code> because the reference is at the beginning of the document. </p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/8.jpg" class="" title="Add new before"></div> 
+
+<p><em>Figure. Will automatic numbering work?</em></p>
+<p>Now, select all text, and update the fields. This results in:</p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/9.jpg" class="" title="AFter updating"></div> 
+
+<p><em>Figure. After updating.</em></p>
+<p>Correct numbers which all updates correspondingly. Just like the bibliography at the end:</p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/10.jpg" class="" title="Updated bibliography"></div> 
+
+<p><em>Figure. Updated bibliography to include source added last at the beginning fo the document.</em></p>
+<h2 id="2-2-Figures-Equations-and-Tables"><a href="#2-2-Figures-Equations-and-Tables" class="headerlink" title="2.2. Figures, Equations and Tables"></a>2.2. Figures, Equations and Tables</h2><p>Figures descriptions (graphs, pictures, etc.) usually appear below them with <code>Figure 10. Description of Figure...</code> or <code>Figure 3.6. Description of Figure...</code> where 3.6 is the 6th Figure in a 3rd chapter. This is just the convention that differs.<br>To cite images, I recommend creating a new style in <code>Home &gt; Styles</code>. I use this style to make citations appear closer to the picture. For that, you can use <code>No Spacing</code> preset style. Another style may be used if you are not satisfied with the default word citation formatting.<br>Paste the image you want to include. Select it by clicking on it. Go into <code>References &gt; Captions &gt; Insert Caption</code>. </p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/11.jpg" class="" title="Citing images"></div> 
+
+<p><em>Figure. Citing images.</em></p>
+<p>Fill in the options you like. If you want to use the scheme of <code>Figure 3.6</code> you have to go into numbering and select based on which style numbering should apply. Note that your chapter names in work should use this style and the style should have numbering like: <code>1. Introduction</code>. Numbering is the easiest to implement by starting a new line with <code>1</code> &gt; <code>dot</code> &gt; <code>space</code>&gt; <code>chapter name</code>. You may also edit the used style (like Heading 1) to implement numbers automatically. When you are satisfied with the caption style, press OK in a popup window. The caption will appear:<br>  <div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/12.jpg" class="" title="Cited image"></div> </p>
+<p><em>Figure. Default MS Word citation.</em></p>
+<p>For my taste, the caption should be closer in vertical distance to the picture. Select cited image and apply <code>No Spacing</code> style to it:</p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/13.jpg" class="" title="closer citation"></div> 
+
+<p><em>Figure. Description of an image closer to it.</em></p>
+<p>To insert <code>List of Figures</code> at the end of the document, head over to <code>References &gt; Captions &gt; Insert Table of Figures</code>.<br>In the popup window select what format you like.<br>It should yield something like the following:</p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/14.jpg" class="" title="List of Figures"></div> 
+
+<p><em>Figure. The default list of Figures.</em></p>
+<p>Just like with references the numbers of each Figure will update to reflect the position in the article.<br>For Tables things appear more or less the same. Use citations just like with Figures. I create separate text style for Figures, other for Tables and Equations. Table may look like this:</p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/15.jpg" class="" title="Table citations"></div> 
+
+<p><em>Figure. Table citation.</em></p>
+<p>To create the List of Tables, use the same way as in the case of Figures. Different from that, change <code>Caption</code> label to <code>Table</code>, and in <code>Options</code> select style which you have created for citation of tables, in my case <code>Tables</code>.</p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/16.jpg" class="" title="Tables"></div> 
+
+<p><em>Figure. List of Tables config example.</em></p>
+<p>For equations, the same story:<br>Note the table in which the equation as well as its number were placed. Its border is displayed as a dotted line, this is why the table does not have its borders marked by anything. After exporting to pdf or printing it, it will be completely invisible. I think it looks better that way. As for List of Equations same steps as for the Tables. For the number on the right of the equations, i.e. <code>Equation 1</code> it is a link as well, and how to place it will be discussed in next chapter below.</p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/17.jpg" class="" title="Equation presentation example"></div> 
+
+<p><em>Figure. Equation presentation example.</em></p>
+<h2 id="2-3-Cross-referencing"><a href="#2-3-Cross-referencing" class="headerlink" title="2.3. Cross referencing"></a>2.3. Cross referencing</h2><p>Let me say that:</p>
+<blockquote>
+<p>In Figure 12.16 there is presented a graph of something. It precisely describes the something in a details. Please take a look at the white line crossing white background. It is very important. </p>
+</blockquote>
+<div style="text-align: center;"></div> 
+
+<p><em>Figure 12.16. Something something.</em></p>
+<p>It would be nice to automatically update the mentioned <code>Figure 12.16</code> number when it changes, right? MS Word can do it as well!<br>It is called <code>cross-reference</code>. And it allows pasting a special field in the text which will point to the object we want. It also updates just like captions and reference numbers.<br>To do so head over to the <code>References &gt; Captions &gt; Cross-reference</code>. </p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/19.jpg" class="" title="Crossereference"></div> 
+
+<p><em>Figure. Cross-reference window location.</em></p>
+<p>In the pop-up window select what object you want to reference and how it should be presented:</p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/20.jpg" class="" title="Referencing example"></div> 
+
+<p><em>Figure. Referencing example.</em></p>
+<blockquote>
+<p>HINT: After pressing <code>Insert</code> the reference will appear where the cursor is. The Cross-reference window do not have to be closed and can stay on hand. You may reference to anything you want: figures, equations, tables and chapters. Handy!</p>
+</blockquote>
+<h2 id="2-4-Table-of-contents-Index"><a href="#2-4-Table-of-contents-Index" class="headerlink" title="2.4. Table of contents (Index)"></a>2.4. Table of contents (Index)</h2><p>Making Index of work containing all chapters, subchapters and their corresponding pages is another thing which is obviously done automatically by the program and no one should ever do this by hand.<br>To create it: <code>References &gt; Table of Contents &gt; Table of Contents</code> and choose some preset you like. It will automatically generate the index based on the styles: <code>Heading 1</code>, <code>Heading 2</code> and <code>Heading 3</code>.</p>
+<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/21.jpg" class="" title="Table of contents"></div> 
+
+<p><em>Figure. Table of contents generated by MS Word. Here, used one of the available presets.</em></p>
+<br/>
+
+<h1 id="3-Conclusions"><a href="#3-Conclusions" class="headerlink" title="3. Conclusions"></a>3. Conclusions</h1><p>In this quick instructions, I present you a way of making life easier during writing longer documents, research papers of scientific documentation. All of these methods were used by me and thanks to them an unbelievable amount of work was skipped and covered by the computer, which is designed to do so.<br>I hope someone out there will benefit from it!</p>
+<br/>
+
+<h1 id="4-References"><a href="#4-References" class="headerlink" title="4. References"></a>4. References</h1><p>[1] For some unknown-to-universe reason.<br>[2] ‘trust me bro’ is a legit source of knowledge.<br>[3] You can also pretend this list was lost during the export process.<br>[4] That’s the only thing that has proper reference in this paragraph.<br>[5] There is always this one professor who keeps track of it.<br>[6] why?<br>[7] they never do since you can’t count above 7.<br>[2134] Told ya<br>[2314] Unless you are using LaTeX, in which case you are a God.<br>[4234] That’s actually true.</p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>tutorials</tag>
+        <tag>msword</tag>
+        <tag>ms_word</tag>
+        <tag>word</tag>
+        <tag>instructions</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>How to Rewind a Tinywhoop (Or Any Other) BLDC Motor</title>
     <url>/2023/05/19/How-to-rewind-Tinywhoop-BLDC-motor/</url>
     <content><![CDATA[<p>Tutorial on how to rewind a broken BLDC motor by replacing the windings in the stator.</p>
@@ -159,12 +285,12 @@
         <category>Networking</category>
       </categories>
       <tags>
+        <tag>tutorials</tag>
         <tag>instructions</tag>
         <tag>flashing</tag>
         <tag>dd-wrt</tag>
         <tag>archer c8</tag>
         <tag>tp-link</tag>
-        <tag>tutorials</tag>
         <tag>de-bricking</tag>
       </tags>
   </entry>
@@ -263,8 +389,8 @@
         <category>Python</category>
       </categories>
       <tags>
-        <tag>instructions</tag>
         <tag>tutorials</tag>
+        <tag>instructions</tag>
         <tag>python</tag>
         <tag>gui</tag>
         <tag>appications</tag>
