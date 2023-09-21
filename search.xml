@@ -295,6 +295,40 @@
       </tags>
   </entry>
   <entry>
+    <title>Updating Discord PC App on Linux With Terminal Automation!</title>
+    <url>/2023/09/21/discord-terminal-updater/</url>
+    <content><![CDATA[<h1 id="1-Discord-Updater"><a href="#1-Discord-Updater" class="headerlink" title="1. Discord Updater"></a>1. Discord Updater</h1><p>Little simple bash script which allows automatic updates of Discord app for Linux.</p>
+<p>Every time there is an update of Discord app it is required to open browser and download then install <code>.deb</code> package. It is not really hard but annoying over time. This little script will do it automatically without user input.</p>
+<div style="text-align: center;">
+<img src="/2023/09/21/discord-terminal-updater/Discord-Updater.png" class="" title="Discord updater banner">
+</div>
+
+<br/>
+
+
+<h1 id="2-Link-https-github-com-AlekSmola-Discord-Terminal-Updater"><a href="#2-Link-https-github-com-AlekSmola-Discord-Terminal-Updater" class="headerlink" title="2. Link: https://github.com/AlekSmola/Discord-Terminal-Updater"></a>2. Link: <a href="https://github.com/AlekSmola/Discord-Terminal-Updater">https://github.com/AlekSmola/Discord-Terminal-Updater</a></h1><p><strong><a href="https://github.com/AlekSmola/Discord-Terminal-Updater">https://github.com/AlekSmola/Discord-Terminal-Updater</a></strong></p>
+<span id="more"></span>
+
+<br/>
+
+<h1 id="3-How-to"><a href="#3-How-to" class="headerlink" title="3. How to"></a>3. How to</h1><p>The script can be run directly just like any other script would. </p>
+<p>It can also be added as startup script.</p>
+<p>Additionally it can be placed at the end of <code>.bashrc</code> file to be executed every time the user logs in.</p>
+<p>Personally, I use the other script to update entire system with one command. I fused these two scripts together. </p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>instructions</tag>
+        <tag>discord</tag>
+        <tag>Linux</tag>
+        <tag>bash</tag>
+        <tag>applications</tag>
+        <tag>apps</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Easy Way to Create a GUI Application for Your Project in Python</title>
     <url>/2023/05/29/easy-gui-app-with-python/</url>
     <content><![CDATA[<h1 id="1-It’s-surprisingly-easy-to-create-your-own-GUI-app-nowadays"><a href="#1-It’s-surprisingly-easy-to-create-your-own-GUI-app-nowadays" class="headerlink" title="1. It’s surprisingly easy to create your own GUI app nowadays"></a>1. It’s surprisingly easy to create your own GUI app nowadays</h1><p>Modern solutions for programming became extremely accessible. </p>
@@ -391,10 +425,10 @@
       <tags>
         <tag>tutorials</tag>
         <tag>instructions</tag>
+        <tag>apps</tag>
         <tag>python</tag>
         <tag>gui</tag>
         <tag>appications</tag>
-        <tag>apps</tag>
       </tags>
   </entry>
   <entry>
