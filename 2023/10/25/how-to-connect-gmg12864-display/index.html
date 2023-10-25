@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/site_logo2white_exp.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha256-/4UQcSmErDzPCMAiuOiWPVVsNN2s3ZY/NsmXNcj0IFc=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"aleksmola.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"bounceInLeft","post_block":"bounceInRight","post_header":"bounceInRight","sidebar":"bounceInLeft"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":2,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="1. GMG12864 display overviewThe GMG12864-06D display is and module which can be used with microcontrollers with SPI interface. It runs on 3.3V logic as well as a power. Screen size is: 58 by 28mm,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How_to_connect_gmg12864_display">
+<meta property="og:url" content="https://aleksmola.github.io/2023/10/25/how-to-connect-gmg12864-display/index.html">
+<meta property="og:site_name" content="AlekSmola">
+<meta property="og:description" content="1. GMG12864 display overviewThe GMG12864-06D display is and module which can be used with microcontrollers with SPI interface. It runs on 3.3V logic as well as a power. Screen size is: 58 by 28mm,">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://aleksmola.github.io/2023/10/25/how-to-connect-gmg12864-display/screen_show.png">
+<meta property="og:image" content="https://aleksmola.github.io/2023/10/25/how-to-connect-gmg12864-display/screen_specs.jpg">
+<meta property="og:image" content="https://aleksmola.github.io/2023/10/25/how-to-connect-gmg12864-display/scren_pinout.jpg">
+<meta property="article:published_time" content="2023-10-25T10:29:08.000Z">
+<meta property="article:modified_time" content="2023-10-25T14:11:32.174Z">
+<meta property="article:author" content="AlekSmola">
+<meta property="article:tag" content="tutorials">
+<meta property="article:tag" content="instructions">
+<meta property="article:tag" content="esp32">
+<meta property="article:tag" content="displays">
+<meta property="article:tag" content="gpio">
+<meta property="article:tag" content="pins">
+<meta property="article:tag" content="arduino">
+<meta property="article:tag" content="GMG12864-06D">
+<meta property="article:tag" content="u8g2">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://aleksmola.github.io/2023/10/25/how-to-connect-gmg12864-display/screen_show.png">
+
+
+<link rel="canonical" href="https://aleksmola.github.io/2023/10/25/how-to-connect-gmg12864-display/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://aleksmola.github.io/2023/10/25/how-to-connect-gmg12864-display/","path":"2023/10/25/how-to-connect-gmg12864-display/","title":"How_to_connect_gmg12864_display"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>How_to_connect_gmg12864_display | AlekSmola</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">AlekSmola</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Just stuff I try to accomplish in my free time.</p>
+      <img class="custom-logo-image" src="/images/site_logo2transparent.png" alt="AlekSmola">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">5</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">33</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">7</span></a></li><li class="menu-item menu-item-about-page"><a href="/about-page/" rel="section"><i class="fa fa-user fa-fw"></i>About Page</a></li><li class="menu-item menu-item-about-author"><a href="/about-me/" rel="section"><i class="fa fa-user fa-fw"></i>About Author</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-GMG12864-display-overview"><span class="nav-text">1. GMG12864 display overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Connection-with-the-microcontroller"><span class="nav-text">2. Connection with the microcontroller</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Sources"><span class="nav-text">3. Sources</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="AlekSmola"
+      src="/images/blankimage.png">
+  <p class="site-author-name" itemprop="name">AlekSmola</p>
+  <div class="site-description" itemprop="description">"Simple site"</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/aleksmola" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;aleksmola" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://aleksmola.github.io/2023/10/25/how-to-connect-gmg12864-display/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blankimage.png">
+      <meta itemprop="name" content="AlekSmola">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AlekSmola">
+      <meta itemprop="description" content=""Simple site"">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="How_to_connect_gmg12864_display | AlekSmola">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          How_to_connect_gmg12864_display
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-10-25 12:29:08 / Modified: 16:11:32" itemprop="dateCreated datePublished" datetime="2023-10-25T12:29:08+02:00">2023-10-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tutorials/" itemprop="url" rel="index"><span itemprop="name">Tutorials</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/DIY/" itemprop="url" rel="index"><span itemprop="name">DIY</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>840</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <div style="text-align: center;">
+<img src="/2023/10/25/how-to-connect-gmg12864-display/screen_show.png" class="" title="Screen Showcase">
+</div>
+
+<h1 id="1-GMG12864-display-overview"><a href="#1-GMG12864-display-overview" class="headerlink" title="1. GMG12864 display overview"></a>1. GMG12864 display overview</h1><p>The GMG12864-06D display is and module which can be used with microcontrollers with <strong>SPI</strong> interface. It runs on <strong>3.3V</strong> logic as well as a power. Screen size is: <strong>58 by 28mm</strong>, amount of pixels: <strong>128 by 64 pixels</strong>. Driver IC is <strong>ST7565R</strong>. </p>
+<p>The display also have the nice texture of the displayed characters which make it more appealing than other screens.</p>
+<span id="more"></span>
+
+<div style="text-align: center;">
+<img src="/2023/10/25/how-to-connect-gmg12864-display/screen_specs.jpg" class="" title="Screen Specs">
+</div>
+
+
+<h1 id="2-Connection-with-the-microcontroller"><a href="#2-Connection-with-the-microcontroller" class="headerlink" title="2. Connection with the microcontroller"></a>2. Connection with the microcontroller</h1><p>The problem which may be encountered after the purchase is the connection scheme and how to wire it up so it works. Since the display uses SPI interface it requires a few signal lines. They are not clearly labeled, especially when header pins are soldered. Other problem can be few <em>mystery</em> pins which are not described anywhere. Here I will present the correct labeling so that the display can display!</p>
+<p>Since the display uses SPI which requires more data lines than I2C or UART wiring can get messy. </p>
+<p>To power display up, it requires 3.3V potential which has to be connected to the <ins><strong>A</strong></ins>(node) of backlight as well as to driver <ins><strong>VDD</strong></ins> pin of driver. Same applies to ground connection which goes to <ins><strong>VSS</strong></ins> and <ins><strong>K</strong></ins>(athode) as labeled on the PCB.</p>
+<p>This tutorial assumes working with <a target="_blank" rel="noopener" href="https://github.com/olikraus/u8g2">u8g2</a> library which makes very easy to drive different types of displays.</p>
+<p>The proper constructor which works for this display is:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">U8G2_ST7565_NHD_C12864_F_4W_SW_SPI <span class="title function_">u8g2</span><span class="params">(U8G2_R0, </span></span><br><span class="line"><span class="params">                                        <span class="comment">/* clock=*/</span> SCL, </span></span><br><span class="line"><span class="params">                                        <span class="comment">/* data=*/</span> SI, </span></span><br><span class="line"><span class="params">                                        <span class="comment">/* cs=*/</span> CS, </span></span><br><span class="line"><span class="params">                                        <span class="comment">/* dc=*/</span> RS, </span></span><br><span class="line"><span class="params">                                        <span class="comment">/* reset=*/</span> RSE     )</span>;</span><br></pre></td></tr></table></figure>
+
+<p>where:</p>
+<ul>
+<li><p><em>U8G2_R0</em> is the rotation of the screen, which can be changed according to the documentation <a target="_blank" rel="noopener" href="https://github.com/olikraus/u8g2/wiki/u8g2reference#carduino-example">here</a></p>
+</li>
+<li><p><em>clock</em>, <em>data</em>, and <em>cs</em> are SPI pins.</p>
+</li>
+<li><p><em>dc</em> is the Data Command pin which differentiate wether sent data to the display is a command (set contrast, rotation, etc) or actual data to be displayed on screen (text, graphics, data, etc)</p>
+</li>
+<li><p><em>reset</em> is reset pin which can be used to reset the screen completely or put it into sleep mode.</p>
+</li>
+</ul>
+</br>
+
+<p>Starting from pin number #1 (looking from back side of a display and having pin header on top it will be right most pin). Pin number #1 is <ins><strong>CS</strong></ins> which is stands for Chip Select. This can be connected to any GPIO output pin of microcontroller and has to be pulled low when writing data to display. Connect to <ins><strong>cs</strong></ins> pin in u8g2 definition.</p>
+<p>Pin number #2 is <ins><strong>RSE</strong></ins> (second from right side). This is to be connected to the GPIO pin assigned to <ins><strong>reset</strong></ins> of u8g2 library definition. This may come from ‘Register Select Enable’. </p>
+<p>Pin number #3 is <ins><strong>RS</strong></ins> (Register Select most likely). Connect to <strong>DC</strong></ins> pin.</p>
+<p>Pin number #4 is <ins><strong>SCL</strong></ins> pin. This is SPI Serial Clock (sometimes denoted as SCLK also) pin and has to be connected to a specific pin. On Arduino UNO there is only one pin used for that, on other boards like ESP32 more pins can be defined for that purpose. Connect as to <ins><strong>clock</strong></ins> definition in u8g2 library. </p>
+<p>Pin number #5 is <ins><strong>SI</strong></ins>. Data Input pin. MOSI in older definition of SPI protocol. This also has to be connected to a specific pin on Arduino UNO. On other boards, can be defined for more pins as user desired. Connect to <ins><strong>data</strong></ins> pin defined in u8g2. </p>
+<div style="text-align: center;">
+<img src="/2023/10/25/how-to-connect-gmg12864-display/scren_pinout.jpg" class="" title="Screen pinout">
+</div>
+
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Display Pin #</strong> (seen from right to left), bottom side</th>
+<th align="center"><strong>Display Pin</strong></th>
+<th align="center"><strong>Function</strong></th>
+<th align="center"><strong>u8g2 library defintion</strong></th>
+<th align="center"><strong>Micrcontroller pin</strong></th>
+<th align="center"><strong>Example pin for ESP32-S2</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">CS</td>
+<td align="center">Chip Select, any GPIO with output capabilities</td>
+<td align="center">cs</td>
+<td align="center">any GPIO</td>
+<td align="center">38</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">RSE</td>
+<td align="center">Register Select Enable, enable for display</td>
+<td align="center">reset</td>
+<td align="center">any GPIO</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">RS</td>
+<td align="center">Register Select, control pin</td>
+<td align="center">dc</td>
+<td align="center">any GPIO</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">SCL</td>
+<td align="center">Serial Clock, SPI pin</td>
+<td align="center">clock</td>
+<td align="center">SCLK</td>
+<td align="center">7</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">SI</td>
+<td align="center">Serial In, data input, (MOSI)</td>
+<td align="center">data</td>
+<td align="center">MOSI</td>
+<td align="center">11</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">VDD</td>
+<td align="center">+Power supply for display driver</td>
+<td align="center">-</td>
+<td align="center">3.3V</td>
+<td align="center">3.3V</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">VSS</td>
+<td align="center">-Power supply for display driver</td>
+<td align="center">-</td>
+<td align="center">GND</td>
+<td align="center">GND</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">A</td>
+<td align="center">+Power supply for backlight (normal LED)</td>
+<td align="center">-</td>
+<td align="center">3.3V</td>
+<td align="center">3.3V</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">K</td>
+<td align="center">-Power supply for backlight (normal LED)</td>
+<td align="center">-</td>
+<td align="center">GND</td>
+<td align="center">GND</td>
+</tr>
+</tbody></table>
+<p>Now upload example script from U8g2 examples: U8g2 &gt; full_buffer &gt; HelloWorld.ino and display should print out text. </p>
+<p><strong>Side Note:</strong><br>Contrast of the screen may require setting in order to see anything. With very small value the text may not be visible at all and thus, cause confusion. In my testing good starting value is <code>640</code> but lower values may be acceptable if screen is to be kept in dark:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u8g2.setContrast(<span class="number">640</span>); </span><br></pre></td></tr></table></figure>
+
+<h1 id="3-Sources"><a href="#3-Sources" class="headerlink" title="3. Sources"></a>3. Sources</h1><p>[1] <a target="_blank" rel="noopener" href="https://github.com/olikraus/u8g2/wiki/u8g2reference">https://github.com/olikraus/u8g2/wiki/u8g2reference</a></p>
+<p>[2] <a target="_blank" rel="noopener" href="https://forum.arduino.cc/t/lcd-12864-st7565-13-pin/645789/4">https://forum.arduino.cc/t/lcd-12864-st7565-13-pin/645789/4</a></p>
+<p>[3] There is also a review on Aliexpress site of some generous buyer (D***v) who figured out the connection and shared it <a target="_blank" rel="noopener" href="https://www.aliexpress.com/item/1005001621784395.html">here</a>. Thank you.</p>
+<p>[3] Images: <a target="_blank" rel="noopener" href="https://megashara.biz/ua/p1590813863-arduino-zhk-lcd12864.html">https://megashara.biz/ua/p1590813863-arduino-zhk-lcd12864.html</a>,<br><a target="_blank" rel="noopener" href="https://www.aliexpress.com/item/1005001621784395.html">https://www.aliexpress.com/item/1005001621784395.html</a>, </p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/paypal.jpg" alt="AlekSmola PayPal">
+        <span>PayPal</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/tutorials/" rel="tag"><i class="fa fa-tag"></i> tutorials</a>
+              <a href="/tags/instructions/" rel="tag"><i class="fa fa-tag"></i> instructions</a>
+              <a href="/tags/esp32/" rel="tag"><i class="fa fa-tag"></i> esp32</a>
+              <a href="/tags/displays/" rel="tag"><i class="fa fa-tag"></i> displays</a>
+              <a href="/tags/gpio/" rel="tag"><i class="fa fa-tag"></i> gpio</a>
+              <a href="/tags/pins/" rel="tag"><i class="fa fa-tag"></i> pins</a>
+              <a href="/tags/arduino/" rel="tag"><i class="fa fa-tag"></i> arduino</a>
+              <a href="/tags/GMG12864-06D/" rel="tag"><i class="fa fa-tag"></i> GMG12864-06D</a>
+              <a href="/tags/u8g2/" rel="tag"><i class="fa fa-tag"></i> u8g2</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/09/21/discord-terminal-updater/" rel="prev" title="Updating Discord PC App on Linux With Terminal Automation!">
+                  <i class="fa fa-chevron-left"></i> Updating Discord PC App on Linux With Terminal Automation!
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AlekSmola in https://aleksmola.github.io/</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">8k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">28 mins.</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/AlekSmola" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
