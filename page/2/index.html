@@ -88,7 +88,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">5</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">33</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">7</span></a></li><li class="menu-item menu-item-about-page"><a href="/about-page/" rel="section"><i class="fa fa-user fa-fw"></i>About Page</a></li><li class="menu-item menu-item-about-author"><a href="/about-me/" rel="section"><i class="fa fa-user fa-fw"></i>About Author</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">6</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">37</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">8</span></a></li><li class="menu-item menu-item-about-page"><a href="/about-page/" rel="section"><i class="fa fa-user fa-fw"></i>About Page</a></li><li class="menu-item menu-item-about-author"><a href="/about-me/" rel="section"><i class="fa fa-user fa-fw"></i>About Author</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -166,6 +166,121 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://aleksmola.github.io/2023/05/19/archerc8-flashing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blankimage.png">
+      <meta itemprop="name" content="AlekSmola">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AlekSmola">
+      <meta itemprop="description" content=""Simple site"">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | AlekSmola">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/05/19/archerc8-flashing/" class="post-title-link" itemprop="url">How to Flash TP-Link Archer C8v2 With DD-WRT.</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-05-19 18:33:04 / Modified: 20:09:32" itemprop="dateCreated datePublished" datetime="2023-05-19T18:33:04+02:00">2023-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tutorials/" itemprop="url" rel="index"><span itemprop="name">Tutorials</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Networking/" itemprop="url" rel="index"><span itemprop="name">Networking</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="0-DISCLAIMER"><a href="#0-DISCLAIMER" class="headerlink" title="0. DISCLAIMER"></a>0. DISCLAIMER</h1><p><ins>I am not responsible for anything.</ins> In this tutorial, I described my way of flashing dd-wrt onto this router. You may have different hardware and the methods described here may not work. Please keep in mind that you may end up with bricked device and you agreed with this loss. </p>
+<br/>
+
+<h1 id="1-Case-scenario"><a href="#1-Case-scenario" class="headerlink" title="1. Case scenario"></a>1. Case scenario</h1><p>TP-Link Archer C8v1 and v2 are wireless routers. Even in 2023, it will handle most of the tasks thrown at it by normal home users. However, support for it ended way back in 2016 and no more official updates were released since then <a target="_blank" rel="noopener" href="https://www.tp-link.com/pl/support/download/archer-c8/v2/#Firmware">[1]</a>.<br>It can be brought back to safer operation with modern updated firmware like dd-wrt. </p>
+<br/>
+
+<h1 id="2-The-problem"><a href="#2-The-problem" class="headerlink" title="2. The problem"></a>2. The problem</h1><p>According to <a target="_blank" rel="noopener" href="https://dd-wrt.com/support/router-database/?model=Archer%20C8%20(AC1750)_1.x,%202.x">[2]</a> support page on dd-wrt.com site, this device is supported and there is an image for it. Following instructions on <a target="_blank" rel="noopener" href="https://wiki.dd-wrt.com/wiki/index.php/TP_Link_Archer_C8#Installation">[3]</a> flashing this router with dd-wrt is easy. It involves only a few steps. Main one is uploading .bin file via the original TP-Link site. Unfortunately, there are some problems with <strong>v2</strong> hardware version which I encountered.</p>
+<p>While performing a flash the following errors can be encountered: <code>error -5533</code> and <code>Error code: 18005</code>. It appears the .bin file on the dd-wrt download page is meant only for the v1 hardware version. Hence the <code>error -5533</code> appears. </p>
+<br/>
+
+<h1 id="3-Solution"><a href="#3-Solution" class="headerlink" title="3. Solution"></a>3. Solution</h1><p>To solve this issue it is suggested to downgrade the firmware with the official release.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/05/19/archerc8-flashing/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -314,13 +429,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">8k</span>
+    <span title="Word count total">9k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">28 mins.</span>
+    <span title="Reading time total">31 mins.</span>
   </span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>

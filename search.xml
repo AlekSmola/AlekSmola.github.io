@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ESP32S2 Problem With More SPI Devices [SOLVED]</title>
+    <url>/2023/12/02/ESP32-S2-problem/</url>
+    <content><![CDATA[<h1 id="1-The-Problem"><a href="#1-The-Problem" class="headerlink" title="1. The Problem"></a>1. The Problem</h1><p>The problem appears when there is more than one device connected to the SPI bus. As it is known, SPI interface uses several wires to achieve fast data rates <a href="https://www.ti.com/lit/ug/sprugp2a/sprugp2a.pdf">[1]</a>. It requires one data-in wire, one data-out wire, one clock wire, a ground reference and one chip-select (CS) wire. </p>
+<p>The last one is the problem. </p>
+<p>ESP32 allows remapping the default SPI pins for almost any other available pin <a href="https://randomnerdtutorials.com/esp32-spi-communication-arduino/">[2]</a>. This allows a certain level of flexibility in a design. </p>
+<p>Each of the new devices connected to the same SPI bus requires one additional chip-select wire dedicated to this device. Since there is a default CS pin, there is a problem with changing it. </p>
+<p>It yields the issue that only one device can be accessed, since the CS pin points to only one device.</p>
+<span id="more"></span>
+
+<h1 id="2-My-Setup"><a href="#2-My-Setup" class="headerlink" title="2. My Setup"></a>2. My Setup</h1><p>I encountered this problem with ESP32-S2 (board: LOLIN S2 mini) while having <a href="https://aleksmola.github.io/2023/10/25/how-to-connect-gmg12864-display/">GMG12864 display</a> with <a href="https://github.com/olikraus/u8g2">u8g2</a> graphic Arduino library and a generic SD card reader connected to the same SPI bus. </p>
+<p>The SD card reader initialized fine and read the file that was meant for logging. Then, when the initialization of a display comes, it overwrites the previous configuration and it stays that way. When the time to log data to the SD card comes, it can not open the file for writing, since ESP still tries to communicate with the display.</p>
+<p>My pins:</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">uint8_t</span> SD_SPI_CS = <span class="number">12</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">uint8_t</span> SCREEN_SPI_CS = <span class="number">38</span>;</span><br></pre></td></tr></table></figure>
+
+<p>I defined different SPI classes for each device with <code>SPIClass spiSD = SPIClass(HSPI);</code> and <code>spiSD.begin(7, 9, 11, SD_SPI_CS);</code> (same for screen), but it did not help. </p>
+<p>Even with <code>spiSD.end()</code> before another device SPI class is started. </p>
+<p>Manually setting each CS pin for low and high did not help either.</p>
+<p>It is probably the issue of libraries used to drive both devices. </p>
+<h1 id="3-Solution"><a href="#3-Solution" class="headerlink" title="3. Solution"></a>3. Solution</h1><p>For my specific case, to use these two devices was to leave SD card as is and initiate display every time any update is to be made. </p>
+<p>To do so, the <code>u8g2.begin();</code> can be called before making any changes to the displayed content. Normally, it has to be called only once - in a setup function. Unfortunately, this creates a negative side effect of the screen blinking every time this is called. Initially, it does not matter, but when on the screen only some data is to be refreshed, and the entire screen refreshes - it is not pleasing to see. It can be disturbing. </p>
+<p>To solve this, the source code of <code>u8g2</code> can be investigated:</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">begin</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    <span class="comment">/* note: call to u8x8_utf8_init is not required here, this is done in the setup procedures before */</span></span><br><span class="line">    <span class="meta">#<span class="keyword">ifndef</span> U8G2_USE_DYNAMIC_ALLOC</span></span><br><span class="line">    initDisplay(); </span><br><span class="line">    clearDisplay(); </span><br><span class="line">    setPowerSave(<span class="number">0</span>); </span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The lines that are causing problems are <code>clearDisplay();</code> and <code>setPowerSave(0);</code>. These can be omitted and <code>u8g2.begin();</code> can be replaced with <code>u8g2.initDisplay();</code>. Unfortunately it may not work as expected in certain situations - I did not come with a clear explanation. </p>
+<p>I managed to debug the problem and finally replaced <code>u8g2.begin();</code> with two lines below:</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">u8g2.initInterface();</span><br><span class="line">u8g2.setPowerSave(<span class="number">0</span>); </span><br></pre></td></tr></table></figure>
+
+<p>These are called every time new changes are to be sent to display.</p>
+<p>For the SD card, logging in my case functionality, the code looks like this:</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">spiSD.begin(<span class="number">7</span>, <span class="number">9</span>, <span class="number">11</span>, SD_SPI_CS); <span class="comment">//!!!!</span></span><br><span class="line">SD.begin(SD_SPI_CS, spiSD, SDSPEED); <span class="comment">//!!!!</span></span><br><span class="line">String SDlog = <span class="string">&quot;Some logging message&quot;</span>;</span><br><span class="line"><span class="type">char</span> char_ming_message[SDlog.length()];</span><br><span class="line">SDlog.toCharArray(char_ming_message, SDlog.length());</span><br><span class="line">sd_append_success = appendFile(SD, FILE_NAME, char_ming_message);</span><br><span class="line">SD.end(); <span class="comment">//!!!!</span></span><br><span class="line">spiSD.end(); <span class="comment">//!!!!</span></span><br></pre></td></tr></table></figure>
+
+<p>I am not sure if the <code>SD</code> and <code>spiSD</code> <code>.begin()</code> and <code>.end()</code> are required to be called every single time, but it works like that. I tried minimizing the code by removing certain parts, but with very mixed results, so I left them. Since ESP32-S2 is 240MHz it can handle a few extra <code>.begin&#39;s</code>. </p>
+<p>Few extra sites for the topic: <a href="https://www.esp32.com/viewtopic.php?t=13697">[4]</a>, <a href="https://github.com/espressif/arduino-esp32/issues/1219">[5]</a>.</p>
+<h1 id="4-Sources"><a href="#4-Sources" class="headerlink" title="4. Sources"></a>4. Sources</h1><p>[1] <a href="https://www.ti.com/lit/ug/sprugp2a/sprugp2a.pdf">https://www.ti.com/lit/ug/sprugp2a/sprugp2a.pdf</a></p>
+<p>[2] <a href="https://randomnerdtutorials.com/esp32-spi-communication-arduino/">https://randomnerdtutorials.com/esp32-spi-communication-arduino/</a></p>
+<p>[3] <a href="https://aleksmola.github.io/2023/10/25/how-to-connect-gmg12864-display/">https://aleksmola.github.io/2023/10/25/how-to-connect-gmg12864-display/</a></p>
+<p>[4] <a href="https://www.esp32.com/viewtopic.php?t=13697">https://www.esp32.com/viewtopic.php?t=13697</a></p>
+<p>[5] <a href="https://github.com/espressif/arduino-esp32/issues/1219">https://github.com/espressif/arduino-esp32/issues/1219</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+        <category>Arduino</category>
+      </categories>
+      <tags>
+        <tag>solutions</tag>
+        <tag>spi</tag>
+        <tag>esp32s2</tag>
+        <tag>esp32</tag>
+        <tag>instructions</tag>
+        <tag>arduinoide</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>How to Create Automatic, Figures, Tables and Equations References as Well as a Bibliography in MS WORD.</title>
     <url>/2023/06/02/How-to-create-automatic-references-in-MS-WORD/</url>
     <content><![CDATA[<br/>
@@ -119,11 +172,11 @@
         <category>Tutorials</category>
       </categories>
       <tags>
+        <tag>instructions</tag>
         <tag>tutorials</tag>
         <tag>msword</tag>
         <tag>ms_word</tag>
         <tag>word</tag>
-        <tag>instructions</tag>
       </tags>
   </entry>
   <entry>
@@ -285,8 +338,8 @@
         <category>Networking</category>
       </categories>
       <tags>
-        <tag>tutorials</tag>
         <tag>instructions</tag>
+        <tag>tutorials</tag>
         <tag>flashing</tag>
         <tag>dd-wrt</tag>
         <tag>archer c8</tag>
@@ -423,8 +476,8 @@
         <category>Python</category>
       </categories>
       <tags>
-        <tag>tutorials</tag>
         <tag>instructions</tag>
+        <tag>tutorials</tag>
         <tag>apps</tag>
         <tag>python</tag>
         <tag>gui</tag>
@@ -432,7 +485,7 @@
       </tags>
   </entry>
   <entry>
-    <title>How_to_connect_gmg12864_display</title>
+    <title>How to Connect GMG12864 Display.</title>
     <url>/2023/10/25/how-to-connect-gmg12864-display/</url>
     <content><![CDATA[<div style="text-align: center;">
 <img src="/2023/10/25/how-to-connect-gmg12864-display/screen_show.png" class="" title="Screen Showcase">
@@ -574,9 +627,9 @@
         <category>DIY</category>
       </categories>
       <tags>
-        <tag>tutorials</tag>
-        <tag>instructions</tag>
         <tag>esp32</tag>
+        <tag>instructions</tag>
+        <tag>tutorials</tag>
         <tag>displays</tag>
         <tag>gpio</tag>
         <tag>pins</tag>
