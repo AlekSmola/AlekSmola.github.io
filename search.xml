@@ -45,11 +45,11 @@
         <category>Arduino</category>
       </categories>
       <tags>
+        <tag>instructions</tag>
         <tag>solutions</tag>
         <tag>spi</tag>
         <tag>esp32s2</tag>
         <tag>esp32</tag>
-        <tag>instructions</tag>
         <tag>arduinoide</tag>
       </tags>
   </entry>
@@ -172,8 +172,8 @@
         <category>Tutorials</category>
       </categories>
       <tags>
-        <tag>instructions</tag>
         <tag>tutorials</tag>
+        <tag>instructions</tag>
         <tag>msword</tag>
         <tag>ms_word</tag>
         <tag>word</tag>
@@ -338,8 +338,8 @@
         <category>Networking</category>
       </categories>
       <tags>
-        <tag>instructions</tag>
         <tag>tutorials</tag>
+        <tag>instructions</tag>
         <tag>flashing</tag>
         <tag>dd-wrt</tag>
         <tag>archer c8</tag>
@@ -476,8 +476,8 @@
         <category>Python</category>
       </categories>
       <tags>
-        <tag>instructions</tag>
         <tag>tutorials</tag>
+        <tag>instructions</tag>
         <tag>apps</tag>
         <tag>python</tag>
         <tag>gui</tag>
@@ -627,9 +627,9 @@
         <category>DIY</category>
       </categories>
       <tags>
-        <tag>esp32</tag>
-        <tag>instructions</tag>
         <tag>tutorials</tag>
+        <tag>instructions</tag>
+        <tag>esp32</tag>
         <tag>displays</tag>
         <tag>gpio</tag>
         <tag>pins</tag>
