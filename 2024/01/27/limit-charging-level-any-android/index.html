@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/site_logo2white_exp.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha256-/4UQcSmErDzPCMAiuOiWPVVsNN2s3ZY/NsmXNcj0IFc=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"aleksmola.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"bounceInLeft","post_block":"bounceInRight","post_header":"bounceInRight","sidebar":"bounceInLeft"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":2,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="1. IntroductionModern even mid-range phones are capable of lasting for more than 2 years of usage. Their performance in terms of CPU, RAM, etc is usually high enough to use for a longer time than we">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Take Care of Your Phones Battery (Limiting Charging Level)">
+<meta property="og:url" content="https://aleksmola.github.io/2024/01/27/limit-charging-level-any-android/index.html">
+<meta property="og:site_name" content="AlekSmola">
+<meta property="og:description" content="1. IntroductionModern even mid-range phones are capable of lasting for more than 2 years of usage. Their performance in terms of CPU, RAM, etc is usually high enough to use for a longer time than we">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://aleksmola.github.io/2024/01/27/limit-charging-level-any-android/front.jpeg">
+<meta property="og:image" content="https://aleksmola.github.io/2024/01/27/limit-charging-level-any-android/accubattery_logo.png">
+<meta property="og:image" content="https://aleksmola.github.io/2024/01/27/limit-charging-level-any-android/sinilink_XY-WFUSB-showcase.png">
+<meta property="og:image" content="https://aleksmola.github.io/2024/01/27/limit-charging-level-any-android/tasmota_logo.svg">
+<meta property="og:image" content="https://aleksmola.github.io/2024/01/27/limit-charging-level-any-android/pinout_xywfusbpng.png">
+<meta property="og:image" content="https://aleksmola.github.io/2024/01/27/limit-charging-level-any-android/tasmotizer_logo.jpg">
+<meta property="og:image" content="https://aleksmola.github.io/2024/01/27/limit-charging-level-any-android/instruction_for_tasmota_config.png">
+<meta property="og:image" content="https://aleksmola.github.io/2024/01/27/limit-charging-level-any-android/Tasker_ChargingTo1.png">
+<meta property="og:image" content="https://aleksmola.github.io/2024/01/27/limit-charging-level-any-android/Tasker_ChargingTo2.png">
+<meta property="og:image" content="https://aleksmola.github.io/2024/01/27/limit-charging-level-any-android/Tasker_ChargingTo3.png">
+<meta property="og:image" content="https://aleksmola.github.io/2024/01/27/limit-charging-level-any-android/Automate_flow_preset_ChargingTo__aleksmola.github.io.png">
+<meta property="article:published_time" content="2024-01-27T14:30:09.000Z">
+<meta property="article:modified_time" content="2024-03-03T19:09:34.923Z">
+<meta property="article:author" content="AlekSmola">
+<meta property="article:tag" content="instructions">
+<meta property="article:tag" content="tutorials">
+<meta property="article:tag" content="charging">
+<meta property="article:tag" content="phone">
+<meta property="article:tag" content="battery">
+<meta property="article:tag" content="capacity">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://aleksmola.github.io/2024/01/27/limit-charging-level-any-android/front.jpeg">
+
+
+<link rel="canonical" href="https://aleksmola.github.io/2024/01/27/limit-charging-level-any-android/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://aleksmola.github.io/2024/01/27/limit-charging-level-any-android/","path":"2024/01/27/limit-charging-level-any-android/","title":"How to Take Care of Your Phones Battery (Limiting Charging Level)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>How to Take Care of Your Phones Battery (Limiting Charging Level) | AlekSmola</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">AlekSmola</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Just stuff I try to accomplish in my free time.</p>
+      <img class="custom-logo-image" src="/images/site_logo2transparent.png" alt="AlekSmola">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">6</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">41</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">9</span></a></li><li class="menu-item menu-item-about-page"><a href="/about-page/" rel="section"><i class="fa fa-user fa-fw"></i>About Page</a></li><li class="menu-item menu-item-about-author"><a href="/about-me/" rel="section"><i class="fa fa-user fa-fw"></i>About Author</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Introduction"><span class="nav-text">1. Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-A-few-of-the-solutions-to-mitigate-the-aging-problem-of-batteries"><span class="nav-text">2. A few of the solutions to mitigate the aging problem of batteries</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Limit-max-charging-level-of-battery"><span class="nav-text">3. Limit max charging level of battery</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Accu%E2%80%8BBattery-app"><span class="nav-text">3.1. Accu​Battery app</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-External-solution-DIY-way-using-XY-WFUSB"><span class="nav-text">3.2. External solution - DIY way using  XY-WFUSB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Flashing-with-Tasmota"><span class="nav-text">3.3. Flashing with Tasmota</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Configuring-Tasmota"><span class="nav-text">3.4. Configuring Tasmota</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Android-app-automation-using-Tasker-Paid"><span class="nav-text">3.5. Android app automation using Tasker (Paid)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-Android-app-automation-using-Automate-Free"><span class="nav-text">3.6. Android app automation using Automate (Free)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Limiting-charging-current"><span class="nav-text">4. Limiting charging current</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Final-thoughts"><span class="nav-text">5. Final thoughts</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Sources"><span class="nav-text">6. Sources</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="AlekSmola"
+      src="/images/blankimage.png">
+  <p class="site-author-name" itemprop="name">AlekSmola</p>
+  <div class="site-description" itemprop="description">"Simple site"</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/aleksmola" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;aleksmola" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://aleksmola.github.io/2024/01/27/limit-charging-level-any-android/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blankimage.png">
+      <meta itemprop="name" content="AlekSmola">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AlekSmola">
+      <meta itemprop="description" content=""Simple site"">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="How to Take Care of Your Phones Battery (Limiting Charging Level) | AlekSmola">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          How to Take Care of Your Phones Battery (Limiting Charging Level)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-01-27 15:30:09" itemprop="dateCreated datePublished" datetime="2024-01-27T15:30:09+01:00">2024-01-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-03-03 20:09:34" itemprop="dateModified" datetime="2024-03-03T20:09:34+01:00">2024-03-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tutorials/" itemprop="url" rel="index"><span itemprop="name">Tutorials</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/DIY/" itemprop="url" rel="index"><span itemprop="name">DIY</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>2.5k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>9 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        </br>
+
+<h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h1><p>Modern even mid-range phones are capable of lasting for more than 2 years of usage. Their performance in terms of CPU, RAM, etc is usually high enough to use for a longer time than we were used to back in eg. 2014. In 2014 phone market was progressing much faster and a generational increase in capabilities and performance was worth the upgrade even in 1 year intervals. Not saying about 2 years.<br>Nowadays, things have changed and 3 years old flagship device will not be the fastest, but it will still be working just fine for 90% of daily tasks. </p>
+<div style="text-align: center;">
+<img src="front.jpeg" width="500" height="500" alt="Battery hero: BatLisa." title="Battery hero: BatLisa.">
+<em></i>Figure. Battery hero: BattLisa.</em></i>
+</div></br>
+
+<p>Unfortunately, what is the benefit of that, if my 2-year-old phone lasts 2 hours on a single charge!? This may be the case for a lot of devices. This pushes customers to buy new devices only because the battery of old one degraded too much. Since there is no easy way to replace the battery by the user without pretty specialized tools and knowledge (it is doable, but certainly does not mean ‘easy procedure’), you are left with a device that can be most used as a photo frame permanently connected to the wall. </p>
+<p>In this article, I will mention a few ways to prolong the battery life. I will focus on one solution which in my opinion is important - <inx>max charging percentage</ins>.</p>
+<span id="more"></span>
+
+</br>
+
+<h1 id="2-A-few-of-the-solutions-to-mitigate-the-aging-problem-of-batteries"><a href="#2-A-few-of-the-solutions-to-mitigate-the-aging-problem-of-batteries" class="headerlink" title="2. A few of the solutions to mitigate the aging problem of batteries"></a>2. A few of the solutions to mitigate the aging problem of batteries</h1><p>A few of the common ways to slow down the aging process of batteries (lithium-based ones):</p>
+<ul>
+<li><p>Charge them slowly - fast charging has a high negative impact on the battery’s life. Use slow old chargers of 5 to 10W when you don’t need fast charging. When leaving your phone to charge overnight, it does not matter if it will be full in 1h or 5h, but for your battery, it does matter, especially over a lot of charges.</p>
+</li>
+<li><p>Avoid extreme temperatures - both cold and high temperatures will decrease the performance. Do not leave the phone in the sun, do not charge in cold temperatures either.</p>
+</li>
+<li><p>Certainly, you may use you phone in a ‘lighter manner’. Since a high discharge rate has a negative impact on the battery life, using your phone less and less intensively (not gaming, etc) will help. At least it will help you, as a user. Although I do realize that modern smartphones are doing so much stuff it may be hard to restrict usage. That’s just a hint.</p>
+</li>
+<li><p>Do not fully charge the battery. This may be hard when users leave devices to charge overnight, but it is highly beneficial.</p>
+</li>
+</ul>
+</br>
+
+<h1 id="3-Limit-max-charging-level-of-battery"><a href="#3-Limit-max-charging-level-of-battery" class="headerlink" title="3. Limit max charging level of battery"></a>3. Limit max charging level of battery</h1><p>Charging to 80% state of charge of the battery, or even to 90% will greatly prolong the life by increasing cycles of the battery. By cycles, it is understood charging and then discharging the cell while the stored capacity stays above the defined threshold (minimum capacity).</p>
+</br>
+
+<h2 id="3-1-Accu​Battery-app"><a href="#3-1-Accu​Battery-app" class="headerlink" title="3.1. Accu​Battery app"></a>3.1. Accu​Battery app</h2><p>An easy way is to charge the device during the day and leave it in a power-saving mode for the night. Not everyone will have that much discipline, time and dedication to do so. To help, there is an app called <a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.digibites.accubattery">AccuBattery</a> which will monitor the charging process and notify users when charging reaches a certain level. But to disconnect charging - that is a user’s task.</p>
+<div style="text-align: center;">
+<img src="accubattery_logo.png" alt="Accu​Battery logo" width="256" height="256" title="Accu​Battery logo">
+<i><em>Figure. Accu​Battery app.</em></i>
+</div>
+
+</br>
+
+<h2 id="3-2-External-solution-DIY-way-using-XY-WFUSB"><a href="#3-2-External-solution-DIY-way-using-XY-WFUSB" class="headerlink" title="3.2. External solution - DIY way using  XY-WFUSB"></a>3.2. External solution - DIY way using  XY-WFUSB</h2><p>To automate this process, some manufacturers equipped options in device settings to limit the charge level. But this is not common.<br>To make it work, it is needed to get some kind of a relay that can be triggered by a phone. </p>
+<div style="text-align: center;">
+<img src="/2024/01/27/limit-charging-level-any-android/sinilink_XY-WFUSB-showcase.png" class="" title="sinilink_XY-WFUSB-showcase">
+<em></i>Figure. Sinilink USB Switch Module (XY-WFUSB).</em></i>
+</div></br>
+
+<p>For such a service there exists a <code>XY-WFUSB</code> dongle. It is a simple device that can switch the USB supply electrically. By plugging one end into the charger and the other into the charged device, it can be wirelessly engaged to start or stop the charging process. It can switch any USB-connected device. More details can be found <a target="_blank" rel="noopener" href="https://templates.blakadder.com/sinilink_XY-WFUSB.html">here</a>.</p>
+</br>
+
+<h2 id="3-3-Flashing-with-Tasmota"><a href="#3-3-Flashing-with-Tasmota" class="headerlink" title="3.3. Flashing with Tasmota"></a>3.3. Flashing with Tasmota</h2><p>This is a Chinese device that comes equipped with some Aliexpress-special app. Personally, I did not even bother to install the app, since I don’t trust Chinese app for such devices. I am not saying this app will not work, but I prefer to flash open-source firmware called <a target="_blank" rel="noopener" href="https://templates.blakadder.com/sinilink_XY-WFUSB.html">Tasmota</a>. It not only gives me more options but also works only locally and independently from a cloud. Unfortunately, the flashing process may be hard for some.</p>
+<div style="text-align: center;">
+<img src="/2024/01/27/limit-charging-level-any-android/tasmota_logo.svg" class="" title="Tasmota logo">
+<em></i>Figure. Tasmota open-source firmware for so-called 'smart' devices: [Tasmota](https://templates.blakadder.com/sinilink_XY-WFUSB.html).</em></i>
+</div></br>
+
+<p>It is needed to open the device (case pieces are held just by friction, but be careful not to damage pins). Then it is required to solder pins to the tiny 1mm pitch header. It is tricky to solder the wires. There exist other methods of programming, like pogo pins, needles or soldering a right header. If you don’t seem to be discouraged, I try to guide you through the process.<br>Video for visualization: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=lrHhn2AVzSA">here</a>.</p>
+<p>One other way can be to strip ethernet cable, stripping the insulation to the length of board thickness. Inserting ends into the holes and pressing with fingers to make sure they do make contact.<br>Since you only have to be successful one time and, if you fail, just try again -  it should not be that hard. </p>
+<p>Personally, I just soldered the wires, but it’s not that easy if you don’t have soldering experience.</p>
+<p>Soldered wires need to be connected into serial to USB converter. Pin <code>IO0</code> should be connected to <code>GND</code>, so ESP (microcontroller controlling the device) is put into flashing mode. <code>GND</code> is <code>GND</code>, <code>Rx</code> goes to <code>Tx</code>, <code>Tx</code> goes to <code>Rx</code>, <code>3v3</code> is power so it goes to <code>3v3</code> on the converter. For the <code>Rst</code>, it should be the same but sometimes converters do not come with this pin, in such a case buy one that has or you may be successful by shorting <code>Rst</code> pin with <code>GND</code> in ‘right’ time. ‘right’ time is pretty much undefined unless you read the documentation od ESP microcontroller. More or less: start flashing and reset the microcontroller. You may be successful after a couple of tries.</p>
+<div style="text-align: center;">
+<img src="/2024/01/27/limit-charging-level-any-android/pinout_xywfusbpng.png" class="" title="pinout">
+<em></i>Figure. Pinout for the converter.</em></i>
+</div></br>
+
+<p>You can flash manually or by using the <a target="_blank" rel="noopener" href="https://github.com/tasmota/tasmotizer">Tasmotizer</a> software (recommended way).</p>
+<div style="text-align: center;">
+<img src="tasmotizer_logo.jpg" width="600" height="429" alt="Tasmotizer logo" title="Tasmotizer logo">
+<em></i>Figure. A neat way for flashing Tasmota onto the device is [Tasmotizer](https://github.com/tasmota/tasmotizer).</em></i>
+</div></br>
+
+<p>When software flashing is successful you may connect the dongle to the USB power to check for Wi-Fi network called <code>Tasmota_something</code> is present. If yes, disconnect the programming pins and close the case. </p>
+</br>
+
+<h2 id="3-4-Configuring-Tasmota"><a href="#3-4-Configuring-Tasmota" class="headerlink" title="3.4. Configuring Tasmota"></a>3.4. Configuring Tasmota</h2><p>Tasmota has a lot of features. To access them it is needed to find the local IP address of the device. first time when connected to the <code>Tasmota_something</code> head over to <code>http://192.168.4.1</code> and provide your local Wi-Fi name and password. After a restart, your board should be connected to your own network. Now, to access it, it is required to find its local IP address. You can do it by checking your router’s configuration, or by using an app. On Linux it can be <code>nmap</code>, on Windows there is an <code>Angry IP Scanner</code>, on Android you can use <code>PingTools</code> from Playstore. Go to the local network and click refresh. IPs of all devices should be displayed. If you have a lot of devices you can disconnect Tasmota from power and see which IP has disappeared. </p>
+<p>Once, you’ve found the IP paste it into your browser address bar and click Enter. You should be presented with a screen similar to the one below. </p>
+<p>The first thing we want to do is to apply the configuration template. The one we need:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;NAME&quot;:&quot;XY-WFUSB&quot;,&quot;GPIO&quot;:[1,1,0,1,32,224,0,0,0,0,320,0,544,0],&quot;FLAG&quot;:0,&quot;BASE&quot;:18&#125;</span><br></pre></td></tr></table></figure>
+
+<p>from <a target="_blank" rel="noopener" href="https://templates.blakadder.com/sinilink_XY-WFUSB.html">here</a>. We need to paste it into the <code>Configuration</code> &gt; <code>Configure Other</code> &gt; <code>Template</code>, and check <code>Activate</code> box below. This tells Tasmota which pins are connected to what on the PCB, so that we can use them properly.</p>
+<div style="text-align: center;">
+<img src="instruction_for_tasmota_config.png" alt="Tamota Config" title="Tamota Config">
+<em></i>Figure. Instruction on how to configure the board.</em></i>
+</div></br>
+
+<p>You can make yourself comfortable with the rest of the settings - there is a lot of stuff to change and tweak. One with that should be checked is if the relay works. Head over to the main page, and click <code>Toggle</code> - the red LED should light up when in <code>On</code> position.</p>
+<p>More configuration instructions can be found <a target="_blank" rel="noopener" href="https://tasmota.github.io/docs/Getting-Started/">here</a> and in 9999 other places. </p>
+<p>Now, let’s automate the process of turning this relay on and off depending on the percentage of the battery.</p>
+</br>
+
+<h2 id="3-5-Android-app-automation-using-Tasker-Paid"><a href="#3-5-Android-app-automation-using-Tasker-Paid" class="headerlink" title="3.5. Android app automation using Tasker (Paid)"></a>3.5. Android app automation using <a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm">Tasker</a> (Paid)</h2><p>Tasker is a pretty old Android app that allows you to automate stuff, like turning on Wi-Fi and disabling mobile data when you get back home, turning on specific application when connected via Bluetooth with some device - possibilities are endless. It can easily check phone battery and based on this use <code>http request</code> to turn Tasmota on and off as needed. Fortunately, Tasmota has the option to do so without using the web interface. Just paste these two strings into the web browser:</p>
+<p><code>http://192.168.X.Y/cm?cmnd=Power%20On</code> (on)</p>
+<p>and</p>
+<p><code>http://192.168.X.Y/cm?cmnd=Power%20off</code> (off)</p>
+<p>Recall <code>%20</code> to be there since some programs replace it with space-sign automatically. Also, replace <code>192.168.X.Y</code> with your own address.</p>
+<p>I prepared the required Profiles, Tasks and Variables, so any can just import them to use.</p>
+<p>During the initial setup of Tasker select <code>Tasker - The full experience</code>. Than, Select Three dots &gt; Data &gt; Restore and select my config which can be downloaded on below.</p>
+<p>The rest of the instructions are visualized below.</p>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td {
+      border: 1px solid transparent;
+      padding: 10px;
+      text-align: center;
+      vertical-align: top;
+    }
+  </style>
+
+  <div style="text-align: center;">
+  <table>
+    <tr>
+      <td><img src="Tasker_ChargingTo1.png" alt="TaskerSetup1" title="TaskerSetup1">
+          </td>
+      <td><img src="Tasker_ChargingTo2.png" alt="TaskerSetup2" title="TaskerSetup2">
+      </td>
+      <td><img src="Tasker_ChargingTo3.png" alt="TaskerSetup3" title="TaskerSetup3">
+      </td>
+    </tr>
+    <tr>
+      <td><em></i>Profiles section is responsible for engaging action (Tasks) upon some action happening, like connection to the charger. There is start (green) and end (red) Task.</em></i></td>
+      <td><em></i>Tasks are doing the work, like monitoring battery state, location, functions, etc. They are responsible for actions directly. </em></i></td>
+        <td><em></i>Variables section stores variables. DO NOT change the default 80% here, use Task "BatteryVoltageSet" (Run icon on the bottom left).</em></i></td>
+    </tr>
+
+  </table>
+  </div>
+
+<p>It is needed to enable Tasker, by tapping 3 dots and selecting Enable Tasker. If the default 80% max charge voltage is too small of a percentage, there is a Task called <code>BatteryVoltageSet</code> which needs to be edited. DO NOT change the variable <code>%BATT_MAX</code> in Vars section.</p>
+<p>Remember to change your IP address (replacing X and Y) <code>ChargingOff</code> and <code>ChargingOnBetter</code> Tasks.</p>
+<p><code>SetupTile</code> is used to set the quick toggle tile in the functions of your Android phone (the area where quick access to functions is, right above notifications). Since Tasker will run in the background and most of the users will not use it (at least initially) for anything else, there is no need to keep it in the background. This tile can be clicked every time the phone is connected to a charger. Remember to click the button on the Tasmota device to activate charging! After charging is completed Tasker will be deactivated.</p>
+<p>Download Files: <a href="TASKER_ChargingTo__aleksmola.github.io.zip">Tasker configuration</a></p>
+</br>
+
+<h2 id="3-6-Android-app-automation-using-Automate-Free"><a href="#3-6-Android-app-automation-using-Automate-Free" class="headerlink" title="3.6. Android app automation using Automate (Free)"></a>3.6. Android app automation using <a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.llamalab.automate">Automate</a> (Free)</h2><p>Automate is more of a user-friendly app desige to do similar things as Tasker. It can be installed from the Play Store for free in basic version. You can create automations with use of simple building blocks which are simpler to manage for less-tech oriented persons.</p>
+<p>On the main screen, select three dots &gt; Import &gt; and select <code>.flo</code> file to import. </p>
+<p>U can install a home screen shortcut by editing Flow &gt; in Flow beginning block &gt; Install home screen shortcut.</p>
+<p>Below is the screenshot of what it looks like.</p>
+<div style="text-align: center;">
+<img src="Automate_flow_preset_ChargingTo__aleksmola.github.io.png" alt="Automate config" title="Automate config">
+<em></i>Figure. Automate flow config. Simple.</em></i>
+</div></br>
+
+<p>Download Files: <a href="AUTOMATE_ChargingTo__aleksmola.github.io.flo">Automate configuration</a></p>
+</br>
+
+<h1 id="4-Limiting-charging-current"><a href="#4-Limiting-charging-current" class="headerlink" title="4. Limiting charging current"></a>4. Limiting charging current</h1><p>Assuming Tasmota device is plugged into 2 [A] charger it would be nice to limit the charging current. Charging speed affects the life of a battery. In this case, it is USB2.0, which unlike USBPD (Power Delivery) can not negotiate current and voltage from a charger. In such a case there is no easy way to limit it, other than using a slow 1 [A] charger. Another method would be to use some crappy cord which is rated for 1 [A]. These can be often found in battery-powered tools, USB lights, etc. </p>
+<p>Fortunately, 2 [A] at 5 [V] is 10 [W] whicch should not degrade the battery by much. But, overall it is some idea worth considering.</p>
+</br>
+
+<h1 id="5-Final-thoughts"><a href="#5-Final-thoughts" class="headerlink" title="5. Final thoughts"></a>5. Final thoughts</h1><p>Methods presented in this tutorial, by some may be considered as ‘extreme methods’ approached only by maniacs. This may be true, but it saves a user a lot of hassle. One-time operation and few coins spent in hardware will yield results in savings of one full phone in six years. </p>
+<p>It is quite a saving!</p>
+<p>Additionally, it also saves time for setting up a new device and getting used to it. And since one Tasmota device can be used by multiple devices, over time it will profit even more.</p>
+</br>
+
+<h1 id="6-Sources"><a href="#6-Sources" class="headerlink" title="6. Sources"></a>6. Sources</h1><p>[1] Main photo generated by <a target="_blank" rel="noopener" href="https://www.adobe.com/products/firefly.html">Adobe Firefly</a></p>
+<p>[2] <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=lrHhn2AVzSA">https://www.youtube.com/watch?v=lrHhn2AVzSA</a></p>
+<p>[3] <a target="_blank" rel="noopener" href="https://batteryuniversity.com/article/bu-808-how-to-prolong-lithium-based-batteries">https://batteryuniversity.com/article/bu-808-how-to-prolong-lithium-based-batteries</a></p>
+<p>[4] <a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.digibites.accubattery">https://play.google.com/store/apps/details?id=com.digibites.accubattery</a></p>
+<p>[5] <a target="_blank" rel="noopener" href="https://templates.blakadder.com/sinilink_XY-WFUSB.html">https://templates.blakadder.com/sinilink_XY-WFUSB.html</a></p>
+<p>[6] <a target="_blank" rel="noopener" href="https://github.com/tasmota/tasmotizer">https://github.com/tasmota/tasmotizer</a></p>
+<p>[7] <a target="_blank" rel="noopener" href="https://tasmota.github.io/docs/Getting-Started/">https://tasmota.github.io/docs/Getting-Started/</a></p>
+<p>[8] <a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm">https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm</a></p>
+<p>[9] <a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.llamalab.automate">https://play.google.com/store/apps/details?id=com.llamalab.automate</a></p>
+<p>[10] <a target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/pii/S2666386423002436">https://www.sciencedirect.com/science/article/pii/S2666386423002436</a></p>
+<p>[11] <a target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/pii/S1876610219308215">https://www.sciencedirect.com/science/article/pii/S1876610219308215</a></p>
+<p>[12] <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=w4lvDGtfI9U">https://www.youtube.com/watch?v=w4lvDGtfI9U</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/paypal.jpg" alt="AlekSmola PayPal">
+        <span>PayPal</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/instructions/" rel="tag"><i class="fa fa-tag"></i> instructions</a>
+              <a href="/tags/tutorials/" rel="tag"><i class="fa fa-tag"></i> tutorials</a>
+              <a href="/tags/charging/" rel="tag"><i class="fa fa-tag"></i> charging</a>
+              <a href="/tags/phone/" rel="tag"><i class="fa fa-tag"></i> phone</a>
+              <a href="/tags/battery/" rel="tag"><i class="fa fa-tag"></i> battery</a>
+              <a href="/tags/capacity/" rel="tag"><i class="fa fa-tag"></i> capacity</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/12/02/ESP32-S2-problem/" rel="prev" title="ESP32S2 Problem With More SPI Devices [SOLVED]">
+                  <i class="fa fa-chevron-left"></i> ESP32S2 Problem With More SPI Devices [SOLVED]
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2023 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AlekSmola in https://aleksmola.github.io/</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">11k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">40 mins.</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/AlekSmola" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
