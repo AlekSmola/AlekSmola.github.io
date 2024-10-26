@@ -773,8 +773,10 @@
 
 <h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h1><p>Modern even mid-range phones are capable of lasting for more than 2 years of usage. Their performance in terms of CPU, RAM, etc is usually high enough to use for a longer time than we were used to back in eg. 2014. In 2014 phone market was progressing much faster and a generational increase in capabilities and performance was worth the upgrade even in 1 year intervals. Not saying about 2 years.<br>Nowadays, things have changed and 3 years old flagship device will not be the fastest, but it will still be working just fine for 90% of daily tasks. </p>
 <div style="text-align: center;">
-<img src="front.jpeg" width="500" height="500" alt="Battery hero: BatLisa." title="Battery hero: BatLisa.">
-<em></i>Figure. Battery hero: BattLisa.</em></i>
+
+<img src="/2024/01/27/limit-charging-level-any-android/front_small.jpg" class="" title="Front_image">
+
+<p><em></i>Figure. Battery hero: BattLisa.</em></i></p>
 </div></br>
 
 <p>Unfortunately, what is the benefit of that, if my 2-year-old phone lasts 2 hours on a single charge!? This may be the case for a lot of devices. This pushes customers to buy new devices only because the battery of old one degraded too much. Since there is no easy way to replace the battery by the user without pretty specialized tools and knowledge (it is doable, but certainly does not mean ‘easy procedure’), you are left with a device that can be most used as a photo frame permanently connected to the wall. </p>
@@ -948,6 +950,41 @@
         <tag>phone</tag>
         <tag>battery</tag>
         <tag>capacity</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>USB Cable Tester PCB Project</title>
+    <url>/2024/10/19/pcb-usb-tester/</url>
+    <content><![CDATA[<div style="text-align:center">
+
+<h1 id="USB-A-and-USB-C-cable-tester"><a href="#USB-A-and-USB-C-cable-tester" class="headerlink" title="USB-A and USB-C cable tester"></a><strong>USB-A and USB-C cable tester</strong></h1></div>
+
+<p>Project for PCB board which checks what standards given cable supports. It check for amount of conductors inside the cable by lighting up LEDs. </p>
+<div style="text-align:center">
+
+<img src="/2024/10/19/pcb-usb-tester/two.jpg" class="" title="Showcase 1">
+
+</div>
+
+<p>Link: <a href="https://github.com/AlekSmola/USB-A-and-USB-C-cable-tester">https://github.com/AlekSmola/USB-A-and-USB-C-cable-tester</a></p>
+<p>Features:</p>
+<ul>
+<li>Shows if there is continuity between different USB pins, i.e. which standards cable supports;</li>
+<li>Can measure USB-C to USB-C cables</li>
+<li>Can measure USB-A to USB-C cables</li>
+<li>Powered from another USB-C (smart chargers compatible) or by soldering leads;</li>
+<li>neat solution in pocket size;</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+        <category>Networking</category>
+      </categories>
+      <tags>
+        <tag>altium</tag>
+        <tag>design</tag>
+        <tag>projects</tag>
+        <tag>pcb</tag>
       </tags>
   </entry>
 </search>
