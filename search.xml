@@ -639,6 +639,54 @@
       </tags>
   </entry>
   <entry>
+    <title>How to Flash CH552 IC</title>
+    <url>/2024/10/26/how-to-flash-ch552/</url>
+    <content><![CDATA[<h1 id="How-to-flash-CH552-Last-Chance-Edition-if-nothing-else-worked"><a href="#How-to-flash-CH552-Last-Chance-Edition-if-nothing-else-worked" class="headerlink" title="How to flash CH552 - Last Chance Edition if nothing else worked"></a>How to flash CH552 - Last Chance Edition if nothing else worked</h1><p>According to the inter-webs flashing already programmed CH552 IC requires a 10kOhms pull-up resistor connected to D+ pin3.6 to 3V3. By doing so, the chip should boot into bootloader for few seconds. Unfortunately for some ICs it does not work and IC ignores this method.</p>
+<p>You may try to install drivers, according to sources provided at the end. </p>
+<p>In my case, it didn’t help, just like changing computer and operating system. </p>
+<p>My CH552G was bought as a ready to work small keyboard with 2 keys from aliexpress. </p>
+<p>To program it, alternate method to enter bootloader was used.<br>It requires to <strong>pull-down Pin1.5  to GND</strong>. This pin is 3rd pin on the other side of the IC dot - opposite to GND. As on the Figure below. Used here is again <strong>10kOhm</strong> resistor. </p>
+<div style="text-align:center">
+
+<img src="/2024/10/26/how-to-flash-ch552/pinout.PNG" class="" title="Figure. IC pinout">
+
+<p><em></i>Figure. IC pinout</em></i></p>
+</div></br>
+
+<p>And that is how it came out:</p>
+<span id="more"></span>
+
+<div style="text-align:center">
+
+<img src="/2024/10/26/how-to-flash-ch552/chip_mod.jpg" class="" title="Figure. Modded Mod">
+
+<p><em></i>Figure. Modded Mod</em></i></p>
+</div>
+
+<p>With this programming went as smooth as possible!</p>
+<h2 id="Usefull-sources-for-flashing"><a href="#Usefull-sources-for-flashing" class="headerlink" title="Usefull sources for flashing:"></a>Usefull sources for flashing:</h2><ol>
+<li><p><a href="https://rabid-inventor.blogspot.com/2020/05/getting-started-with-ch55x.html">https://rabid-inventor.blogspot.com/2020/05/getting-started-with-ch55x.html</a></p>
+</li>
+<li><p><a href="https://learn.adafruit.com/adafruit-ch552-qt-py/bootloader-mode">https://learn.adafruit.com/adafruit-ch552-qt-py/bootloader-mode</a></p>
+</li>
+<li><p>driver (windows): <a href="https://www.wch-ic.com/downloads/CH372DRV_EXE.html">https://www.wch-ic.com/downloads/CH372DRV_EXE.html</a></p>
+</li>
+<li><p><a href="https://github.com/wagiminator/CH552-MacroPad-plus">https://github.com/wagiminator/CH552-MacroPad-plus</a></p>
+</li>
+<li><p><a href="https://github.com/eccherda/ch552g_mini_keyboard">https://github.com/eccherda/ch552g_mini_keyboard</a></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>instructions</tag>
+        <tag>tutorials</tag>
+        <tag>flashing</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>My Instructions for Using Hexo</title>
     <url>/2023/03/28/how_to_use_hexo/</url>
     <content><![CDATA[<h1 id="How-to-setup-HEXO-website-my-own-instructions-this-site"><a href="#How-to-setup-HEXO-website-my-own-instructions-this-site" class="headerlink" title="How to setup HEXO website [my own instructions] [this site]"></a>How to setup HEXO website [my own instructions] [this site]</h1><p>Just the quick helpdesk for the things I went through to get Hexo working.</p>

@@ -88,7 +88,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">6</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">45</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">10</span></a></li><li class="menu-item menu-item-about-page"><a href="/about-page/" rel="section"><i class="fa fa-user fa-fw"></i>About Page</a></li><li class="menu-item menu-item-about-author"><a href="/about-me/" rel="section"><i class="fa fa-user fa-fw"></i>About Author</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">6</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">45</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">11</span></a></li><li class="menu-item menu-item-about-page"><a href="/about-page/" rel="section"><i class="fa fa-user fa-fw"></i>About Page</a></li><li class="menu-item menu-item-about-author"><a href="/about-me/" rel="section"><i class="fa fa-user fa-fw"></i>About Author</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -166,6 +166,119 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://aleksmola.github.io/2024/10/26/how-to-flash-ch552/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blankimage.png">
+      <meta itemprop="name" content="AlekSmola">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AlekSmola">
+      <meta itemprop="description" content=""Simple site"">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | AlekSmola">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/10/26/how-to-flash-ch552/" class="post-title-link" itemprop="url">How to Flash CH552 IC</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-10-26 18:33:04 / Modified: 19:47:16" itemprop="dateCreated datePublished" datetime="2024-10-26T18:33:04+02:00">2024-10-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tutorials/" itemprop="url" rel="index"><span itemprop="name">Tutorials</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>239</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="How-to-flash-CH552-Last-Chance-Edition-if-nothing-else-worked"><a href="#How-to-flash-CH552-Last-Chance-Edition-if-nothing-else-worked" class="headerlink" title="How to flash CH552 - Last Chance Edition if nothing else worked"></a>How to flash CH552 - Last Chance Edition if nothing else worked</h1><p>According to the inter-webs flashing already programmed CH552 IC requires a 10kOhms pull-up resistor connected to D+ pin3.6 to 3V3. By doing so, the chip should boot into bootloader for few seconds. Unfortunately for some ICs it does not work and IC ignores this method.</p>
+<p>You may try to install drivers, according to sources provided at the end. </p>
+<p>In my case, it didn’t help, just like changing computer and operating system. </p>
+<p>My CH552G was bought as a ready to work small keyboard with 2 keys from aliexpress. </p>
+<p>To program it, alternate method to enter bootloader was used.<br>It requires to <strong>pull-down Pin1.5  to GND</strong>. This pin is 3rd pin on the other side of the IC dot - opposite to GND. As on the Figure below. Used here is again <strong>10kOhm</strong> resistor. </p>
+<div style="text-align:center">
+
+<img src="/2024/10/26/how-to-flash-ch552/pinout.PNG" class="" title="Figure. IC pinout">
+
+<p><em></i>Figure. IC pinout</em></i></p>
+</div></br>
+
+<p>And that is how it came out:</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/10/26/how-to-flash-ch552/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -741,118 +854,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://aleksmola.github.io/2023/06/02/How-to-create-automatic-references-in-MS-WORD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/blankimage.png">
-      <meta itemprop="name" content="AlekSmola">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AlekSmola">
-      <meta itemprop="description" content=""Simple site"">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | AlekSmola">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/" class="post-title-link" itemprop="url">How to Create Automatic, Figures, Tables and Equations References as Well as a Bibliography in MS WORD.</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-06-02 18:05:23" itemprop="dateCreated datePublished" datetime="2023-06-02T18:05:23+02:00">2023-06-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-09-21 20:54:44" itemprop="dateModified" datetime="2023-09-21T20:54:44+02:00">2023-09-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tutorials/" itemprop="url" rel="index"><span itemprop="name">Tutorials</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.9k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>7 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <br/>
-
-<h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h1><p>During studies, it is required to back up the word you type with some other research papers&#x2F;documents&#x2F;scientific research [1]. Basically, by writing a theoretical introduction chapter to some thesis everything should in some way be quoted and not ‘made up by students imaginations’ [2]. It is usually accomplished by putting <code>[number#]</code> after each sentence&#x2F;paragraph which leads to a full source listed at the end of document [3]. It is annoying and students hate it [4]. Not only the list of references should be kept in order [5], but also each figure should have its number leading to it. Tables and equations follow the same scheme [6]. </p>
-<div style="text-align: center;"><img src="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/thumb.png" class="" title="Reference photo"></div> 
-
-<p>This process seems easy when you start writing the document. You just go from start to the end and write everything in order and numbers will match up [7], right? Well, if you are very consistent, yes but it happens all the time you start writing from actual work and after that, you go on with introduction and theory. In such a case, you would have to change all of the numbers in <code>[]</code> after each change which is a NIGHTMARE [2134]<br>Most simple text editors do not implement any functionality to automate this [2314]. In reality, it is an easy task to automate. In this example, MS Word will be used to show how easy it is to automate handling references like a pro! [4234].</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/06/02/How-to-create-automatic-references-in-MS-WORD/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -883,7 +884,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">40 mins.</span>
+    <span title="Reading time total">41 mins.</span>
   </span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
