@@ -180,61 +180,6 @@
       </tags>
   </entry>
   <entry>
-    <title>How to Rewind a Tinywhoop (Or Any Other) BLDC Motor</title>
-    <url>/2023/05/19/How-to-rewind-Tinywhoop-BLDC-motor/</url>
-    <content><![CDATA[<p>Tutorial on how to rewind a broken BLDC motor by replacing the windings in the stator.</p>
-<h1 id="1-A-bit-of-theory"><a href="#1-A-bit-of-theory" class="headerlink" title="1. A bit of theory"></a>1. A bit of theory</h1><p>BLDC motors are DC voltage operating motors. The most important advantage over regular brushed DC motors is the fact of lack of brushes in BLDC motors. BLDC comes from a Brushless DC motor. Thanks to that, fewer parts can wear out and the motor is more reliable and longer lasting. Stator consists of windings made out of copper enameled wire. This means that wire has thin layer of insulation. This insulation may get damaged by excess heat, which occurs during motor stall (not only of course). The motor stall is when we want motors to rotate, but its rotor is locked. Visually burned coils will be black, they will stink quite a lot and some of the isolation may melt, changing the shape of the wire. The damaged motor will ‘try’ to rotate when power is applied, but will only vibrate by moving small steps forward and backward.</p>
-<img src="/2023/05/19/How-to-rewind-Tinywhoop-BLDC-motor/mobula6motor.jpg" class="" title="BLDC motor example.">
-<h6 id="Figure-1-BLDC-motor-which-is-to-be-repaired-in-this-guide-Note-that-the-instructions-can-be-applied-to-other-motors-of-that-kind-Only-the-windings-pattern-will-change-and-x2F-or-the-wire-for-windings-used"><a href="#Figure-1-BLDC-motor-which-is-to-be-repaired-in-this-guide-Note-that-the-instructions-can-be-applied-to-other-motors-of-that-kind-Only-the-windings-pattern-will-change-and-x2F-or-the-wire-for-windings-used" class="headerlink" title="Figure 1. BLDC motor which is to be repaired in this guide. Note that the instructions can be applied to other motors of that kind. Only the windings pattern will change and&#x2F;or the wire for windings used."></a><strong>Figure 1. BLDC motor which is to be repaired in this guide. Note that the instructions can be applied to other motors of that kind. Only the windings pattern will change and&#x2F;or the wire for windings used.</strong></h6><p>This guide is based on a tiny BLDC motor taken from Mobula 6 tinywhoop. For other motors, the procedure will be the same but the arrangement and parts required may differ.</p>
-<span id="more"></span>
-
-
-
-<h1 id="2-Why-repair-it-by-yourself-when-spare-motors-can-be-bought-cheaply"><a href="#2-Why-repair-it-by-yourself-when-spare-motors-can-be-bought-cheaply" class="headerlink" title="2. Why repair it by yourself when spare motors can be bought cheaply?"></a>2. Why repair it by yourself when spare motors can be bought cheaply?</h1><p>Sometimes we just want to use the motors instead of waiting for the delivery. You may be in luck if the motors you need are available locally and delivery time is in days. But stuff bought from China may have weeks in delivery time. A repair can be conducted now, at the very moment. With the right tools, you will be in the air the same day.</p>
-<p>Plus this motor is dead anyway, so why not give it a shot?</p>
-<p>Plus plus you will learn something.</p>
-<h1 id="3-What-will-be-needed"><a href="#3-What-will-be-needed" class="headerlink" title="3. What will be needed?"></a>3. What will be needed?</h1><p>There are some</p>
-<ol>
-<li>A bit of patience. Small motors like Mobula 6 are tiny. The winding process may require small fingers and steady hands.</li>
-<li>0.2mm diameter copper enameled wire can be bought cheaply.</li>
-<li>Good tweezers for catching the E-clip. These clips hold the rotor in place. Can be visible from the bottom of the motor.</li>
-<li>Soldering iron will rather be required.</li>
-</ol>
-<h1 id="4-Instructions"><a href="#4-Instructions" class="headerlink" title="4. Instructions."></a>4. Instructions.</h1><p>Note: These instructions are written based on the outrunner motor. The outrunner motor is the motor in which the rotor is outside and the stator is inside. Inrunner motors are the opposite. The inrunner motor can be held by hand while spinning, whereas the outrunner only by stator base.</p>
-<p><strong>1.</strong> Remove the motor from the body of the quadcopter or any frame it is attached to. Disconnect wires. Leave the plug as it may be required later.</p>
-<p><strong>2.</strong> Remove the E-clip. This is tricky without any special tools. You can use a small screwdriver to push the clip out. The secret is to push it from both sides, but the problem is that it rotates independently from the rotor. One note: E-clip is springy, after successful removal it may fly away and you never going to find it again. The motor can spin without it and for such a small motor it may be an option if you lost it, but for any more powerful motor with a bigger propeller, it is not an option. Put your motor into a plastic transparent bug while removing it. even if it flies away should be easy to find in the bug. To be even more safe, attach a neodymium magnet to the tip of the tweezer to catch the clip.</p>
-<p><strong>3.</strong> Remove the rotor from the stator. There will be some magnetic force holding it in place, but nothing strong.</p>
-<p><strong>4.</strong> Cut the plug off, leave some length of wire attached to the winding on the motor since it will be easier to unwind and count the turns.</p>
-<p><strong>5.</strong> Unwind the damaged windings. Note down the number of turns around each stator arm. If your wires are damaged to the point of being unusable below I did it for you for a described motor. Different motors will require some research, keep in mind source number <a href="https://www.bavaria-direct.co.za/scheme/calculator/">[1]</a>. which nicely visualizes how the windings should be winded.</p>
-<p>For the Mobula 6 <strong>SE0802-KV19000 9N12P</strong> (12 magnets&#x2F;poles, 9 stator arms&#x2F;slots) <a href="https://www.aliexpress.com/item/1005001666252329.html">like these</a> motors counts are as follows:</p>
-<ul>
-<li>the wire is <strong>0.2mm in diameter, enameled copper</strong>;</li>
-<li>10 turns around each stator arm;</li>
-<li>Configuration is Y (star) meaning that in the stator there is a connection of all 3 phase wires;</li>
-</ul>
-<p>Make note of which wire is which phase and which end of the wire is start or finish. Preferably use sticky tape and stick it into each note marking for example <code>A start</code>.<br>For now, leave 10cm at the beginning and at the of each winded phase. It will make life easier afterward. Cut the rest.<br>While winding follow the below scheme <strong>ABCABCABC</strong>**:<br>(it describes the direction of winding by lower- or uppercase letter and phases order)</p>
-<img src="/2023/05/19/How-to-rewind-Tinywhoop-BLDC-motor/bldc_rewinding3.jpg" class="" title="Scheme for windings">
-
-<h6 id="Figure-2-Rewinding-pattern-Follow-the-lines-from-the-figure-exactly-Start-finish-and-direction-matters-Source-http-www-bavaria-direct-co-za"><a href="#Figure-2-Rewinding-pattern-Follow-the-lines-from-the-figure-exactly-Start-finish-and-direction-matters-Source-http-www-bavaria-direct-co-za" class="headerlink" title="Figure 2. Rewinding pattern. Follow the lines from the figure exactly. Start, finish and direction matters! Source: http://www.bavaria-direct.co.za/"></a><em><strong>Figure 2. Rewinding pattern. Follow the lines from the figure exactly. Start, finish and direction matters! Source: <a href="http://www.bavaria-direct.co.za/">http://www.bavaria-direct.co.za/</a></strong></em></h6><p><strong>6.</strong> When this is done, you are left with 3 phases having each two ends. Make sure that the windings do not interfere with the rest of the motor. Make the Y-center connection as inside the diagram in the Figure above. Place it offside but in the footprint of the motor. Solder the three wires. You may heat the ends with the soldering iron to remove the isolation, but it can damage deeper isolation. Preferably use sandpaper. Do not forget to isolate the solder joint from the rest with heat shrink.</p>
-<img src="/2023/05/19/How-to-rewind-Tinywhoop-BLDC-motor/repaired1.jpg" class="" title="Motor after repair.">
-<h6 id="Figure-3-Repaired-motor-from-top-Note-the-center-Y-connection"><a href="#Figure-3-Repaired-motor-from-top-Note-the-center-Y-connection" class="headerlink" title="Figure 3. Repaired motor from top. Note the center Y connection."></a><em><strong>Figure 3. Repaired motor from top. Note the center Y connection.</strong></em></h6><p><strong>7.</strong> Cut the other ends of each phase to the required length. Solder connector if you need one. Now you can text the motor. For the tests, do not assemble the whole motor yet, leave E-clip aside. Just insert the rotor into the stator.</p>
-<img src="/2023/05/19/How-to-rewind-Tinywhoop-BLDC-motor/repaired2.jpg" class="" title="Repaired motor from the bottom.">
-<h6 id="Figure-4-Repaired-motor-from-the-bottom-the-Y-center-connection-does-not-interfere-with-other-components"><a href="#Figure-4-Repaired-motor-from-the-bottom-the-Y-center-connection-does-not-interfere-with-other-components" class="headerlink" title="Figure 4. Repaired motor from the bottom. the Y center connection does not interfere with other components."></a><em><strong>Figure 4. Repaired motor from the bottom. the Y center connection does not interfere with other components.</strong></em></h6><h1 id="5-Post-stuff"><a href="#5-Post-stuff" class="headerlink" title="5. Post stuff"></a>5. Post stuff</h1><p>The motor works pretty much the same as the original, but I noted that it starts with a delay concerning the original ones. Higher rotations are required to start it up. You may want to adjust the start-up power in the esc configurator.</p>
-<h1 id="6-Sources-and-useful-links"><a href="#6-Sources-and-useful-links" class="headerlink" title="6. Sources and useful links"></a>6. Sources and useful links</h1><p>[1] <a href="https://www.bavaria-direct.co.za/scheme/calculator/">https://www.bavaria-direct.co.za/scheme/calculator/</a><br>[2] <a href="https://www.rcgroups.com/forums/showthread.php?1076415-Alternative-12N14P-winding">https://www.rcgroups.com/forums/showthread.php?1076415-Alternative-12N14P-winding</a><br>[3] <a href="http://www.bavaria-direct.co.za/scheme/common/#prettyPhoto">http://www.bavaria-direct.co.za/scheme/common/#prettyPhoto</a><br>[4] <a href="https://fjp.at/projects/fpv/motor">https://fjp.at/projects/fpv/motor</a><br>[5] <a href="https://www.machinedesign.com/motors-drives/article/21834666/how-to-calculate-new-dc-motor-parameters-of-a-modified-winding">https://www.machinedesign.com/motors-drives/article/21834666/how-to-calculate-new-dc-motor-parameters-of-a-modified-winding</a><br>[6] <a href="https://www.instructables.com/Rewinding-a-Brushless-Motor/">https://www.instructables.com/Rewinding-a-Brushless-Motor/</a></p>
-]]></content>
-      <categories>
-        <category>Tutorials</category>
-        <category>Repairs</category>
-      </categories>
-      <tags>
-        <tag>instructions</tag>
-        <tag>tutorial</tag>
-        <tag>bldc</tag>
-        <tag>motors</tag>
-        <tag>repairs</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>How to Flash TP-Link Archer C8v2 With DD-WRT.</title>
     <url>/2023/05/19/archerc8-flashing/</url>
     <content><![CDATA[<h1 id="0-DISCLAIMER"><a href="#0-DISCLAIMER" class="headerlink" title="0. DISCLAIMER"></a>0. DISCLAIMER</h1><p><ins>I am not responsible for anything.</ins> In this tutorial, I described my way of flashing dd-wrt onto this router. You may have different hardware and the methods described here may not work. Please keep in mind that you may end up with bricked device and you agreed with this loss. </p>
@@ -345,6 +290,165 @@
         <tag>archer c8</tag>
         <tag>tp-link</tag>
         <tag>de-bricking</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>How to Rewind a Tinywhoop (Or Any Other) BLDC Motor</title>
+    <url>/2023/05/19/How-to-rewind-Tinywhoop-BLDC-motor/</url>
+    <content><![CDATA[<p>Tutorial on how to rewind a broken BLDC motor by replacing the windings in the stator.</p>
+<h1 id="1-A-bit-of-theory"><a href="#1-A-bit-of-theory" class="headerlink" title="1. A bit of theory"></a>1. A bit of theory</h1><p>BLDC motors are DC voltage operating motors. The most important advantage over regular brushed DC motors is the fact of lack of brushes in BLDC motors. BLDC comes from a Brushless DC motor. Thanks to that, fewer parts can wear out and the motor is more reliable and longer lasting. Stator consists of windings made out of copper enameled wire. This means that wire has thin layer of insulation. This insulation may get damaged by excess heat, which occurs during motor stall (not only of course). The motor stall is when we want motors to rotate, but its rotor is locked. Visually burned coils will be black, they will stink quite a lot and some of the isolation may melt, changing the shape of the wire. The damaged motor will ‘try’ to rotate when power is applied, but will only vibrate by moving small steps forward and backward.</p>
+<img src="/2023/05/19/How-to-rewind-Tinywhoop-BLDC-motor/mobula6motor.jpg" class="" title="BLDC motor example.">
+<h6 id="Figure-1-BLDC-motor-which-is-to-be-repaired-in-this-guide-Note-that-the-instructions-can-be-applied-to-other-motors-of-that-kind-Only-the-windings-pattern-will-change-and-x2F-or-the-wire-for-windings-used"><a href="#Figure-1-BLDC-motor-which-is-to-be-repaired-in-this-guide-Note-that-the-instructions-can-be-applied-to-other-motors-of-that-kind-Only-the-windings-pattern-will-change-and-x2F-or-the-wire-for-windings-used" class="headerlink" title="Figure 1. BLDC motor which is to be repaired in this guide. Note that the instructions can be applied to other motors of that kind. Only the windings pattern will change and&#x2F;or the wire for windings used."></a><strong>Figure 1. BLDC motor which is to be repaired in this guide. Note that the instructions can be applied to other motors of that kind. Only the windings pattern will change and&#x2F;or the wire for windings used.</strong></h6><p>This guide is based on a tiny BLDC motor taken from Mobula 6 tinywhoop. For other motors, the procedure will be the same but the arrangement and parts required may differ.</p>
+<span id="more"></span>
+
+
+
+<h1 id="2-Why-repair-it-by-yourself-when-spare-motors-can-be-bought-cheaply"><a href="#2-Why-repair-it-by-yourself-when-spare-motors-can-be-bought-cheaply" class="headerlink" title="2. Why repair it by yourself when spare motors can be bought cheaply?"></a>2. Why repair it by yourself when spare motors can be bought cheaply?</h1><p>Sometimes we just want to use the motors instead of waiting for the delivery. You may be in luck if the motors you need are available locally and delivery time is in days. But stuff bought from China may have weeks in delivery time. A repair can be conducted now, at the very moment. With the right tools, you will be in the air the same day.</p>
+<p>Plus this motor is dead anyway, so why not give it a shot?</p>
+<p>Plus plus you will learn something.</p>
+<h1 id="3-What-will-be-needed"><a href="#3-What-will-be-needed" class="headerlink" title="3. What will be needed?"></a>3. What will be needed?</h1><p>There are some</p>
+<ol>
+<li>A bit of patience. Small motors like Mobula 6 are tiny. The winding process may require small fingers and steady hands.</li>
+<li>0.2mm diameter copper enameled wire can be bought cheaply.</li>
+<li>Good tweezers for catching the E-clip. These clips hold the rotor in place. Can be visible from the bottom of the motor.</li>
+<li>Soldering iron will rather be required.</li>
+</ol>
+<h1 id="4-Instructions"><a href="#4-Instructions" class="headerlink" title="4. Instructions."></a>4. Instructions.</h1><p>Note: These instructions are written based on the outrunner motor. The outrunner motor is the motor in which the rotor is outside and the stator is inside. Inrunner motors are the opposite. The inrunner motor can be held by hand while spinning, whereas the outrunner only by stator base.</p>
+<p><strong>1.</strong> Remove the motor from the body of the quadcopter or any frame it is attached to. Disconnect wires. Leave the plug as it may be required later.</p>
+<p><strong>2.</strong> Remove the E-clip. This is tricky without any special tools. You can use a small screwdriver to push the clip out. The secret is to push it from both sides, but the problem is that it rotates independently from the rotor. One note: E-clip is springy, after successful removal it may fly away and you never going to find it again. The motor can spin without it and for such a small motor it may be an option if you lost it, but for any more powerful motor with a bigger propeller, it is not an option. Put your motor into a plastic transparent bug while removing it. even if it flies away should be easy to find in the bug. To be even more safe, attach a neodymium magnet to the tip of the tweezer to catch the clip.</p>
+<p><strong>3.</strong> Remove the rotor from the stator. There will be some magnetic force holding it in place, but nothing strong.</p>
+<p><strong>4.</strong> Cut the plug off, leave some length of wire attached to the winding on the motor since it will be easier to unwind and count the turns.</p>
+<p><strong>5.</strong> Unwind the damaged windings. Note down the number of turns around each stator arm. If your wires are damaged to the point of being unusable below I did it for you for a described motor. Different motors will require some research, keep in mind source number <a href="https://www.bavaria-direct.co.za/scheme/calculator/">[1]</a>. which nicely visualizes how the windings should be winded.</p>
+<p>For the Mobula 6 <strong>SE0802-KV19000 9N12P</strong> (12 magnets&#x2F;poles, 9 stator arms&#x2F;slots) <a href="https://www.aliexpress.com/item/1005001666252329.html">like these</a> motors counts are as follows:</p>
+<ul>
+<li>the wire is <strong>0.2mm in diameter, enameled copper</strong>;</li>
+<li>10 turns around each stator arm;</li>
+<li>Configuration is Y (star) meaning that in the stator there is a connection of all 3 phase wires;</li>
+</ul>
+<p>Make note of which wire is which phase and which end of the wire is start or finish. Preferably use sticky tape and stick it into each note marking for example <code>A start</code>.<br>For now, leave 10cm at the beginning and at the of each winded phase. It will make life easier afterward. Cut the rest.<br>While winding follow the below scheme <strong>ABCABCABC</strong>**:<br>(it describes the direction of winding by lower- or uppercase letter and phases order)</p>
+<img src="/2023/05/19/How-to-rewind-Tinywhoop-BLDC-motor/bldc_rewinding3.jpg" class="" title="Scheme for windings">
+
+<h6 id="Figure-2-Rewinding-pattern-Follow-the-lines-from-the-figure-exactly-Start-finish-and-direction-matters-Source-http-www-bavaria-direct-co-za"><a href="#Figure-2-Rewinding-pattern-Follow-the-lines-from-the-figure-exactly-Start-finish-and-direction-matters-Source-http-www-bavaria-direct-co-za" class="headerlink" title="Figure 2. Rewinding pattern. Follow the lines from the figure exactly. Start, finish and direction matters! Source: http://www.bavaria-direct.co.za/"></a><em><strong>Figure 2. Rewinding pattern. Follow the lines from the figure exactly. Start, finish and direction matters! Source: <a href="http://www.bavaria-direct.co.za/">http://www.bavaria-direct.co.za/</a></strong></em></h6><p><strong>6.</strong> When this is done, you are left with 3 phases having each two ends. Make sure that the windings do not interfere with the rest of the motor. Make the Y-center connection as inside the diagram in the Figure above. Place it offside but in the footprint of the motor. Solder the three wires. You may heat the ends with the soldering iron to remove the isolation, but it can damage deeper isolation. Preferably use sandpaper. Do not forget to isolate the solder joint from the rest with heat shrink.</p>
+<img src="/2023/05/19/How-to-rewind-Tinywhoop-BLDC-motor/repaired1.jpg" class="" title="Motor after repair.">
+<h6 id="Figure-3-Repaired-motor-from-top-Note-the-center-Y-connection"><a href="#Figure-3-Repaired-motor-from-top-Note-the-center-Y-connection" class="headerlink" title="Figure 3. Repaired motor from top. Note the center Y connection."></a><em><strong>Figure 3. Repaired motor from top. Note the center Y connection.</strong></em></h6><p><strong>7.</strong> Cut the other ends of each phase to the required length. Solder connector if you need one. Now you can text the motor. For the tests, do not assemble the whole motor yet, leave E-clip aside. Just insert the rotor into the stator.</p>
+<img src="/2023/05/19/How-to-rewind-Tinywhoop-BLDC-motor/repaired2.jpg" class="" title="Repaired motor from the bottom.">
+<h6 id="Figure-4-Repaired-motor-from-the-bottom-the-Y-center-connection-does-not-interfere-with-other-components"><a href="#Figure-4-Repaired-motor-from-the-bottom-the-Y-center-connection-does-not-interfere-with-other-components" class="headerlink" title="Figure 4. Repaired motor from the bottom. the Y center connection does not interfere with other components."></a><em><strong>Figure 4. Repaired motor from the bottom. the Y center connection does not interfere with other components.</strong></em></h6><h1 id="5-Post-stuff"><a href="#5-Post-stuff" class="headerlink" title="5. Post stuff"></a>5. Post stuff</h1><p>The motor works pretty much the same as the original, but I noted that it starts with a delay concerning the original ones. Higher rotations are required to start it up. You may want to adjust the start-up power in the esc configurator.</p>
+<h1 id="6-Sources-and-useful-links"><a href="#6-Sources-and-useful-links" class="headerlink" title="6. Sources and useful links"></a>6. Sources and useful links</h1><p>[1] <a href="https://www.bavaria-direct.co.za/scheme/calculator/">https://www.bavaria-direct.co.za/scheme/calculator/</a><br>[2] <a href="https://www.rcgroups.com/forums/showthread.php?1076415-Alternative-12N14P-winding">https://www.rcgroups.com/forums/showthread.php?1076415-Alternative-12N14P-winding</a><br>[3] <a href="http://www.bavaria-direct.co.za/scheme/common/#prettyPhoto">http://www.bavaria-direct.co.za/scheme/common/#prettyPhoto</a><br>[4] <a href="https://fjp.at/projects/fpv/motor">https://fjp.at/projects/fpv/motor</a><br>[5] <a href="https://www.machinedesign.com/motors-drives/article/21834666/how-to-calculate-new-dc-motor-parameters-of-a-modified-winding">https://www.machinedesign.com/motors-drives/article/21834666/how-to-calculate-new-dc-motor-parameters-of-a-modified-winding</a><br>[6] <a href="https://www.instructables.com/Rewinding-a-Brushless-Motor/">https://www.instructables.com/Rewinding-a-Brushless-Motor/</a></p>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+        <category>Repairs</category>
+      </categories>
+      <tags>
+        <tag>instructions</tag>
+        <tag>tutorial</tag>
+        <tag>bldc</tag>
+        <tag>motors</tag>
+        <tag>repairs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Bring-Back-Pernament-Notifications-Android-14-15</title>
+    <url>/2025/07/01/bring-back-pernament-notifications-android-14-15/</url>
+    <content><![CDATA[<h1 id="How-to-bring-back-permanent-notifications-on-Android-14-and-15"><a href="#How-to-bring-back-permanent-notifications-on-Android-14-and-15" class="headerlink" title="How to bring back permanent notifications on Android 14 and 15"></a>How to bring back permanent notifications on Android 14 and 15</h1><p>Android 14 has removed option for application to send permanent (persistent, non-dismissible) notifications. These were sometimes pretty annoying, especially for people who like having no pending notifications. At a same time they were pretty useful when it came for apps which required to run in a background all the time (Antiviruses, Downloaders)</p>
+<div style="text-align:center">
+  <span style="display: inline-block; transform: scale(0.8);">
+    <img src="/2025/07/01/bring-back-pernament-notifications-android-14-15/swiping_away.png" class="" title="Figure. IC pinout">
+  </span>
+  <em></i>Example of notifcation, which can't be swiped away and lost forever...</em></i>
+</div></br>
+
+ <span id="more"></span>
+<p>Android 14+ users can manually swipe away <em>permanent</em> notification just like normal ones. This means some apps could disappear even when they were doing some task in the background. Another handy use case for such notifications were notes or reminders which stayed all the time until user manually removed them. Now they can be dismissed with all the other spam you get every second :&#x2F;</p>
+<p>Fortunately, there is a way to bring them back!<br>This method works on single app basis. This means you need to enable permanent notification for every app you need separately. </p>
+<h2 id="1-Few-prerequisites"><a href="#1-Few-prerequisites" class="headerlink" title="1. Few prerequisites"></a>1. Few prerequisites</h2><p>Some stuff is required unfortunately.</p>
+<h3 id="1-1-ADB-tools"><a href="#1-1-ADB-tools" class="headerlink" title="1.1 ADB tools"></a>1.1 ADB tools</h3><p>There is multiple good resources to install ADB tools and enable USB debugging on Android for various OS’s. Go here for more info: <a href="https://www.xda-developers.com/install-adb-windows-macos-linux/">https://www.xda-developers.com/install-adb-windows-macos-linux/</a></p>
+<details> <summary>ADB tools installation simplified procedure</summary>
+
+<ul>
+<li>On Linux:</li>
+</ul>
+<p><code>sudo apt install adb</code></p>
+<ul>
+<li>On Windows:</li>
+</ul>
+<p><a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download this</a> and install.</p>
+<ul>
+<li>Mac users don’t bother with such problems, since Apple knows better what’s good for them ( and they uses Iphones ).</li>
+</ul>
+</details>
+
+<h3 id="1-2-Enable-USB-Debbuging-on-Android-phone"><a href="#1-2-Enable-USB-Debbuging-on-Android-phone" class="headerlink" title="1.2 Enable USB Debbuging on Android phone"></a>1.2 Enable USB Debbuging on Android phone</h3><details> <summary>USB Debbuging</summary>
+
+</br>
+
+<p>Go Settings &gt; About phone &gt; On the bottom of the screen smash Build Number as many times as required to get popup saying <code>You are now a developer</code>.</p>
+<p>Go back to Main Settings screen &gt; System &gt; Developer options and near the top there should be a USB debugging toggle. Enable it. </p>
+</details>
+
+<h3 id="1-3-A-will-to-type-few-commands-into-scarrry-𝔗𝔢𝔯𝔪𝔦𝔫𝔞𝔩"><a href="#1-3-A-will-to-type-few-commands-into-scarrry-𝔗𝔢𝔯𝔪𝔦𝔫𝔞𝔩" class="headerlink" title="1.3 A will to type few commands into scarrry 𝔗𝔢𝔯𝔪𝔦𝔫𝔞𝔩"></a>1.3 A will to type few commands into scarrry 𝔗𝔢𝔯𝔪𝔦𝔫𝔞𝔩</h3><details> <summary>One command for a good start</summary>
+
+</br>
+
+<p>Open Terminal ( On Windows, go to folder where adb.exe was installed, right click &gt; Open in Terminal (might require right-click while holding Shift) ) and type:</p>
+<p><code>adb devices</code></p>
+<p>There should be a popup on your phone to authorize your computer, click allow. On terminal you should see a list of devices with one phone saying ‘device’. </p>
+</details>
+
+
+<h2 id="2-Actuall-work"><a href="#2-Actuall-work" class="headerlink" title="2. Actuall work"></a>2. Actuall work</h2><p>Find app package id of an app you want to enable permanent notifications for. </p>
+<p>One app, one id, one command. </p>
+<p>The easiest way is to: on your phone, hold desired app &gt; on popup select <code>i</code> or more info &gt; Scroll all the way down in Settings screen and there should be package in format e.g.: <code>net.dinglisch.android.taskerm</code> or <code>org.tasks</code>, etc.</p>
+<blockquote>
+<p>To ENABLE permanent notifications, in Terminal type:</p>
+</blockquote>
+<p><code>adb shell appops set --uid YOU_PACKAGE SYSTEM_EXEMPT_FROM_DISMISSIBLE_NOTIFICATIONS allow</code></p>
+<details> <summary>Usage Example</summary>
+
+<p><code>adb shell appops set --uid net.dinglisch.android.taskerm SYSTEM_EXEMPT_FROM_DISMISSIBLE_NOTIFICATIONS allow</code> for app Tasker.</p>
+</details>
+
+</br>
+
+<blockquote>
+<p>To DISABLE permanent notifications, in Terminal type:</p>
+</blockquote>
+<p><code>adb shell appops set --uid YOU_PACKAGE SYSTEM_EXEMPT_FROM_DISMISSIBLE_NOTIFICATIONS default</code></p>
+<details> <summary>Usage Example</summary>
+
+<p><code>adb shell appops set --uid net.dinglisch.android.taskerm SYSTEM_EXEMPT_FROM_DISMISSIBLE_NOTIFICATIONS default</code> for app Tasker.</p>
+</details>
+
+</br>
+
+<p>No reboot required. Tested on Android 15. </p>
+<p>WARNING: If app does not post permanent notifications after executing above command, this may indicate that this app simply does not post such notifications at all. In this situation, nothing can be done other than contacting a developer. </p>
+<h3 id="Effect-example"><a href="#Effect-example" class="headerlink" title="Effect example:"></a>Effect example:</h3><div style="text-align: center;">
+  <video width="416" height="360" controls>
+    <source src="example.mp4" type="video/mp4">
+  </video>
+</div>
+
+</br>
+
+
+<p>For more info and for few other hidden useful-tip and tricks see: <a href="https://www.reddit.com/r/tasker/comments/1fv9ez4/how_to_enable_nondismissible_persistent/">https://www.reddit.com/r/tasker/comments/1fv9ez4/how_to_enable_nondismissible_persistent/</a></p>
+<h2 id="3-Sources"><a href="#3-Sources" class="headerlink" title="3. Sources:"></a>3. Sources:</h2><ul>
+<li><p>main source and all credits go to this: <a href="https://www.reddit.com/r/tasker/comments/1fv9ez4/how_to_enable_nondismissible_persistent/">https://www.reddit.com/r/tasker/comments/1fv9ez4/how_to_enable_nondismissible_persistent/</a></p>
+</li>
+<li><p><a href="https://www.xda-developers.com/install-adb-windows-macos-linux/">https://www.xda-developers.com/install-adb-windows-macos-linux/</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tutorials</category>
+      </categories>
+      <tags>
+        <tag>instructions</tag>
+        <tag>tutorials</tag>
+        <tag>android</tag>
+        <tag>modding</tag>
+        <tag>custom-roms</tag>
       </tags>
   </entry>
   <entry>
