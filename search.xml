@@ -424,27 +424,10 @@
 <p>No reboot required. Tested on Android 15. </p>
 <p>WARNING: If app does not post permanent notifications after executing above command, this may indicate that this app simply does not post such notifications at all. In this situation, nothing can be done other than contacting a developer. </p>
 <h3 id="Effect-example"><a href="#Effect-example" class="headerlink" title="Effect example:"></a>Effect example:</h3><div style="text-align: center;">
-  <video width="416" height="360" controls>
-    <source src="example.mp4" type="video/mp4">
+  <video controls>
+    <source src="output.webm" type="video/mp4">
   </video>
 </div>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-  <iframe   src="example.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%;  height: 100%; left: 0; top: 0;"> 
-  </iframe>
-
-</div>
-
-<video src="<iframe" preload="metadata" controlslist="nodownload" controls playsinline poster="width=560"></video>
-
-
-<video controls width="600">
-  <source src="/bring-back-pernament-notifications-android-14-15/example.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-
-
 
 
 <div style="text-align: left;">
